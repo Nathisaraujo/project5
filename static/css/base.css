@@ -4,16 +4,14 @@ html {
 
 body {
     background-color: white;
-    font-family:'Times New Roman', Times, serif;
-    color: black;
-}
-
-.sections {
-    font-size: 3em;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
+    color: black;
+}
+
+.fst-section {
+    font-size: 3em;
     margin-left: 3em;
 }
 
@@ -25,6 +23,65 @@ body {
     width: 15em;
     text-transform: uppercase;
     height: 4em;
+    font-weight: bold;
+}
+
+.scd-section {
+    background-image: url('/media/scd_section.png');
+    background-size: cover;
+    height: 100vh;
+    font-size: 2em;
+}
+
+.trd-section {
+    background-image: url('/media/trd_section.png');
+    background-size: cover;
+    background-color: #9684A1;
+    color: white;
+    height: 12em;
+    font-size: 2em;
+    padding-bottom: 4em;
+    padding-top: 2em;
+}
+
+.fth-section {
+    background-color: #9684A1;
+    color: white;
+    font-size: 2em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.margin-offers-image {
+    margin-top: 4em;
+    margin-left: 5em;
+    margin-right: 2em;
+}
+
+.margin-offers-text {
+    margin-top: 2em;
+    margin-left: 5em;
+    margin-right: 2em;
+}
+
+.offers-image {
+    max-width: 10em;
+}
+
+.offers-text {
+    background-color:black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.margin-trd-section{
+    margin-top: 3em;
+
+}
+
+.logo-img {
+    max-width: 15em;
 }
 
 /* from Bulma */

@@ -18,6 +18,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     {% endblock %}
 
     {% block extra_css %}
@@ -39,7 +40,7 @@
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <img src="images/knowme.png" alt="logo">
+            <img src="{{ MEDIA_URL }}logo.png" alt="logo" class="logo-img">
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -49,7 +50,7 @@
               <div class="input-group-append">
                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                   <span class="icon">
-                      <i class="fas fa-search"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                   </span>
                 </button>
               </div>
