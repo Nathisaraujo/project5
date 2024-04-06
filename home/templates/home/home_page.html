@@ -1,7 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">it works</h1>
+
+    <!-- home page first section -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+            <p>Hi! <br> My name is Natalia and I sell art! <br> You can see (and buy) my drawings here</p>
+            </div>
+            <div class="col">
+                <img src="images/knowme.png" alt="Get to know me">
+            </div>
+    </div>
 
 {% endblock %}
