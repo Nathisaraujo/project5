@@ -12,14 +12,19 @@
 {% block content %}
 
     <!-- home page first section -->
-    <div class="container-fluid">
+    <div class="container-fluid sections">
         <div class="row">
-            <div class="col">
-            <p>Hi! <br> My name is Natalia and I sell art! <br> You can see (and buy) my drawings here</p>
+            <div class="col text-center">
+                <p><span class="text-uppercase" data-aos="animation_name">Hi!<br></span> My name is Natalia and I sell art! <br> You can see (and buy) <br>my drawings here:</p>
+                <button type="button" class="btn btn-outline-secondary font-weight-bold btn-home">See products</button>
             </div>
+
             <div class="col">
-                <img src="images/knowme.png" alt="Get to know me">
+                <a href="#">
+                    <img src="{{ MEDIA_URL }}knowme.png" alt="get to know me" class="knowme-image">
+                </a>
             </div>
     </div>
 
 {% endblock %}
+
