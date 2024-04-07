@@ -27,14 +27,14 @@ body {
 }
 
 .scd-section {
-    background-image: url('/media/scd_section.png');
+    background-image: url('/media/home/scd_section.png');
     background-size: cover;
     height: 100vh;
     font-size: 2em;
 }
 
 .trd-section {
-    background-image: url('/media/trd_section.png');
+    background-image: url('/media/home/trd_section.png');
     background-size: cover;
     background-color: #9684A1;
     color: white;
