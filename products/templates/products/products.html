@@ -10,11 +10,68 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col" style="background-color: red;">
-                <p>olá</p>{{ products }}
+            <div class="col mt-3 text-center">
+                <h2 class="mt-5 text-uppercase">Products</h2>
+                <hr class="m-5">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col margin-product-list justify-content-center">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-sm-4 mb-4 card-product">
+                        <div class="card h-100 border-0">
+                            {% if product.image %}
+                            <a href="#">
+                                <img class="card-img-top rounded img-thumbnail" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="#">
+                                <img class="card-img-top rounded img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0 text-uppercase">{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                                        {% if product.rating %}
+                                        <small class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} / 5</small>
+                                        {% else %}
+                                        <small class="text-muted">No Rating yet</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="row text-center mt-2">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-dark btn-products"><i class="fa-solid fa-heart"></i><br> wishlist</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-dark btn-products"> <i class="fa-solid fa-bag-shopping"></i><br> add to bag</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-dark btn-buynow"><i class="fa-solid fa-credit-card"></i> Buy now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="w-100"></div>
+                        {% endif %}
+                    {% endfor %}
+                    
+                </div>
             </div>
         </div>
     </div>
+
+
+
 {% endblock %}

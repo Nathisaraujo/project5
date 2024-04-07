@@ -84,6 +84,32 @@ body {
     max-width: 15em;
 }
 
+.btn-products {
+    margin: 1em 0em;
+    /* max-width: 10em; */
+    min-width: 8em;
+}
+
+.btn-buynow {
+    background-color: #9684A1;
+    text-transform: uppercase;
+    border: none;
+    min-width: 20em;
+}
+
+.margin-product-list {
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.card-product {
+    border: solid 1px #AAACB0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    max-width: 23em;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -91,10 +117,6 @@ body {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-}
-
-.logo-font {
-    text-transform: uppercase;
 }
 
 .main-logo-link {
