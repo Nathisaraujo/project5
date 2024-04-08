@@ -5,8 +5,8 @@
                 Products
             </a>
             <ul class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <li><a href="#" class="dropdown-item">By Price</a></li>
-                <li><a href="#" class="dropdown-item">By Rating</a></li>
+                <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Lowest Price</a></li>
+                <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Highest Rating</a></li>
                 <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
             </ul>
         </li>
@@ -41,7 +41,7 @@
                 <li><a href="{% url 'products' %}?paint=Watercolor" class="dropdown-item">Watercolor</a></li>
                 <li><a href="{% url 'products' %}?surface=Card" class="dropdown-item">Card</a></li>
                 <li><a href="{% url 'products' %}?material=Ink Pens" class="dropdown-item">Ink Pen</a></li>
-                <li><a href="{% url 'products' %}?material=Coloured Pencils" class="dropdown-item">Coloured Pencils</a></li>
+                <li><a href="{% url 'products' %}?material=Coloured Pencil" class="dropdown-item">Coloured Pencil</a></li>
             </ul>
         </li>
 
