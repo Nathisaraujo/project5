@@ -6,6 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'sku',
+        'digital',
         'category',
         'price',
         'rating',
@@ -53,4 +54,3 @@ admin.site.register(Paper, PaperAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(ProductTags)
-
