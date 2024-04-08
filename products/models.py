@@ -28,3 +28,48 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class ProductTags(models.Model):
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
+    materials = models.ManyToManyField('Material')    
+    surface = models.ManyToManyField('Surface')    
+    paint = models.ManyToManyField('Paint')    
+    frame = models.ManyToManyField('Frame')  
+    paper = models.ManyToManyField('Paper')
+    
+
+    def __str__(self):
+        return str(self.product)
+
+class Material(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Paint(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Surface(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+         return self.name
+
+class Paper(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Frame(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+    
+

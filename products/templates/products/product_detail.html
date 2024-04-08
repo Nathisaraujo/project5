@@ -35,7 +35,53 @@
                     {% else %}
                         <small class="text-muted">No rating yet</small>
                     {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
+                    <p class="mt-3">{{ product.description }} </p>
+                    {% if product.producttags %}
+                        <p class="mt-3">
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th>Paints</th>
+                                    <th>Other materials</th>
+                                    <th>Paper</th>
+                                    <th>Frame</th>
+                                    <th>Surface</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        {% for paint in product.producttags.paint.all %}
+                                        <li>{{ paint.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for material in product.producttags.materials.all %}
+                                        <li>{{ material.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for paper in product.producttags.paper.all %}
+                                        <li>{{ paper.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for frame in product.producttags.frame.all %}
+                                        <li>{{ frame.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for surface in product.producttags.surface.all %}
+                                        <li>{{ surface.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>This is a digital drawing. You'll get the print on tal paper, no frame.</p>
+                        {% endif %}
+                    </p>
                     <div class="col text-center">
                         <button type="button" class="btn btn-dark btn-products"><i class="fa-solid fa-heart"></i><br> wishlist</button>
                         <button type="button" class="btn btn-dark btn-products"> <i class="fa-solid fa-bag-shopping"></i><br> add to bag</button>
