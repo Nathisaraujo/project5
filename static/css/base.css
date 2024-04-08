@@ -156,6 +156,19 @@ li {
     list-style: none;
 }
 
+.btn-top {
+    background-color: #000000;
+    text-decoration: none;
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+    align-items: center;
+}
+
+.btn-top:hover {
+    background-color: #AAACB0;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
