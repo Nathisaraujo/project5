@@ -2,39 +2,46 @@
     <ul class="navbar-nav me-auto mx-auto">
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black me-5" href="#" id="all-products-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                All Products
+                Products
             </a>
             <ul class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <li><a href="#" class="dropdown-item">By Price</a></li>
                 <li><a href="#" class="dropdown-item">By Rating</a></li>
-                <li><a href="#" class="dropdown-item">By Category</a></li>
                 <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black me-5" href="#" id="clothing-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Canvas
+                Category
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <li><a href="#" class="dropdown-item">Lanscape</a></li>
-                <li><a href="#" class="dropdown-item">Pessoas</a></li>
-                <li><a href="#" class="dropdown-item">Animals</a></li>
-                <li><a href="#" class="dropdown-item">St. Patrick's Day</a></li>
+            <ul class="dropdown-menu border-0" aria-labelledby="categories-link">
+                <li><a href="{% url 'products' %}?category=christmas" class="dropdown-item">Christmas</a></li>
+                <li><a href="{% url 'products' %}?category=family" class="dropdown-item">Family</a></li>
+                <li><a href="{% url 'products' %}?category=thank_you" class="dropdown-item">Thank You</a></li>
+                <li><a href="{% url 'products' %}?category=valentines_day" class="dropdown-item">Valentine's Day</a></li>
+                <li><a href="{% url 'products' %}?category=mothers_day" class="dropdown-item">Mother's Day</a></li>
+                <li><a href="{% url 'products' %}?category=fathers_day" class="dropdown-item">Father's Day</a></li>
+                <li><a href="{% url 'products' %}?category=easter" class="dropdown-item">Easter</a></li>
+                <li><a href="{% url 'products' %}?category=congratulations" class="dropdown-item">Congratulations</a></li>
+                <li><a href="{% url 'products' %}?category=abstract" class="dropdown-item">Abstract</a></li>
+                <li><a href="{% url 'products' %}?category=plants" class="dropdown-item">Plants</a></li>
+                <li><a href="{% url 'products' %}?category=animal" class="dropdown-item">Animal</a></li>
+                <li><a href="{% url 'products' %}?category=portrait" class="dropdown-item">Portraits</a></li>
+                <li><a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black me-5" href="#" id="homeware-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Cards
+                Main Materials
             </a>
             <ul class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <li><a href="#" class="dropdown-item">Birthday</a></li>
-                <li><a href="#" class="dropdown-item">Christmas</a></li>
-                <li><a href="#" class="dropdown-item">St. Patrick's Day</a></li>
-                <li><a href="#" class="dropdown-item">Valentine's Day</a></li>
-                <li><a href="#" class="dropdown-item">Easter</a></li>
-                <li><a href="#" class="dropdown-item">Others/all</a></li>
+                <li><a href="#" class="dropdown-item">Digital</a></li>
+                <li><a href="{% url 'products' %}?paint=Watercolor" class="dropdown-item">Watercolor</a></li>
+                <li><a href="{% url 'products' %}?surface=Card" class="dropdown-item">Card</a></li>
+                <li><a href="{% url 'products' %}?material=Ink Pens" class="dropdown-item">Ink Pen</a></li>
+                <li><a href="{% url 'products' %}?material=Coloured Pencils" class="dropdown-item">Coloured Pencils</a></li>
             </ul>
         </li>
 
