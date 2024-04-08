@@ -36,52 +36,6 @@
                         <small class="text-muted">No rating yet</small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }} </p>
-                    {% if product.producttags %}
-                        <p class="mt-3">
-                            <table class="table table-sm">
-                                <thead>
-                                <tr>
-                                    <th>Paints</th>
-                                    <th>Other materials</th>
-                                    <th>Paper</th>
-                                    <th>Frame</th>
-                                    <th>Surface</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        {% for paint in product.producttags.paint.all %}
-                                        <li>{{ paint.name }}</li>
-                                        {% endfor %}    
-                                    </td>
-                                    <td>
-                                        {% for material in product.producttags.materials.all %}
-                                        <li>{{ material.name }}</li>
-                                        {% endfor %}    
-                                    </td>
-                                    <td>
-                                        {% for paper in product.producttags.paper.all %}
-                                        <li>{{ paper.name }}</li>
-                                        {% endfor %}    
-                                    </td>
-                                    <td>
-                                        {% for frame in product.producttags.frame.all %}
-                                        <li>{{ frame.name }}</li>
-                                        {% endfor %}    
-                                    </td>
-                                    <td>
-                                        {% for surface in product.producttags.surface.all %}
-                                        <li>{{ surface.name }}</li>
-                                        {% endfor %}    
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        {% else %}
-                            <p>This is a digital drawing. You'll get the print on tal paper, no frame.</p>
-                        {% endif %}
-                    </p>
                     <div class="col text-center">
                         <button type="button" class="btn btn-dark btn-products"><i class="fa-solid fa-heart"></i><br> wishlist</button>
                         <button type="button" class="btn btn-dark btn-products"> <i class="fa-solid fa-bag-shopping"></i><br> add to bag</button>
@@ -89,6 +43,55 @@
                     <div class="col text-center">
                         <button type="button" class="btn btn-dark btn-buynow"><i class="fa-solid fa-credit-card"></i> Buy now</button>
                     </div>
+                    {% if product.producttags %}
+                        <p class="mt-3">
+                            <table class="table table-sm text-center table-striped">
+                                <caption>Product Specifications</caption>
+                                <thead>
+                                <tr>
+                                    <th><i class="fa-solid fa-fill-drip"></i><br>Paints</th>
+                                    <th><i class="fa-solid fa-pen-ruler"></i><br>Other materials</th>
+                                    <th><i class="fa-regular fa-note-sticky"></i><br>Paper</th>
+                                    <th><i class="fa-solid fa-crop-simple"></i><br>Frame</th>
+                                    <th><i class="fa-solid fa-chess-board"></i><br>Surface</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% for paint in product.producttags.paint.all %}
+                                            <li>{{ paint.name }}</li>
+                                            {% endfor %}    
+                                        </td>
+                                        <td>
+                                            {% for material in product.producttags.materials.all %}
+                                            <li>{{ material.name }}</li>
+                                            {% endfor %}    
+                                        </td>
+                                        <td>
+                                            {% for paper in product.producttags.paper.all %}
+                                            <li>{{ paper.name }}</li>
+                                            {% endfor %}    
+                                        </td>
+                                        <td>
+                                            {% for frame in product.producttags.frame.all %}
+                                            <li>{{ frame.name }}</li>
+                                            {% endfor %}    
+                                        </td>
+                                        <td>
+                                            {% for surface in product.producttags.surface.all %}
+                                            <li>{{ surface.name }}</li>
+                                            {% endfor %}    
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f7b801;"></i> digital art</p>
+                            <p> You'll can buy this digital art and it will be printed on and will be printed on card paper, 
+                                A4 size, landscape or portrait (according to the orientation in the picture).</p>
+                        {% endif %}
+                    </p>
                 </div>
             </div>
         </div>
