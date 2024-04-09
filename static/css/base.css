@@ -125,6 +125,46 @@ body {
     height: 2px;
 }
 
+/* Convenience classes - colors from Bootstrap 5 */
+.arrow-primary {
+    border-bottom-color: #0d6efd !important; /* Bootstrap 5 primary color */
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important; /* Bootstrap 5 secondary color */
+}
+
+.arrow-success {
+    border-bottom-color: #198754 !important; /* Bootstrap 5 success color */
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important; /* Bootstrap 5 danger color */
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important; /* Bootstrap 5 warning color */
+}
+
+.arrow-info {
+    border-bottom-color: #0dcaf0 !important; /* Bootstrap 5 info color */
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important; /* Bootstrap 5 light color */
+}
+
+.arrow-dark {
+    border-bottom-color: #212529 !important; /* Bootstrap 5 dark color */
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
 /* from Bulma */
 .icon {
     align-items: center;
