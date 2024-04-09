@@ -66,13 +66,11 @@
                                 </div>
                             </div>
 
-                            <div class="col text-center">
+                            <div class="col{% if s %}-12 mt-2{% endif %} text-center">
                                 <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
                                     <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>
                                 </a>
-                                <a type="submit" class="btn rounded-0 mt-5">
-                                    <span class="btn btn-dark btn-products"><i class="fas fa-bag-shopping"></i> Add to Bag</span>
-                                </a>
+                                <input type="submit" class="btn rounded-0 mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
