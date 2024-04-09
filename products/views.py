@@ -47,10 +47,8 @@ def all_products(request):
             products = products.filter(producttags__paint__name__in=paints)
         
         if 'digital' in request.GET:
-            digital_value = request.GET['digital']
-            if digital_value.lower() in ['true', 'false']:
-                digital = digital_value.lower() == 'true'
-                products = products.filter(producttags__product__digital=digital)
+            digital = request.GET['digital']
+            products = products.filter(digital=True)
                 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
