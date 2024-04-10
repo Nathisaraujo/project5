@@ -15,8 +15,8 @@
     <div class="container mb-2">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <br>
+                <h2 class="m-4">Shopping Bag</h2>
                 <hr>
             </div>
         </div>
@@ -46,10 +46,10 @@
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
+                                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        <form class="form update-form mb-2" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
@@ -81,22 +81,22 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="update-link"><small> Update </small></a>
+                                        <a class="remove-item float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small> Remove </small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h6><strong>In the bag: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Total: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_delivery_delta > 0 %}
                                         <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                            You could get free delivery by spending just <strong><i class="fa-solid fa-euro-sign fa-xs"></i>{{ free_delivery_delta }}</strong> more!
                                         </p>
                                     {% endif %}
                                 </td>

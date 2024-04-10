@@ -164,6 +164,22 @@ body {
     overflow-y: auto;
 }
 
+.remove-item {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.update-link {
+    background-color: #3F6c51;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 2px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
