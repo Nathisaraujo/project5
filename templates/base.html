@@ -17,7 +17,7 @@
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@600&family=Shrikhand&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     {% endblock %}
 
@@ -85,9 +85,9 @@
                         <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                         <p class="my-0">
                             {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
+                              <i class="fa-solid fa-euro-sign fa-sm"></i>{{ grand_total|floatformat:2 }}
                             {% else %}
-                                $0.00
+                              <i class="fa-solid fa-euro-sign fa-sm"></i>0.00
                             {% endif %}
                         </p>
                     </div>

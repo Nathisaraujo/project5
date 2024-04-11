@@ -20,10 +20,29 @@ body {
 }
 
 .btn-home {
-    width: 15em;
-    text-transform: uppercase;
-    height: 4em;
+    width: 10em;
+    /* text-transform: uppercase; */
+    height: 5em;
     font-weight: bold;
+    font-family: "Indie Flower", cursive;
+    font-size: 30px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+.btn-home:hover {
+    background-color: #AAACB0;
+    color:#000000;
+}
+
+.btn-qty {
+    margin-left:20px;
+}
+
+.btn-products:hover {
+    background-color: #AAACB0;
+    color:#000000;
+    border-style: none;
 }
 
 .scd-section {
