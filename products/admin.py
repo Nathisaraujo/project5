@@ -7,6 +7,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'sku',
         'digital',
+        'producttags',
         'category',
         'price',
         'rating',
@@ -44,6 +45,14 @@ class FrameAdmin(admin.ModelAdmin):
 class PaperAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+    )
+
+class ProducttagsAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'paper',
+        'surface',
+        'materials',
     )
 
 admin.site.register(Material, MaterialAdmin)

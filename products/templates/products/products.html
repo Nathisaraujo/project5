@@ -58,6 +58,9 @@
                             {% endif %}
                             <div class="card-body pb-0">
                                 <p class="mb-0 text-uppercase">{{ product.name }}</p>
+                                {% if not product.producttags %}
+                                <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation" style="color: #f7b801;"></i> digital art</p>
+                                {% endif %}
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
