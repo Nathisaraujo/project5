@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    "crispy_bootstrap5",
     'home',
     'products',
     'bag',
@@ -59,7 +61,11 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-nathisaraujo-project5-fzptatqfext.ws-eu110.gitpod.io']
+
 ROOT_URLCONF = 'drawing_gratitude.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
     {

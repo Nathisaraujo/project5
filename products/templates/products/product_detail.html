@@ -65,16 +65,17 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col{% if s %}-12 mt-2{% endif %} text-center">
-                                <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
-                                    <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn rounded-0 mt-5" value="Add to Bag">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
+                    
+                        <div class="col{% if s %}-12 mt-2{% endif %} text-center">
+                            <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
+                                <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn rounded-0 mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
+                    
                     <div class="col text-center">
                         <button type="button" class="btn btn-dark btn-buynow"><i class="fa-solid fa-credit-card"></i> Buy now</button>
                     </div>
