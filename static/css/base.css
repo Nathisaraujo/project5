@@ -69,6 +69,15 @@ body {
     font-size: 2em;
     padding-bottom: 2em;
     padding-top: 2em;
+    height: 15em;
+}
+
+.why-art {
+    max-width: 10em;
+}
+
+.personalised {
+    max-width: 15em;
 }
 
 .margin-offers-image {
@@ -258,9 +267,28 @@ li {
     background-color: #AAACB0;
 }
 
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
+
+@media (min-width: 1400px) {
+    /* Example: Change font family */
+    .margin-offers-image {
+        margin-top: 10em;
+        margin-left: 12em;
+        margin-right: 3em;
+    }
+    .trd-section {
+        height: 16em;
+    }
+    .margin-offers-text {
+        margin-top: 5em;
+        margin-left: 0em;
+        margin-right: 4em;
+    }
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
