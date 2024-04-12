@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -14,6 +15,9 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container mt-5">
+                    {% if product.offers %}
+                        <p class="on-sale">on sale</p>                    
+                    {% endif %}
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid img-thumbnail" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -79,7 +83,14 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold"><i class="fa-solid fa-euro-sign"></i>{{ product.price }}</p>
+                    {% if product.offers %}
+                        <p>
+                            <span class="discount-price">It was: <i class="fas fa-euro-sign fa-xs"></i> {{ product.price }} <br></span>
+                            <span class="new-price">Now is only <i class="fas fa-euro-sign fa-xs"></i> {{ product.price|discount:15 }}!</span>
+                        </p>
+                    {% else %}
+                        <p class="lead mb-0 text-left font-weight-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                    {% endif %}
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star me-1"></i>{{ product.rating }} / 5</small>
                     {% else %}

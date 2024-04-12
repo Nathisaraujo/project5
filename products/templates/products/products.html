@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -42,6 +43,9 @@
                         {% for product in products %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card h-100">
+                                    {% if product.offers %}
+                                        <p class="on-sale">on sale</p>                    
+                                    {% endif %}
                                     {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -65,7 +69,14 @@
                                     <div class="card-footer bg-white pt-0 border-0 text-left">
                                         <div class="row">
                                             <div class="col">
-                                                <p class="lead mb-0 text-left font-weight-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                                                {% if product.offers %}
+                                                    <p>
+                                                        <span class="discount-price">It was: <i class="fas fa-euro-sign fa-xs"></i> {{ product.price }} <br></span>
+                                                        <span class="new-price">Now is only <i class="fas fa-euro-sign fa-xs"></i> {{ product.price|discount:15 }}!</span>
+                                                    </p>
+                                                {% else %}
+                                                    <p class="lead mb-0 text-left font-weight-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="row text-center mt-2">

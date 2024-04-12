@@ -46,7 +46,11 @@
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price }}</p>
+                                        {% if item.product.offers %}
+                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price|discount:15 }}</p>
+                                        {% else %}
+                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price }}</p>
+                                        {% endif %}
                                     </td>
                                     <td class="py-3 w-25">
                                         <form class="form update-form mb-2" method="POST" action="{% url 'adjust_bag' item.item_id %}">
@@ -75,9 +79,6 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    {% if item.product.has_sizes %}
-                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </form>
@@ -85,7 +86,11 @@
                                         <a class="remove-item float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small> Remove </small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        {% if item.product.offers %}
+                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price | discount:15 | calc_subtotal:item.quantity }}</p>
+                                        {% else %}
+                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}
