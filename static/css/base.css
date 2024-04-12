@@ -126,7 +126,7 @@ body {
 }
 
 .margin-product-list {
-    margin-left: 10em;
+    /* margin-left: 10em; */
     margin-right: 8em;
 }
 
@@ -148,11 +148,11 @@ body {
     width: 10em;
 }
 .card-product {
-    border: solid 1px #AAACB0;
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 10px;
-    max-width: 23em;
+    /* border: solid 1px #AAACB0;
+    border-radius: 10px; */
+    padding: 0px;
+    margin-left: 0px;
+    /* max-width: 23em; */
 }
 
 .message-container {
@@ -307,9 +307,12 @@ li {
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
+    .btn-buynow {
+        min-width: 10em;
+    }
 }
 
 /* fixed top navbar only on medium and up */
@@ -324,6 +327,10 @@ li {
 
     .header-container {
         padding-top: 164px;
+    }
+
+    .btn-buynow {
+        min-width: 10em;
     }
 }
 
