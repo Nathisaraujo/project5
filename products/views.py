@@ -18,6 +18,7 @@ def all_products(request):
     sort = None
     direction = None
     digital = None
+    offers = None
 
     if request.GET:
         if request.GET:
@@ -49,6 +50,10 @@ def all_products(request):
         if 'digital' in request.GET:
             digital = request.GET['digital']
             products = products.filter(digital=True)
+        
+        if 'offers' in request.GET:
+            offers = request.GET['offers']
+            products = products.filter(offers=True)
                 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -75,9 +80,11 @@ def all_products(request):
         'surfaces': surfaces,
         'paints': paints,
         'digital': digital,
+        'offers': offers,
     }
     
     return render(request, 'products/products.html', context)
+
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
