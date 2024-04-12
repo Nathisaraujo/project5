@@ -58,6 +58,16 @@
         <li class="nav-item">
             <a class="nav-link logo-font font-weight-bold text-black" href="{% url 'products' %}?offers=True">Special Offers</a>
         </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="" id="specials-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+            </a>
+            <ul class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <li><a href="{% url 'about' %}" class="dropdown-item">About the artist</a></li>
+                <li><a href="#" class="dropdown-item">Blog Why Art</a></li>
+            </ul>
+        </li>
         
     </ul>
 </div>
