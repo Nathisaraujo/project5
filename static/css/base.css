@@ -242,6 +242,68 @@ body {
     padding: 2px;
 }
 
+.artist-photo {
+    max-width: 20em;
+    border-radius: 20px;
+}
+
+.items-site {
+    background-color: #9684A1;
+    border-radius: 20px;
+    height: 10em;
+    margin-bottom: 2em;
+    text-align: center;
+    padding-top: 4em;
+}
+
+.items-site:hover {
+    background-image: url('/media/35.jpeg');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
+}
+
+.personalised.items-site:hover {
+    background-image: url('/media/home/personalised.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
+.watercolor.items-site:hover {
+    background-image: url('/media/28.jpeg');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
+.special.items-site:hover {
+    background-image: url('/media/17.jpeg');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
+.blog.items-site:hover {
+    background-image: url('/media/home/whyart.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
+.favorites.items-site:hover {
+    background-image: url('/media/11.jpeg');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

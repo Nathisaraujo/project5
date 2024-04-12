@@ -11,8 +11,7 @@ class AboutMe(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
-
+        return self.artist
     
         
 

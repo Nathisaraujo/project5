@@ -10,9 +10,41 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <p> hello!</p>
+<div class="container mt-5">
+    <div class="row">
+        {% for about_me in about %}
+            <div class="col-6 text-center">
+                <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo">
+                <h1>{{ about_me.title }}</h1>
+            </div>
+            <div class="col-6">
+                    <p>{{ about_me.content }} </p>
+                    <p>With love, <br>{{ about_me.artist }} </p>
+            </div>
+        {% endfor %}
     </div>
+    <div class="row justify-contents-center">
+        <p>Artist recommendation:</p>
+        <div class="col-2">
+            <a href="{% url 'products' %}?digital=True" class="dropdown-item items-site">Digital Creations</a>
+        </div>
+        <div class="col-2">
+            <a href="#" class="dropdown-item items-site personalised">Personalised Designs</a>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'products' %}?paint=Watercolor" class="watercolor dropdown-item items-site">Made w/ <br>Watercolor</a>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'products' %}?offers=True" class="dropdown-item items-site special">Special Offers</a>
+        </div>
+        <div class="col-2">
+            <a href="#" class="dropdown-item items-site blog">Why Art Blog</a>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item items-site favorites">Consumer's Favorites</a>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
