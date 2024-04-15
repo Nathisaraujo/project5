@@ -304,6 +304,49 @@ body {
     color: #000000;    
 }
 
+.personalised-section {
+    padding: 0em 25em;
+}
+
+.personalised-img {
+    max-width: 80em;
+    border-radius: 20px;
+    /* margin-left: 10em; */
+}
+
+.personalised-example {
+    padding: 2em;
+    /* margin-left: 2em; */
+    background-color: #9684A1;
+    color: #ffffff;
+    border-radius: 30px;
+    /* max-width: 25em; */
+    /* margin-left: 20em; */
+
+}
+
+.choices-example {
+    font-size:1em;
+    border: 1px solid #9684A1;
+    /* margin-right: 40em;
+    max-width: 20em; */
+    border-radius: 30px;
+    padding: 0.5em 4em;
+
+}
+
+.margin-example {
+    margin: 0em 20em;
+}
+
+.personalised-table {
+    padding: 0em 10em;
+}
+
+.table-border {
+    border: solid 2px #9684A1;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
