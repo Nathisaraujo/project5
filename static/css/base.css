@@ -325,14 +325,19 @@ body {
 
 }
 
-.choices-example {
-    font-size:1em;
-    border: 1px solid #9684A1;
-    /* margin-right: 40em;
-    max-width: 20em; */
-    border-radius: 30px;
-    padding: 0.5em 4em;
+.price {
+    background-color: #000;
+    padding: 4px;
+    color:#F7B801;
+    border-radius: 10px;
+}
 
+.personalised-page {
+    background-image: url('/media/18.jpeg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .margin-example {
