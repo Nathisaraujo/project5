@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid text-center mt-5">
+            <h1 class="text-uppercase mt-2">Order your personalised design now</h1>            
+            <p>You don't know how it works? Click <a href="{% url 'personalised' %}">here</a> for more information</p>
+
+        </div>
+    </div>
+    
+    <div class="container-fluid text-center mt-5">
+        <div class="row">
+            <p class="text-muted">Please fill out the form below to complete your order</p>
+            <form action="{% url 'personalised_order' %}" method="POST">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    {{ personalised_order_form.name | as_crispy_field }}
+                    {{ personalised_order_form.message | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    {{ personalised_order_form.size | as_crispy_field }}
+                    {{ personalised_order_form.paper | as_crispy_field }}
+                    {{ personalised_order_form.frame | as_crispy_field }}
+                    {{ personalised_order_form.subject | as_crispy_field }}
+                    {{ personalised_order_form.image | as_crispy_field }}
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Add to Bag</button>
+        </div>
+    </div>
+    
+
+    
+{% endblock %}
+
