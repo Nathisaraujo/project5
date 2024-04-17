@@ -344,8 +344,12 @@ body {
     margin: 0em 20em;
 }
 
-.personalised-table {
-    padding: 0em 10em;
+.table-big-img {
+    max-width: 30em;
+}
+
+.table-sm-img {
+    max-width: 20em;
 }
 
 .table-border {
