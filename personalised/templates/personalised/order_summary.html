@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid text-center mt-5">
+        <h1 class="text-uppercase mt-2">Order Summary</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Message</th>
+
+                    <th>Brush Choices</th>
+                    <th>Color Choices</th>
+                    <th>Orientation</th>
+                    <th>Size</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.name }}</td>
+                        <td>{{ order.phone_number }}</td>
+                        <td>{{ order.email }}</td>
+                        <td>{{ order.message }}</td>
+                        
+                        <td>{{ order.brushes }}</td>
+                        <td>{{ order.colours }}</td>
+                        <td>{{ order.orientation }}</td>
+                        <td>{{ order.size }}</td>
+                        <td>{{ order.price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+

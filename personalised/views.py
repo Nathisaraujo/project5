@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from .forms import PersonalisedForm
 from django.views.generic import FormView
-
+from .models import Personalised
 
 # Create your views here.
 
@@ -12,20 +12,23 @@ def personalised_page(request):
     
     return render(request, 'personalised/personalised.html')
 
-class PersonalisedOrder(FormView):
-    template_name = 'personalised/order.html'
-    form_class = PersonalisedForm
-    success_url = reverse_lazy('order_summary')
+def PersonalisedOrder(request):
+    if request.method == 'POST':
+        form = PersonalisedForm(request.POST, request.FILES)
+        if form.is_valid():
+            order = form.save(commit=False)
+            if order.size == 'A4':
+                order.total_price = 30
+            elif order.size == 'A6':
+                order.total_price = 25
+            else:
+                order.total_price = 20
+            order.save()
+            return redirect('order_summary')
+    else:
+        form = PersonalisedForm()
+    return render(request, 'personalised/order.html', {'form': form})
 
-    def form_valid(self, form):
-        instance = form.save(commit=False)
-        size_price_mapping = {
-            'A4': 30,
-            'A5': 25,
-            'A6': 20,
-        }
-        instance.price = size_price_mapping.get(instance.size, 0)
-        instance.order_total = instance.price
-        instance.grand_total = instance.order_total
-        instance.save()
-        return super().form_valid(form)
+def order_summary(request):
+    orders = Personalised.objects.all()
+    return render(request, 'personalised/order_summary.html', {'orders': orders})

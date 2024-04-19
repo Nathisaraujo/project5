@@ -6,7 +6,7 @@ class PersonalisedForm(forms.ModelForm):
     class Meta:
         model = Personalised
         fields = ('name', 'phone_number', 'email',
-                  'message', 'size',
+                  'message', 'image','size',
                   'orientation', 'brushes', 'colours',)
 
     def __init__(self, *args, **kwargs):

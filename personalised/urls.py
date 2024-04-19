@@ -4,5 +4,6 @@ from .views import PersonalisedOrder
 
 urlpatterns = [
     path('', views.personalised_page, name='personalised'),
-    path('order/', PersonalisedOrder.as_view(), name='personalised_order'),
+    path('order/', views.PersonalisedOrder, name='personalised_order'),
+    path('order-summary/', views.order_summary, name='order_summary'),
 ] 
