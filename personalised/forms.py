@@ -1,13 +1,13 @@
 from django import forms
-from .models import OrderPersonalised
+from .models import Personalised
 
 
-class PersonalisedOrderForm(forms.ModelForm):
+class PersonalisedForm(forms.ModelForm):
     class Meta:
-        model = OrderPersonalised
-        fields = ('name', 'message', 'image',
-                  'size', 'paper',
-                  'frame', 'subject',)
+        model = Personalised
+        fields = ('name', 'phone_number', 'email',
+                  'message', 'size',
+                  'orientation', 'brushes', 'colours',)
 
     def __init__(self, *args, **kwargs):
         """
