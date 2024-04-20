@@ -25,7 +25,6 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
@@ -55,7 +54,7 @@ form.addEventListener('submit', function(ev) {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
-        },
+        }
     }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
