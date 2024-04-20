@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from .forms import PersonalisedForm
 from django.views.generic import FormView
 from .models import Personalised
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -12,6 +13,7 @@ def personalised_page(request):
     
     return render(request, 'personalised/personalised.html')
 
+@login_required
 def PersonalisedOrder(request):
     if request.method == 'POST':
         form = PersonalisedForm(request.POST, request.FILES)
@@ -29,6 +31,7 @@ def PersonalisedOrder(request):
         form = PersonalisedForm()
     return render(request, 'personalised/order.html', {'form': form})
 
+@login_required
 def order_summary(request):
     orders = Personalised.objects.all()
     return render(request, 'personalised/order_summary.html', {'orders': orders})
