@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 
 from .models import UserProfile
-from .forms import UserProfileForm
+from .forms import UserProfileForm, RecommendationForm
 
 from checkout.models import Order
 
@@ -45,3 +45,18 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+def recommend(request):
+    if request.method == 'POST':
+        form = RecommendationForm(request.POST)
+        if form.is_valid():
+            recommendation = form.save(commit=False)
+            recommendation.user = request.user
+            recommendation.save()
+            return redirect('recommendation_success')
+    else:
+        form = RecommendationForm()
+    return render(request, 'profiles/recommendation_form.html', {'form': form})
+
+def recommendation_success(request):
+    return render(request, 'profiles/recommendation_success.html')

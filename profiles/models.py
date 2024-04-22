@@ -33,3 +33,14 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+class Recommendation(models.Model):
+    """
+    A model for storing user recommendations
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recommendation_text = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Recommendation by {self.user.username} | ({self.timestamp})"

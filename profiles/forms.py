@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Recommendation
 
 
 class UserProfileForm(forms.ModelForm):
@@ -32,3 +32,17 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+class RecommendationForm(forms.ModelForm):
+    class Meta:
+        model = Recommendation
+        fields = ['recommendation_text']
+        widgets = {
+            'recommendation_text': forms.Textarea(attrs={'rows': 5}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['recommendation_text'].label = 'Your Recommendation'
+
+    
