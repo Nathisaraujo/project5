@@ -59,7 +59,7 @@
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.item_id }} 
+                                                        <button class="decrement-qty btn btn-sm btn-dark rounded-0 decrement-qty_{{ item.item_id }} 
                                                             {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
                                                             data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                                             <span>
@@ -72,7 +72,7 @@
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                         data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.item_id }} 
+                                                        <button class="increment-qty btn btn-sm btn-dark rounded-0 increment-qty_{{ item.item_id }} 
                                                             {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
                                                             data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                                             <span>
@@ -96,7 +96,7 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="5" class="pt-5 text-end">
                                     <h6><strong>In the bag: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Total: <i class="fa-solid fa-euro-sign fa-xs"></i>{{ grand_total|floatformat:2 }}</strong></h4>
@@ -108,14 +108,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right">
+                                <td colspan="5" class="text-end">
                                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-dark rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>

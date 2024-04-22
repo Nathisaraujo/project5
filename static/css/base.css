@@ -375,7 +375,7 @@ body {
     min-width: 260px;
 }
 
-.btn-black {
+.btn-dark {
     background: black;
     color: white;
 }
@@ -383,9 +383,9 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-dark:hover,
+.btn-dark:active,
+.btn-dark:focus {
     background: #222;
     color: white;
 }
