@@ -22,7 +22,6 @@ def profile(request):
     return render(request, template, context)
 
 def update_profile(request):
-    """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -36,6 +35,20 @@ def update_profile(request):
     template = 'profiles/update_profile.html'
     context = {
         'form': form,
+        'on_profile_page': True,
+    }
+
+    return render(request, template, context)
+
+def orders(request):
+
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    orders = profile.orders.all()
+    template = 'profiles/orders.html'
+
+    context = {
+        'orders': orders,
         'on_profile_page': True,
     }
 

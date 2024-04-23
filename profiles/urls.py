@@ -7,4 +7,5 @@ urlpatterns = [
     path('recommend/', views.recommend, name='recommend'),
     path('recommendation/success/', views.recommendation_success, name='recommendation_success'),
     path('update_profile/', views.update_profile, name='update_profile'),
+    path('orders/', views.orders, name='orders'),
 ]
