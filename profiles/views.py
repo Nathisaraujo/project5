@@ -10,11 +10,20 @@ from checkout.models import Order
 
 def profile(request):
     """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
-
     if request.user.is_authenticated:
         user_info = UserProfile.objects.get(user=request.user)
-        
+
+    template = 'profiles/profile.html'
+    context = {
+        'on_profile_page': True,
+        'user_info': user_info,
+    }
+
+    return render(request, template, context)
+
+def update_profile(request):
+    """ Display the user's profile. """
+    profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -23,14 +32,11 @@ def profile(request):
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
 
-    template = 'profiles/profile.html'
+    template = 'profiles/update_profile.html'
     context = {
         'form': form,
-        'orders': orders,
         'on_profile_page': True,
-        'user_info': user_info,
     }
 
     return render(request, template, context)
