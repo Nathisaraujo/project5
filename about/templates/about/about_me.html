@@ -11,25 +11,37 @@
 
 {% block content %}
 <div class="container mt-5">
+    <h1 class="text-center">About the artist</h1>
+    <hr>
     <div class="row">
         {% for about_me in about %}
             <div class="col-6 text-center">
                 <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo">
-                <h1>{{ about_me.title }}</h1>
+                <div class="about-artist">
+                    <ul class="text-start ml-1">
+                        <li><i class="fa-solid fa-location-dot"></i> Brazilian in Ireland</li>
+                        <li><i class="fa-solid fa-person-breastfeeding" style="color: #990070;"></i> Mum to Thomas</li>
+                        <li><i class="fa-solid fa-palette" style="color: #f7b801;"></i> Artist</li>
+                        <li><i class="fa-solid fa-gamepad" style="color: #270490;"></i> Gamer</li>
+                        <li><i class="fa-solid fa-tree" style="color: #2e511f;"></i> Nature Lover</li>
+                        <li><i class="fa-solid fa-utensils" style="color: #cc0000;"></i> Master Chef</li>
+                    </ul>
+                </div>
             </div>
             <div class="col-6">
-                    <p>{{ about_me.content }} </p>
-                    <p>With love, <br>{{ about_me.artist }} </p>
+                <h3 class="text-center">{{ about_me.title }}</h3>
+                <p>{{ about_me.content }} </p>
+                <p>With love, <br>{{ about_me.artist }} </p>
             </div>
         {% endfor %}
     </div>
     <div class="row justify-contents-center">
-        <p>Artist recommendation:</p>
+        <p>My recommendations:</p>
         <div class="col-2">
-            <a href="{% url 'products' %}?digital=True" class="dropdown-item items-site">Digital Creations</a>
+            <a href="{% url 'products' %}?digital=True" class="dropdown-item items-site digital">Digital Creations</a>
         </div>
         <div class="col-2">
-            <a href="#" class="dropdown-item items-site personalised">Personalised Designs</a>
+            <a href="{% url 'products' %}?community=True" class="dropdown-item items-site community">Community <br>Suggestions</a>
         </div>
         <div class="col-2">
             <a href="{% url 'products' %}?paint=Watercolor" class="watercolor dropdown-item items-site">Made w/ <br>Watercolor</a>
@@ -41,7 +53,7 @@
             <a href="#" class="dropdown-item items-site blog">Why Art Blog</a>
         </div>
         <div class="col-2">
-            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item items-site favorites">Consumer's Favorites</a>
+            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item items-site favorites">Consumer's<br> Favorites</a>
         </div>
     </div>
 </div>

@@ -272,8 +272,8 @@ body {
     color: #000000;
 }
 
-.personalised.items-site:hover {
-    background-image: url('/media/home/personalised.png');
+.community.items-site:hover {
+    background-image: url('/media/about/community.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;
@@ -281,7 +281,7 @@ body {
 }
 
 .watercolor.items-site:hover {
-    background-image: url('/media/28.jpeg');
+    background-image: url('/media/about/watercolor.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;
@@ -289,7 +289,7 @@ body {
 }
 
 .special.items-site:hover {
-    background-image: url('/media/17.jpeg');
+    background-image: url('/media/about/special.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;
@@ -297,7 +297,15 @@ body {
 }
 
 .blog.items-site:hover {
-    background-image: url('/media/home/whyart.png');
+    background-image: url('/media/about/blog.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;    
+}
+
+.digital.items-site:hover {
+    background-image: url('/media/about/digital.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;
@@ -305,65 +313,17 @@ body {
 }
 
 .favorites.items-site:hover {
-    background-image: url('/media/11.jpeg');
+    background-image: url('/media/about/favorites.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;
     color: #000000;    
 }
 
-.personalised-section {
-    padding: 0em 25em;
+.about-artist {
+    margin: 1em 0em 1em 15em;
+    font-size: smaller;
 }
-
-.personalised-img {
-    max-width: 80em;
-    border-radius: 20px;
-    /* margin-left: 10em; */
-}
-
-.personalised-example {
-    padding: 2em;
-    /* margin-left: 2em; */
-    background-color: #9684A1;
-    color: #ffffff;
-    border-radius: 30px;
-    /* max-width: 25em; */
-    /* margin-left: 20em; */
-
-}
-
-.price {
-    background-color: #000;
-    padding: 4px;
-    color:#F7B801;
-    border-radius: 10px;
-}
-
-.personalised-page {
-    background-image: url('/media/18.jpeg');
-    height: 100vh;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.margin-example {
-    margin: 0em 20em;
-}
-
-.table-big-img {
-    max-width: 30em;
-}
-
-.table-sm-img {
-    max-width: 20em;
-}
-
-.table-border {
-    border: solid 2px #9684A1;
-}
-
 /* from Bulma */
 .icon {
     align-items: center;
