@@ -20,6 +20,7 @@ def all_products(request):
     direction = None
     digital = None
     offers = None
+    community = None
 
     if request.GET:
         if request.GET:
@@ -55,6 +56,10 @@ def all_products(request):
         if 'offers' in request.GET:
             offers = request.GET['offers']
             products = products.filter(offers=True)
+        
+        if 'community' in request.GET:
+            community = request.GET['community']
+            products = products.filter(community=True)
                 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -82,6 +87,7 @@ def all_products(request):
         'paints': paints,
         'digital': digital,
         'offers': offers,
+        'community': community,
     }
     
     return render(request, 'products/products.html', context)

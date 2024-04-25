@@ -46,6 +46,9 @@
                                     {% if product.offers %}
                                         <p class="on-sale">on sale</p>                    
                                     {% endif %}
+                                    {% if product.community %}
+                                        <p class="on-community">community suggestion</p>                    
+                                    {% endif %}
                                     {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
                                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">

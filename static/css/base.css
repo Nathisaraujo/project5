@@ -135,6 +135,14 @@ body {
     margin: 0px;
 }
 
+.on-community {
+    background-color: #3d2b3d;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    color: white;
+}
+
 .btn-buynow {
     background-color: #9684A1;
     text-transform: uppercase;

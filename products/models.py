@@ -38,6 +38,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     digital = models.BooleanField(default=False)
     offers =  models.BooleanField(default=False)
+    community =  models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
