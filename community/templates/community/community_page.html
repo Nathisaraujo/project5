@@ -10,18 +10,59 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid fst-section mt-5">
-        <div class="row">
-            <div class="col text-center">
-                <p><span class="text-uppercase">Hi!<br></span> community page</p>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <h1><i class="fa-solid fa-users"></i><br>Welcome to our community!</h1>
+            <p>Joining our community offers you the opportunity to: </p>
+            <ul class="text-start list-community">
+                <li class="p-1"><i class="fa-solid fa-star"></i> Stay updated with our Newsletter by subscribing</li>
+                <li class="p-1"><i class="fa-solid fa-star"></i> Submit drawing suggestions</li>
+                <li class="p-1"><i class="fa-solid fa-star"></i> Simplify your shopping experience</li>
+                <li class="p-1"><i class="fa-solid fa-star"></i> Share your reviews of purchased products.</li>
+                <li class="p-1"><i class="fa-solid fa-star"></i> Engage with our "WHY ART" blog posts</li>
+            </ul>
+            <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i> </p>
+        </div>
+        <div class="row text-center m-5">
+            <div class="col-6">
+                <h4><i class="fa-regular fa-newspaper"></i> Subscribe to our Newslettler! </h4>
+                <p> Subscribe with your email here to receive our newsletter. <br>
+                    Stay updated with the latest news! Be the first to know about sales, <br>
+                    new products, blog posts, and features!
+                </p>
+                
             </div>
-
-            <div class="col">
-                <p><span class="text-uppercase">Hi!<br></span> My name is Nathalia and I sell my art! <br> You can see (and buy) <br>my drawings here:</p>
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/newsletter.gif" alt="newsletter examples" class="suggestion-img">
+            </div>
+        </div>
+        <div class="row text-center m-5">
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/suggestions.png" alt="users suggestions" class="suggestion-img">
+            </div>
+            <div class="col-6">
+                <h4><i class="fa-solid fa-message"></i> Submit drawing suggestions </h4>
+                <p> Registered users have the opportunity to submit drawing suggestions. <br>
+                    Each month, I'll randomly select one suggestion to bring to life!!<br>
+                    If your suggestion is chosen, you'll receive a free copy!
+                </p>
+            </div>
+        </div>
+        <div class="row text-center m-5">
+            <div class="col-6">
+                <h4><i class="fa-solid fa-cart-shopping"></i> Simplify your shopping experience </h4>
+                <ul>
+                    <li class="p-1"><i class="fa-brands fa-gratipay"></i><br> Registered users have the option to save products to their wishlist,
+                        allowing them to keep track of items they're interested in and make conscious purchasing decisions.</li>
+                    <li class="p-1"><i class="fa-solid fa-truck-fast"></i><br> Additionally, you can save your delivery information for future orders,
+                        streamlining the checkout process.</li>
+                    <li class="p-1"><i class="fa-solid fa-clock-rotate-left"></i><br> You can also keep track of your order history!</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/wishlist.png" alt="users suggestions" class="suggestion-img">
             </div>
         </div>
     </div>
-
-    <!-- home page second section -->
     
 {% endblock %}
