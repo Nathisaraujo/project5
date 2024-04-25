@@ -44,10 +44,10 @@
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card h-100">
                                     {% if product.offers %}
-                                        <p class="on-sale">on sale</p>                    
+                                        <p class="on-sale"><i class="fa-solid fa-circle-exclamation fa-sm"></i> on sale</p>                    
                                     {% endif %}
                                     {% if product.community %}
-                                        <p class="on-community">community suggestion</p>                    
+                                        <p class="on-community"><i class="fa-solid fa-circle-exclamation fa-sm"></i> community suggestion</p>                    
                                     {% endif %}
                                     {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
