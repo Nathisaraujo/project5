@@ -16,18 +16,23 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row mt-5">
+            <div class="col mt-5">
+                <h2 class="text-center"><i class="fa-solid fa-users"></i><br>Community Suggestion</h2>
                 <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
+                <p class="text-center"> Feel free to send me your drawing suggestions here.<br>
+                    Every month, I'll randomly select one suggestion to bring to life!<br>
+                    If your suggestion is chosen, you'll receive a free copy!<br>
+                    The community suggestion drawing will cost only <i class="fa-solid fa-euro-sign fa-xs"></i>10.<br>
+                </p>
             </div>
         </div>
         <div class="row">
             <form method="post" class="mt-5">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button type="submit">Submit Recommendation</button>
+                <a class="btn btn-outline-dark mb-2 mt-2" href="{% url 'profile' %}">Back to profile</a>
+                <button type="submit" class="btn btn-dark">Submit Recommendation</button>
             </form>
         </div>
     </div>

@@ -82,9 +82,11 @@ def recommend(request):
             recommendation = form.save(commit=False)
             recommendation.user = request.user
             recommendation.save()
-            return redirect('recommendation_success')
+            messages.success(request, (f'Recommendation Submitted Successfully.Thank you for your recommendation!'))
+            return redirect('profile')
     else:
         form = RecommendationForm()
+
     return render(request, 'profiles/recommendation_form.html', {'form': form})
 
 def recommendation_success(request):
