@@ -17,26 +17,48 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <h1 class="text-uppercase mt-5 mb-2">My Profile</h1>
+            <h1 class="text-center mt-5 mb-2">My Profile</h1>
             <hr>
         </div>
         <div class="row">
-            <!-- navbar -->
-            {% include 'includes/profile_navbar.html' %}
-            <!-- navbar -->
-            <div class="col-12 col-lg-9">
-                <p class="text-center text-muted">Default Information</p>
-                <ul>
-                    <li><strong>Username:</strong> {{ user_info.user.username }}</li>
-                    <li><strong>Email:</strong> {{ user_info.user.email }}</li>
-                    <li><strong>Phone Number:</strong> {{ user_info.default_phone_number }}</li>
-                    <li><strong>Street Address 1:</strong> {{ user_info.default_street_address1 }}</li>
-                    <li><strong>Street Address 2:</strong> {{ user_info.default_street_address2 }}</li>
-                    <li><strong>Town or City:</strong> {{ user_info.default_town_or_city }}</li>
-                    <li><strong>County:</strong> {{ user_info.default_county }}</li>
-                    <li><strong>Country:</strong> {{ user_info.default_country }}</li>
-                    <li><strong>Postal Code:</strong> {{ user_info.default_postcode }}</li>
-                </ul>
+            <div class="col-3">
+                <!-- navbar -->
+                {% include 'includes/profile_navbar.html' %}
+                <!-- navbar -->
+            </div>
+            <div class="col-6">
+                <p class="text-muted default-text text-center"><i class="fa-solid fa-circle-info fa-lg" style="color: #b0b2b5;"></i> Your details</p>
+                <div class="m-5">
+                    <p><i class="fa-solid fa-user"></i> Username: {{ user_info.user.username }}</p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: {{ user_info.user.email }}</p>
+                    <p><i class="fa-solid fa-phone"></i> Phone Number: {{ user_info.default_phone_number }}</p>
+                </div>
+                <p class="text-muted default-text text-center"><i class="fa-solid fa-truck fa-lg" style="color: #b0b2b5;"></i> Default Delivery Information</p>
+                <table class="table table-hover profile-table m-5">
+                    <tbody>
+                    <tr>
+                        <th>Street Address 1:</th>
+                        <td>{{ user_info.default_street_address1 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Street Address 2:</th>
+                        <td>{{ user_info.default_street_address2 }}</td>
+                    </tr>
+                    <tr>
+                        <th>County:</th>
+                        <td>{{ user_info.default_county }}</td>
+                    </tr>
+                    <tr>
+                        <th>Country:</th>
+                        <td>{{ user_info.default_country }}</td>
+                    </tr>
+                    <tr>
+                        <th>Postal Code:</th>
+                        <td>{{ user_info.default_postcode }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button href="{% url 'update_profile' %}" class="btn btn-dark btn-profile">Update delivery information</button>
             </div>
         </div>
     </div>
