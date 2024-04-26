@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row text-center m-5">
             <h1 class="text-uppercase">why art?</h1>
             <p>Welcome to Why Art Blog!<br>
@@ -22,7 +22,8 @@
             </p>
             <hr>
             {% for post in post_list %}
-                <div class="card-deck mt-3" style="width: 25em;">
+            <!-- <div class="col-3"> -->
+                <div class="card-deck">
                     <div class="card">
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             <div class="image-container img-thumbnail" style="background-image: url('{{ post.image.url }}');"></div>
@@ -34,6 +35,7 @@
                     </div>
                     </div>
                 </div>
+            <!-- </div> -->
             {% endfor %}
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-4">
@@ -49,7 +51,7 @@
                         </li>
                     {% endif %}
                 </ul>
-              </nav>
+            </nav>
     </div>
     
 {% endblock %}

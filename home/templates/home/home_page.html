@@ -13,14 +13,15 @@
 
     <!-- home page first section -->
     <div class="container-fluid fst-section mt-5">
-        <div class="row">
-            <div class="col text-center">
-                <p><span class="text-uppercase">Hi!<br></span> My name is Nathalia and I sell my art! <br> You can see (and buy) <br>my drawings here:</p>
-                <a href="{% url 'products' %}" class="btn btn-dark btn-home"><i class="fa-solid fa-pencil"></i><br> Check out my <br>products here!</a>
+        <div class="row justify-content-center">
+            <div class="col-4 text-center mt-4">
+                <h1>Welcome to <br>Drawing Gratitude!<br></h1>
+                <p>My name is Nathalia and I sell my art! <br> You can see (and buy) my drawings here:</p>
+                <a href="{% url 'products' %}" class="btn btn-dark btn-home"><i class="fa-solid fa-bag-shopping fa-shake"></i><br> start shopping</a>
             </div>
 
-            <div class="col">
-                <a href="#">
+            <div class="col-4 mt-4 text-center">
+                <a href="{% url 'about_me' %}">
                     <img src="{{ MEDIA_URL }}home/knowme.png" alt="get to know me" class="knowme-image">
                 </a>
             </div>
@@ -31,31 +32,40 @@
     <div class="container-fluid scd-section">
         <div class="row">
             <div class="col margin-offers-image">
-                <a href="#">
+                <a href="{% url 'products' %}?offers=True">
                     <img src="{{ MEDIA_URL }}home/offers.png" alt="get to know me" class="offers-image">
                 </a>
             </div>
             <div class="col text-center margin-offers-text">
-                <p>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> I have super special offers on selected products!</p>
+                <h2>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> I have super special offers on selected products!</h2>
             </div>
         </div>
     </div>
 
     <!-- home page third section -->
     <div class="container-fluid trd-section">
-        <div class="col text-center ">
-                <p class="margin-trd-section"> and you can also order some</p>
-                <a href="#">
-                    <img src="{{ MEDIA_URL }}home/personalised.png" alt="personalised design" class="personalised">
-                </a>
+        <div class="row text-center ">
+            <i class="fa-solid fa-users fa-beat fa-2xl"></i><br>
+            <p class="mb-5">
+                Enhance your shopping experience and unlock exclusive features by joining our vibrant community! <br>
+                Click here and start exploring!<br>
+            </p>
+            <i class="fa-solid fa-circle-arrow-down fa-xl"></i>
+            <a href="{% url 'community' %}">
+                <img src="{{ MEDIA_URL }}home/community.png" alt="community" class="home-community">
+            </a>
         </div>
     </div>
 
     <!-- home page fourth section -->
     <div class="container-fluid fth-section">
-        <div class="col text-center">
-            <p> If your not convinced yet, check out my blog:</p>
-            <a href="#">
+        <div class="row text-center">
+            <i class="fa-regular fa-newspaper fa-flip fa-2xl"></i><br>
+            <p> Explore captivating insights about art <br> and discover inspiration to enrich your life with creativity. 
+                <br>Dive into my blog, where you'll find thought-provoking articles <br>
+                that delve into the world of art:
+            </p>
+            <a href="{% url 'blog' %}">
                 <img src="{{ MEDIA_URL }}home/whyart.png" alt="why art blog" class="why-art">
             </a>
         </div>

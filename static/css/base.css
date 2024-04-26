@@ -11,20 +11,20 @@ body {
 }
 
 .fst-section {
-    font-size: 3em;
-    margin-left: 3em;
+    font-size: 20px;
+    /* margin-left: 3em; */
 }
 
 .knowme-image {
-    max-width: 10em;
+    max-width: 15em;
 }
 
 .btn-home {
-    width: 10em;
-    /* text-transform: uppercase; */
-    height: 5em;
-    font-weight: bold;
-    font-family: "Indie Flower", cursive;
+    width: 15em;
+    text-transform: uppercase;
+    /* height: 5em; */
+    /* font-weight: bold; */
+    /* font-family: "Indie Flower", cursive; */
     font-size: 30px;
     border-radius: 20px;
     border-style: none;
@@ -53,12 +53,10 @@ body {
 }
 
 .trd-section {
-    background-image: url('/media/home/trd_section.png');
-    background-size: cover;
     background-color: #9684A1;
     color: white;
-    height: 12em;
-    font-size: 2em;
+    height: 10em;
+    font-size: 20px;
     padding-bottom: 4em;
     padding-top: 2em;
 }
@@ -66,18 +64,22 @@ body {
 .fth-section {
     background-color: #9684A1;
     color: white;
-    font-size: 2em;
+    font-size: 20px;
     padding-bottom: 2em;
     padding-top: 2em;
-    height: 15em;
+    height: 20em;
 }
 
 .why-art {
     max-width: 10em;
 }
 
-.personalised {
-    max-width: 15em;
+.home-community {
+    max-width: 22em;
+}
+
+.btn-community {
+    width: 10em;
 }
 
 .margin-offers-image {
@@ -101,11 +103,6 @@ body {
     color: white;
     border-radius: 10px;
     padding: 10px;
-}
-
-.margin-trd-section{
-    margin-top: 3em;
-
 }
 
 .logo-img {
@@ -332,6 +329,11 @@ body {
     font-size: smaller;
 }
 
+.card-deck {
+    width: 25em; 
+    margin-left: 6.5em;
+}
+
 .page-link {
     
     color:#9684A1;
@@ -367,10 +369,10 @@ body {
     min-width: 260px;
 }
 
-.btn-dark {
+/* .btn-dark {
     background: black;
     color: white;
-}
+} */
 
 .shop-now-button:hover,
 .shop-now-button:active,
