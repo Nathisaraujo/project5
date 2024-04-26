@@ -150,6 +150,13 @@ body {
     min-width: 20em;
 }
 
+.image-container {
+    width: 25em; 
+    height: 20em; 
+    background-size: cover;
+    background-position: center;
+}
+
 .margin-product-list {
     /* margin-left: 10em; */
     margin-right: 8em;
@@ -324,6 +331,18 @@ body {
     margin: 1em 0em 1em 15em;
     font-size: smaller;
 }
+
+.page-link {
+    
+    color:#9684A1;
+    
+}
+
+.page-item.active .page-link {
+    background-color:#3d2b3d;
+    border-color: #3d2b3d;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

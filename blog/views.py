@@ -12,21 +12,12 @@ class blog(generic.ListView):
     template_name = "blog/blog.html"
     paginate_by = 3
 
-
-
 def post_detail(request, slug):
-    
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
-    # like_count = post.like_count
 
     return render(
-        request,
-        "blog/post_detail.html",
-        {"post": post,
-        #  "like": like,
-        #  "like_count": like_count,
-        },
+        request, "blog/post_detail.html",{"post": post,},
     )
 
 class like_posts(generic.RedirectView):
