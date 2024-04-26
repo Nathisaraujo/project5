@@ -338,6 +338,11 @@ body {
     
 }
 
+.like-btn {
+    border: none;
+    background-color: #fff;
+    color: rgb(158, 15, 15);
+}
 .page-item.active .page-link {
     background-color:#3d2b3d;
     border-color: #3d2b3d;

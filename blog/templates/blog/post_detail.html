@@ -11,30 +11,39 @@
 
 {% block content %}
     <div class="container mt-5">
-        <div class="row text-center m-5">
-          <div class="card-body">
-              <h1 class="post-title">{{ post.title }}</h1>
-              <hr>
-              <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 20em;">
-              <p class="card-text"> {{ post.excerpt }}</p>
-              <p class="post-subtitle text-center">{{ post.author }} | {{ post.created_on }}</p> 
+        <div class="row m-5">
+          <div class="col-6">
+            <img class="justify-content-center rounded img-fluid" src="{{ post.image.url }}">
+            <hr>
+            <div class="d-flex justify-content-center">
+              <img src="{{ MEDIA_URL }}about/myself.jpg" alt="Author's picture" style="max-width: 4em; border-radius: 50%; margin-right: 1em;">
+              <p class="text-muted mt-4">Written by {{ post.author }} </p>
             </div>
+            <div class="text-center mt-3">
+              <p class="text-muted"> Curious to learn more about the author behind the post? <br> Click <a href="{% url 'about_me' %}">here</a></p>
+              <a class="btn btn-outline-dark mb-2 mt-2 justify-content-center" href="{% url 'blog' %}">Back to all posts</a> 
+            </div>
+            
+            
+          </div>
+          <div class="col-6">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <hr>
             <div class="card card-body post-card">
               {{ post.content | safe }}
+              <span class="text-muted">{{ post.created_on }} </span>
             </div>
             <form action="{% url 'like_post' slug=post.slug %}" method="post">
               {% csrf_token %}
-              <button type="submit">
+              <button type="submit" class="like-btn mt-2">
                 {% if request.user in post.like.all %}
-                  Unlike
+                  <i class="fa-solid fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
                 {% else %}
-                  Like
+                  <i class="fa-regular fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
                 {% endif %}
               </button>
             </form>
-            <p>Likes: {{ post.like.count }}</p>
-            </div>
-        </div>
+          </div>
     </div>
     
 {% endblock %}
