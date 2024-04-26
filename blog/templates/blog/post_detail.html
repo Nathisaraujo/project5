@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row text-center m-5">
+          <div class="card-body">
+              <h1 class="post-title">{{ post.title }}</h1>
+              <hr>
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 20em;">
+              <p class="card-text"> {{ post.excerpt }}</p>
+              <p class="post-subtitle text-center">{{ post.author }} | {{ post.created_on }}</p> 
+            </div>
+            <div class="card card-body post-card">
+              {{ post.content | safe }}
+            </div>
+            <form action="{% url 'like_post' slug=post.slug %}" method="post">
+              {% csrf_token %}
+              <button type="submit">
+                {% if request.user in post.like.all %}
+                  Unlike
+                {% else %}
+                  Like
+                {% endif %}
+              </button>
+            </form>
+            <p>Likes: {{ post.like.count }}</p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

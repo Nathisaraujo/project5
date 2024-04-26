@@ -12,7 +12,23 @@
 {% block content %}
     <div class="container mt-5">
         <div class="row text-center m-5">
-            <h1>WHY ART?</h1>
+            {% for post in post_list %}
+            <div class="col cards cards-margin">
+                <div class="post-card post-card-mq">
+                    <div class="card-body">
+                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            <p class="card-title">{{ post.title }}</p><br>
+                        </a>
+                        <p class="card-text excerpt-text">{{ post.excerpt }}</p><br>
+                        <p class="card-text card-info">By {{ post.author}} on {{ post.created_on}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="row">
+                {% endif %}
+                {% endfor %}
         </div>
     </div>
     
