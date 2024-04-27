@@ -44,3 +44,4 @@ class Recommendation(models.Model):
 
     def __str__(self):
         return f"Recommendation by {self.user.username} | ({self.timestamp})"
+
