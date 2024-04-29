@@ -26,7 +26,12 @@
           <!-- Display time remaining as countdown -->
           <p><strong>Time Remaining:</strong> <span id="countdown-{{ event.pk }}">{{ event.time_remaining }}</span></p>
           
-          <!-- Add more event information here -->
+          {% if request.user.is_authenticated %}
+            <form action="{% url 'save_event' event.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Save Event</button>
+            </form>
+          {% endif %}
         </li>
       {% endfor %}
     </ul>

@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.event_list, name='event_list'),
+    path('save_event/<int:event_id>/', views.save_event, name='save_event'),
 ] 

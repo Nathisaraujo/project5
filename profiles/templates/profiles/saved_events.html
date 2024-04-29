@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<h1>Saved Events</h1>
+  
+    {% if saved_events %}
+    <ul>
+        {% for event in saved_events %}
+        <li>
+            <h2>{{ event.title }}</h2>
+            <p><strong>Description:</strong> {{ event.description }}</p>
+            <p><strong>Date and Time:</strong> {{ event.date_and_time }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>Organizer:</strong> {{ event.organizer }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No events saved yet.</p>
+{% endif %}
+
+{% endblock %}

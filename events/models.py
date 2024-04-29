@@ -8,7 +8,8 @@ class Event(models.Model):
     description = models.TextField()
     date_and_time = models.DateTimeField()
     location = models.CharField(max_length=255)
-    organizer = models.CharField(max_length=255)  
+    organizer = models.CharField(max_length=255)
+    save_event = models.ManyToManyField(User, related_name='saved_events')
 
     def __str__(self):
         return self.title

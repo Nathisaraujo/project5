@@ -4,6 +4,9 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm, RecommendationForm
 
+from events.models import Event
+
+
 from checkout.models import Order
 
 # Create your views here.
@@ -91,3 +94,8 @@ def recommend(request):
 
 def recommendation_success(request):
     return render(request, 'profiles/recommendation_success.html')
+
+def saved_events(request):
+    saved_events = Event.objects.filter(save_event=request.user)
+
+    return render(request, 'profiles/saved_events.html', {'saved_events': saved_events})
