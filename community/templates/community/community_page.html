@@ -18,7 +18,7 @@
                 <li class="p-1"><i class="fa-solid fa-star"></i> Stay updated with our Newsletter by subscribing</li>
                 <li class="p-1"><i class="fa-solid fa-star"></i> Submit drawing suggestions</li>
                 <li class="p-1"><i class="fa-solid fa-star"></i> Simplify your shopping experience</li>
-                <li class="p-1"><i class="fa-solid fa-star"></i> Share your reviews of purchased products.</li>
+                <li class="p-1"><i class="fa-solid fa-star"></i> Keep track of events by saving them to your profile and receive email reminders</li>
                 <li class="p-1"><i class="fa-solid fa-star"></i> Engage with our "WHY ART" blog posts</li>
             </ul>
             <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i> </p>
@@ -49,6 +49,13 @@
                     Each community suggestion drawing is priced at just <i class="fa-solid fa-euro-sign fa-xs"></i>10!
                 </p>
                 <a href="{% url 'products' %}?community=True" class="btn btn-dark pt-0"> Check out some<br> community suggestions!</a>
+                {% if user.is_authenticated  %}
+                    <p> Send your drawing suggestion now!</p>
+                    <a href="{% url 'recommend' %}" class="btn btn-dark btn-community">Send a Suggestion</a> 
+                {% else %}
+                    <p> Go to your profile and start exploring!</p>
+                    <a href="{% url 'community' %}" class="btn btn-dark btn-community">register</a>
+                {% endif %}
             </div>
         </div>
         <div class="row text-center m-5">
@@ -67,15 +74,20 @@
             </div>
         </div>
         <div class="row text-center m-5">
-            {% if user.is_authenticated  %}
-                <p> Send your drawing suggestion now!</p>
-                <a href="{% url 'recommend' %}" class="btn btn-dark btn-community" 
-                style="margin-left: 35em;">Send a Suggestion</a> 
-            {% else %}
-                <p> Go to your profile and start exploring!</p>
-                <a href="{% url 'community' %}" class="btn btn-dark btn-community"
-                style="margin-left: 35em;">register</a>
-            {% endif %}
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/events.png" alt="users suggestions" class="suggestion-img">
+            </div>
+            <div class="col-6">
+                <h4><i class="fa-solid fa-calendar-days"></i> Keep track of our events </h4>
+                <p> Discover an array of exciting events I'm participating! 
+                    <br> Explore comprehensive event details including dates, locations, <br>
+                    and whether they're virtual or in-person, all at your fingertips. <br>
+                    <i class="fa-solid fa-user"></i><br> By registering on the website, you unlock the ability to effortlessly <br>
+                    bookmark events for future reference directly on your profile. <br>
+                    <i class="fa-solid fa-envelope"></i><br> Plus, anticipate a delightful email reminder one day prior to each event, <br>
+                    ensuring you never miss out on an exciting opportunity.
+                </p>
+            </div>
         </div>
     </div>
     

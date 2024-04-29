@@ -10,41 +10,49 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 event-section">
   <div class="row text-center m-5">
-      <h1 class="text-uppercase">Events</h1>
+      <h1 class="text-uppercase"><i class="fa-solid fa-calendar-days"></i><br>Events</h1>
       <p>Check out all of my events!<br>
-        Here you'll discover all my hosted events. 
+        Here you'll discover all my hosted events. <br>
         You'll have access to event details such as the date, location, 
-        and whether it's virtual or in-person. Plus, if you register on the website, 
-        you can conveniently save events for future reference on your profile. 
-        As a bonus, you'll receive a friendly email reminder one day before the event!
+        and whether it's virtual or in-person. <br> <i class="fa-solid fa-circle-exclamation"></i> 
+        If you register on the website, you can conveniently save events for future reference on your profile. <br>
+        <i class="fa-solid fa-envelope"></i> You'll receive a friendly email reminder one day before the event!
       </p>
       <hr>
       {% if events %}
         {% for event in events %}
-          <div class="card-deck mt-3">
-            <div class="card">
+          <div class="col-3 mt-3" id="event-{{ event.pk }}">
+            <div class="card event-card">
               <div class="card-body">
                 <span class="text-uppercase">{{ event.title }}</span>
                 <hr>
-                <p><strong>Description:</strong> {{ event.description }}</p>
-                <p><strong>Date and Time:</strong> {{ event.date_and_time }}</p>
-                <p><strong>Location:</strong> {{ event.location }}</p>
-                <p><strong>Organizer:</strong> {{ event.organizer }}</p>
-                <p><strong>Time Remaining:</strong> <span id="countdown-{{ event.pk }}">{{ event.time_remaining }}</span></p>
+                <p>{{ event.description }}</p>
+                <p><i class="fa-solid fa-id-badge"></i> Organizer: {{ event.organizer }}</p>
+                <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
+                {% if event.date_and_time > now %}
+                  <p><i class="fa-regular fa-clock"></i> Remaining Time:<br><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
+                {% else %}
+                  <p><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
+                {% endif %}
                 {% if request.user.is_authenticated %}
-                  {% if request.user in event.save_event.all %}
+                  {% if request.user not in event.save_event.all %}
+                    {% if event.date_and_time > now %}
+                      <form action="{% url 'save_event' event.pk %}" method="post" class="save-button">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
+                      </form>
+                    {% endif %}
+                  {% else %}
                     <form action="{% url 'unsave_event' event.pk %}" method="post">
                       {% csrf_token %}
                       <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
                     </form>
-                  {% else %}
-                    <form action="{% url 'save_event' event.pk %}" method="post">
-                      {% csrf_token %}
-                      <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
-                    </form>
                   {% endif %}
+                {% else %}
+                    <p>Login to save it</p>
                 {% endif %}
               </div>
             </div>
@@ -55,15 +63,12 @@
       {% endif %}
     </div>
   </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-  {{ block.super }}
-
-  <!-- Pass events variable as JSON object to JavaScript -->
-  <script>
-    var events = JSON.parse('{{ events_json|escapejs }}');
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
     // Function to update countdown timer
     function updateCountdown(eventId, eventDateTime) {
       var eventDate = new Date(eventDateTime);
@@ -73,6 +78,11 @@
       if (now > eventDate) {
         var countdownElement = document.getElementById('countdown-' + eventId);
         countdownElement.textContent = 'Event already happened';
+        // If event already happened, remove the save button
+        var saveButton = document.querySelector('#event-' + eventId + ' .save-button');
+        if (saveButton) {
+          saveButton.style.display = "none";
+        }
       } else {
         var timeRemaining = eventDate - now;
 
@@ -85,21 +95,27 @@
         // Update countdown element
         var countdownElement = document.getElementById('countdown-' + eventId);
         countdownElement.textContent = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds';
+
+        // Show the save button
+        var saveButton = document.querySelector('#event-' + eventId + ' .save-button');
+        if (saveButton) {
+          saveButton.style.display = "block";
+        }
       }
     }
 
-    // Function to update countdown for each event
+    // Update countdown for each event
     function updateAllCountdowns() {
-      for (var i = 0; i < events.length; i++) {
-        var event = events[i];
+      var events = JSON.parse('{{ events_json|escapejs }}');
+      events.forEach(function(event) {
         updateCountdown(event.pk, event.fields.date_and_time);
-      }
+      });
     }
 
     // Update countdowns every second
     setInterval(updateAllCountdowns, 1000);
-  </script>
+  });
+</script>
+
+
 {% endblock %}
-
-
-

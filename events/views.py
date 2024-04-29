@@ -6,11 +6,18 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils import timezone
 from profiles.models import UserProfile
+from datetime import datetime
+
+from django.db.models import Q
 
 def event_list(request):
     events = Event.objects.all()
-    saved_events = Event.objects.filter(save_event=request.user)
-    saved_event_ids = saved_events.values_list('id', flat=True)
+    now = datetime.now()
+
+    if request.user.is_authenticated:
+        saved_event_ids = Event.objects.filter(save_event=request.user).values_list('id', flat=True)
+    else:
+        saved_event_ids = []
 
     # Serialize events queryset to JSON object
     events_json = serializers.serialize('json', events)
@@ -19,9 +26,11 @@ def event_list(request):
         'events_json': events_json,
         'events': events,
         'saved_event_ids': saved_event_ids,
+        'now': now,
     }
     
     return render(request, 'events/event_list.html', context)
+
 
 @login_required
 def save_event(request, event_id):
