@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'community',
     'blog',
     'wishlist',
+    'events',
 ]
 
 MIDDLEWARE = [

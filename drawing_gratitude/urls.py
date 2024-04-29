@@ -31,4 +31,5 @@ urlpatterns = [
     path('community/', include('community.urls')),
     path('blog/', include('blog.urls')),
     path('wishlist/', include('wishlist.urls')),
+    path('events/', include('events.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
