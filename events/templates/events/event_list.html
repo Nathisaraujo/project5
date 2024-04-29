@@ -23,9 +23,9 @@
       <hr>
       {% if events %}
         {% for event in events %}
-          <div class="card-deck">
+          <div class="card-deck mt-3">
             <div class="card">
-            <div class="card-body">
+              <div class="card-body">
                 <span class="text-uppercase">{{ event.title }}</span>
                 <hr>
                 <p><strong>Description:</strong> {{ event.description }}</p>
@@ -34,54 +34,72 @@
                 <p><strong>Organizer:</strong> {{ event.organizer }}</p>
                 <p><strong>Time Remaining:</strong> <span id="countdown-{{ event.pk }}">{{ event.time_remaining }}</span></p>
                 {% if request.user.is_authenticated %}
-                  <form action="{% url 'save_event' event.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Save Event</button>
-                  </form>
+                  {% if request.user in event.save_event.all %}
+                    <form action="{% url 'unsave_event' event.pk %}" method="post">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
+                    </form>
+                  {% else %}
+                    <form action="{% url 'save_event' event.pk %}" method="post">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
+                    </form>
+                  {% endif %}
                 {% endif %}
-            </div>
+              </div>
             </div>
           </div>
-          {% endfor %}
+        {% endfor %}
       {% else %}
-      <p>No events available at the moment.</p>
+        <p>No events available at the moment.</p>
       {% endif %}
+    </div>
+  </div>
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
+  {{ block.super }}
 
- <!-- Pass events variable as JSON object to JavaScript -->
- <script>
-  var events = JSON.parse('{{ events_json|escapejs }}');
+  <!-- Pass events variable as JSON object to JavaScript -->
+  <script>
+    var events = JSON.parse('{{ events_json|escapejs }}');
 
-  // Function to update countdown timer
-  function updateCountdown(eventId, eventDateTime) {
-    var eventDate = new Date(eventDateTime);
-    var now = new Date();
-    var timeRemaining = eventDate - now;
-    
-    // Calculate remaining days, hours, minutes, and seconds
-    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-    
-    // Update countdown element
-    var countdownElement = document.getElementById('countdown-' + eventId);
-    countdownElement.textContent = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds';
-  }
+    // Function to update countdown timer
+    function updateCountdown(eventId, eventDateTime) {
+      var eventDate = new Date(eventDateTime);
+      var now = new Date();
 
-  // Function to update countdown for each event
-  function updateAllCountdowns() {
-    for (var i = 0; i < events.length; i++) {
-      var event = events[i];
-      updateCountdown(event.pk, event.fields.date_and_time);
+      // Check if the event has already happened
+      if (now > eventDate) {
+        var countdownElement = document.getElementById('countdown-' + eventId);
+        countdownElement.textContent = 'Event already happened';
+      } else {
+        var timeRemaining = eventDate - now;
+
+        // Calculate remaining days, hours, minutes, and seconds
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Update countdown element
+        var countdownElement = document.getElementById('countdown-' + eventId);
+        countdownElement.textContent = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds';
+      }
     }
-  }
 
-  // Update countdowns every second
-  setInterval(updateAllCountdowns, 1000);
-</script>
+    // Function to update countdown for each event
+    function updateAllCountdowns() {
+      for (var i = 0; i < events.length; i++) {
+        var event = events[i];
+        updateCountdown(event.pk, event.fields.date_and_time);
+      }
+    }
 
+    // Update countdowns every second
+    setInterval(updateAllCountdowns, 1000);
+  </script>
 {% endblock %}
+
+
+

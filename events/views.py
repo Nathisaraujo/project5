@@ -9,6 +9,8 @@ from profiles.models import UserProfile
 
 def event_list(request):
     events = Event.objects.all()
+    saved_events = Event.objects.filter(save_event=request.user)
+    saved_event_ids = saved_events.values_list('id', flat=True)
 
     # Serialize events queryset to JSON object
     events_json = serializers.serialize('json', events)
@@ -16,6 +18,7 @@ def event_list(request):
     context = {
         'events_json': events_json,
         'events': events,
+        'saved_event_ids': saved_event_ids,
     }
     
     return render(request, 'events/event_list.html', context)
@@ -28,9 +31,7 @@ def save_event(request, event_id):
 
     send_event_reminders(event)
 
-    messages.success(request, f'{event.title} to your events')
-
-    
+    messages.success(request, f'{event.title} to your events. A reminder email will be sent one day before the event.')
 
     return redirect('event_list')
 
@@ -48,3 +49,14 @@ def send_event_reminders(event):
                 [profile.user.email],
                 fail_silently=False,
             )
+        
+    event.has_passed = event.date_and_time < timezone.now()
+    event.save()
+
+@login_required
+def unsave_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    event.save_event.remove(request.user)
+    event.save()
+    messages.success(request, f'Event "{event.title}" removed from saved events')
+    return redirect('event_list')
