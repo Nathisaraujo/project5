@@ -30,15 +30,9 @@ def add_to_wishlist(request, product_id):
     else:
         messages.error(request, 'You have already added this product in your wishlist!')
 
-    return redirect(reverse('product_detail', args=[product_id]))
+    return redirect(reverse('products'))
 
-@login_required
-def wishlist(request):
-    """
-    This view displays the user's wishlist
-    """
-    wishlist_items = Wishlist.objects.filter(user=request.user)
-    return render(request, 'wishlist/wishlist.html', {'wishlist_items': wishlist_items})
+
 
 @login_required
 def remove_from_wishlist(request, product_id):

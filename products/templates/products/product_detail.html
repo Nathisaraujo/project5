@@ -132,9 +132,15 @@
                         </div>
                     
                         <div class="col{% if s %}-12 mt-2{% endif %} text-center">
-                            <a href="" class="btn btn-dark btn-products">
-                                <span><i class="fa fa-heart"></i> Add to wishlist</span>
-                            </a>
+                            {% if request.user not in wishlist.all %}
+                                <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-dark btn-products">
+                                    <span><i class="fa-regular fa-heart"></i> Add to wishlist</span>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'wishlist' %}" class="btn btn-dark btn-products">
+                                    <span><i class="fa-solid fa-heart"></i> on wishlist</span>
+                                </a>
+                            {% endif %}
                             <input type="submit" class="btn btn-dark btn-products" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">

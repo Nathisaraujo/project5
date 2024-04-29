@@ -44,39 +44,21 @@
                 <h4><i class="fa-solid fa-message"></i> Submit drawing suggestions </h4>
                 <p> Registered users have the opportunity to submit drawing suggestions. <br>
                     Each month, I'll randomly select one suggestion to bring to life!!<br>
-                    If your suggestion is chosen, you'll receive a free copy!<br>
-                    <i class="fa-solid fa-circle-exclamation fa-lg" style="color: #f7b801;"></i>
-                    Each community suggestion drawing is priced at just <i class="fa-solid fa-euro-sign fa-xs"></i>10!
                 </p>
                 <a href="{% url 'products' %}?community=True" class="btn btn-dark pt-0"> Check out some<br> community suggestions!</a>
+                <p class="mt-3">
+                    <i class="fa-solid fa-circle-exclamation fa-lg" style="color: #f7b801;"></i><br>
+                    If your suggestion is chosen, you'll receive a free copy!<br>
+                    Each community suggestion drawing is priced at just <i class="fa-solid fa-euro-sign fa-xs"></i>10!
+                </p>
                 {% if user.is_authenticated  %}
-                    <p> Send your drawing suggestion now!</p>
-                    <a href="{% url 'recommend' %}" class="btn btn-dark btn-community">Send a Suggestion</a> 
+                    <a href="{% url 'recommend' %}" class="btn btn-dark btn-community">Send a Suggestion now!</a> 
                 {% else %}
-                    <p> Go to your profile and start exploring!</p>
-                    <a href="{% url 'community' %}" class="btn btn-dark btn-community">register</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-dark btn-community">register to send a suggestion</a>
                 {% endif %}
             </div>
         </div>
         <div class="row text-center m-5">
-            <div class="col-6">
-                <h4><i class="fa-solid fa-cart-shopping"></i> Simplify your shopping experience </h4>
-                <ul>
-                    <li class="p-1"><i class="fa-brands fa-gratipay"></i><br> Registered users have the option to save products to their wishlist,
-                        allowing them to keep track of items they're interested in and make conscious purchasing decisions.</li>
-                    <li class="p-1"><i class="fa-solid fa-truck-fast"></i><br> Additionally, you can save your delivery information for future orders,
-                        streamlining the checkout process.</li>
-                    <li class="p-1"><i class="fa-solid fa-clock-rotate-left"></i><br> You can also keep track of your order history!</li>
-                </ul>
-            </div>
-            <div class="col-6">
-                <img src="{{ MEDIA_URL }}community/wishlist.png" alt="users suggestions" class="suggestion-img">
-            </div>
-        </div>
-        <div class="row text-center m-5">
-            <div class="col-6">
-                <img src="{{ MEDIA_URL }}community/events.png" alt="users suggestions" class="suggestion-img">
-            </div>
             <div class="col-6">
                 <h4><i class="fa-solid fa-calendar-days"></i> Keep track of our events </h4>
                 <p> Discover an array of exciting events I'm participating! 
@@ -87,6 +69,30 @@
                     <i class="fa-solid fa-envelope"></i><br> Plus, anticipate a delightful email reminder one day prior to each event, <br>
                     ensuring you never miss out on an exciting opportunity.
                 </p>
+                <a href="{% url 'event_list' %}" class="btn btn-dark">Go to Events</a>
+            </div>
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/events.png" alt="users suggestions" class="suggestion-img">
+            </div>
+        </div>
+        <div class="row text-center m-5">
+            <div class="col-6">
+                <img src="{{ MEDIA_URL }}community/wishlist.png" alt="users suggestions" class="suggestion-img">
+            </div>
+            <div class="col-6">
+                <h4><i class="fa-solid fa-cart-shopping"></i> Simplify your shopping experience </h4>
+                <ul>
+                    <li class="p-1"><i class="fa-brands fa-gratipay"></i><br> Registered users have the option to save products to their wishlist,
+                        allowing them to keep track of items they're interested in and make conscious purchasing decisions.</li>
+                    <li class="p-1"><i class="fa-solid fa-truck-fast"></i><br> Additionally, you can save your delivery information for future orders,
+                        streamlining the checkout process.</li>
+                    <li class="p-1"><i class="fa-solid fa-clock-rotate-left"></i><br> You can also keep track of your order history!</li>
+                </ul>
+                {% if user.is_authenticated  %}
+                    <a href="{% url 'profile' %}" class="btn btn-dark">Go to your profile</a> 
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="btn btn-dark">register now!</a>
+                {% endif %}
             </div>
         </div>
     </div>

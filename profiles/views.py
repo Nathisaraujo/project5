@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm, RecommendationForm
 
 from events.models import Event
-
+from wishlist.models import Wishlist
 
 from checkout.models import Order
 
@@ -47,6 +47,14 @@ def update_profile(request):
     }
 
     return render(request, template, context)
+
+@login_required
+def wishlist(request):
+    """
+    This view displays the user's wishlist
+    """
+    wishlist_items = Wishlist.objects.filter(user=request.user)
+    return render(request, 'profiles/wishlist.html', {'wishlist_items': wishlist_items})
 
 def orders(request):
 
