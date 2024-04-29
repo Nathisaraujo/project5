@@ -10,34 +10,42 @@
 {% endblock %}
 
 {% block content %}
-
-  <h1>Events</h1>
-  
-  {% if events %}
-    <ul>
-      {% for event in events %}
-        <li>
-          <h2>{{ event.title }}</h2>
-          <p><strong>Description:</strong> {{ event.description }}</p>
-          <p><strong>Date and Time:</strong> {{ event.date_and_time }}</p>
-          <p><strong>Location:</strong> {{ event.location }}</p>
-          <p><strong>Organizer:</strong> {{ event.organizer }}</p>
-          
-          <!-- Display time remaining as countdown -->
-          <p><strong>Time Remaining:</strong> <span id="countdown-{{ event.pk }}">{{ event.time_remaining }}</span></p>
-          
-          {% if request.user.is_authenticated %}
-            <form action="{% url 'save_event' event.id %}" method="post">
-              {% csrf_token %}
-              <button type="submit">Save Event</button>
-            </form>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No events available at the moment.</p>
-  {% endif %}
+<div class="container-fluid mt-5">
+  <div class="row text-center m-5">
+      <h1 class="text-uppercase">Events</h1>
+      <p>Check out all of my events!<br>
+        Here you'll discover all my hosted events. 
+        You'll have access to event details such as the date, location, 
+        and whether it's virtual or in-person. Plus, if you register on the website, 
+        you can conveniently save events for future reference on your profile. 
+        As a bonus, you'll receive a friendly email reminder one day before the event!
+      </p>
+      <hr>
+      {% if events %}
+        {% for event in events %}
+          <div class="card-deck">
+            <div class="card">
+            <div class="card-body">
+                <span class="text-uppercase">{{ event.title }}</span>
+                <hr>
+                <p><strong>Description:</strong> {{ event.description }}</p>
+                <p><strong>Date and Time:</strong> {{ event.date_and_time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Organizer:</strong> {{ event.organizer }}</p>
+                <p><strong>Time Remaining:</strong> <span id="countdown-{{ event.pk }}">{{ event.time_remaining }}</span></p>
+                {% if request.user.is_authenticated %}
+                  <form action="{% url 'save_event' event.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Save Event</button>
+                  </form>
+                {% endif %}
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+      {% else %}
+      <p>No events available at the moment.</p>
+      {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
