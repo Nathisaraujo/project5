@@ -94,19 +94,10 @@
                                                 </form>
                                             </div>
                                             <div class="col">
-                                                {% if products in request.user.userprofile.wishlist.all %}
-                                                    <a href="{% url 'wishlist' %}" class="btn btn-dark btn-products">
-                                                        <span><i class="fa-solid fa-heart"></i> on wishlist</span>
-                                                    </a>
-                                                {% else %}
-                                                    <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-dark btn-products">
-                                                        <span><i class="fa-regular fa-heart"></i> Add to wishlist</span>
-                                                    </a>
-                                                {% endif %}
+                                                <a href="{% url 'checkout' %}" class="btn btn-dark btn-buynow">
+                                                    <span class="text-uppercase"><i class="fa-solid fa-credit-card"></i> Buy now</span>
+                                                </a>
                                             </div>
-                                            <a href="{% url 'checkout' %}" class="btn btn-dark btn-buynow">
-                                                <span class="text-uppercase"><i class="fa-solid fa-credit-card"></i> Buy now</span>
-                                            </a>
                                         </div>
                                         <!-- <div class="row">
                                             <div class="col">

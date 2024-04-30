@@ -35,20 +35,24 @@
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
-
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
+                                        {% if item.product.offers %}
+                                            <p class="on-sale"><i class="fa-solid fa-circle-exclamation fa-sm"></i> on sale</p>                   
+                                        {% endif %}
+                                        {% if item.product.community %}
+                                            <p class="on-community"><i class="fa-solid fa-circle-exclamation fa-sm"></i> community suggestion</p>                    
+                                        {% endif %}
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
                                         {% if item.product.offers %}
-                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price|discount:15 }}</p>
+                                            <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i> {{ item.product.price|discount:15 }}</p>
                                         {% else %}
                                             <p class="my-0"><i class="fa-solid fa-euro-sign fa-xs"></i>{{ item.product.price }}</p>
                                         {% endif %}

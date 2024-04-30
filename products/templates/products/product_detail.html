@@ -126,28 +126,34 @@
                                                 </span>
                                             </button>
                                         </div>
+                                        <input type="submit" class="btn btn-dark btn-products" value="Add to Bag">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     
-                        <div class="col{% if s %}-12 mt-2{% endif %} text-center">
-                            {% if request.user not in wishlist.all %}
-                                <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-dark btn-products">
-                                    <span><i class="fa-regular fa-heart"></i> Add to wishlist</span>
-                                </a>
-                            {% else %}
-                                <a href="{% url 'wishlist' %}" class="btn btn-dark btn-products">
-                                    <span><i class="fa-solid fa-heart"></i> on wishlist</span>
-                                </a>
-                            {% endif %}
-                            <input type="submit" class="btn btn-dark btn-products" value="Add to Bag">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        
                     </form>
+
+                    <div class="col{% if s %}-12 mt-2{% endif %} text-center">
+                        {% if product_in_wishlist %}
+                            <p>na wishlist</p>
+                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-danger">Remove from Wishlist</a>
+                        {% else %}
+                            <p>fora wishlist</p>
+                            <form action="{% url 'add_to_wishlist' product.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Add to Wishlist</button>
+                            </form>
+                        {% endif %}
+                        
+                    </div>
                     
                     <div class="col text-center">
-                        <button type="button" class="btn btn-dark btn-buynow"><i class="fa-solid fa-credit-card"></i> Buy now</button>
+                        <a href="{% url 'checkout' %}" class="btn btn-dark btn-buynow">
+                            <span class="text-uppercase"><i class="fa-solid fa-credit-card"></i> Buy now</span>
+                        </a>
                     </div>
                     <a href="{% url 'products' %}" class="btn d-block d-md-none d-lg-none d-xl-none d-xxl-none">
                         <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>

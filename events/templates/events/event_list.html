@@ -37,22 +37,22 @@
                 {% else %}
                   <p><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
                 {% endif %}
+                
+                {% now "Y-m-d H:i:s" as current_time %}
                 {% if request.user.is_authenticated %}
-                  {% if request.user not in event.save_event.all %}
-                    {% if event.date_and_time > now %}
-                      <form action="{% url 'save_event' event.pk %}" method="post" class="save-button">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
-                      </form>
-                    {% endif %}
-                  {% else %}
-                    <form action="{% url 'unsave_event' event.pk %}" method="post">
+                  {% if request.user in event.save_event.all %}
+                    <form action="{% url 'unsave_event' event.id %}" method="post">
                       {% csrf_token %}
                       <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
                     </form>
+                  {% else %}
+                  {% if event.date_and_time|date:"Y-m-d H:i:s" > current_time %}
+                    <form action="{% url 'save_event' event.id %}" method="post">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
+                    </form>
+                    {% endif %}
                   {% endif %}
-                {% else %}
-                    <p>Login to save it</p>
                 {% endif %}
               </div>
             </div>

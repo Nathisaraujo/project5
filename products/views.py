@@ -4,6 +4,7 @@ from django.db.models import Q
 from decimal import Decimal
 from django.db.models.functions import Lower
 from .models import Product, Category, Surface, Paint
+from wishlist.models import Wishlist
 
 # Create your views here.
 
@@ -97,9 +98,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    product_in_wishlist = Wishlist.objects.filter(product=product, user=request.user).exists()
 
     context = {
         'product': product,
+        'product_in_wishlist': product_in_wishlist,
     }
 
     return render(request, 'products/product_detail.html', context)

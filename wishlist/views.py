@@ -19,6 +19,7 @@ def add_to_wishlist(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     exist_wishlist_item = Wishlist.objects.filter(product=product, user=request.user)
+
     if not exist_wishlist_item:
         Wishlist.objects.create(
             product=product,
@@ -30,7 +31,7 @@ def add_to_wishlist(request, product_id):
     else:
         messages.error(request, 'You have already added this product in your wishlist!')
 
-    return redirect(reverse('products'))
+    return redirect('product_detail', product_id=product_id)
 
 
 
@@ -42,4 +43,4 @@ def remove_from_wishlist(request, product_id):
     """
     Wishlist.objects.filter(user=request.user, product_id=product_id).delete()
     messages.success(request, 'Item removed from your wishlist!')
-    return redirect(reverse('wishlist'))
+    return redirect('product_detail', product_id=product_id)

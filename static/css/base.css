@@ -145,6 +145,7 @@ body {
     text-transform: uppercase;
     border: none;
     min-width: 20em;
+    margin: 1em 0em;
 }
 
 .image-container {
