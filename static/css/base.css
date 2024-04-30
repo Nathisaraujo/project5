@@ -113,6 +113,7 @@ body {
     margin: 1em 0em;
     /* max-width: 10em; */
     min-width: 8em;
+    border-radius: 5px;
 }
 
 .discount-price {
@@ -144,8 +145,21 @@ body {
     background-color: #9684A1;
     text-transform: uppercase;
     border: none;
-    min-width: 20em;
-    margin: 1em 0em;
+    color: #fff;
+    /* min-width: 20em;
+    max-height: 2em; */
+    margin: 16px;
+    align-content: center;
+}
+
+.btn-wish {
+    background-color: #000;
+    color: #fff;
+    margin: 1em;
+}
+
+.btn-wish:hover {
+    background-color: #9684A1;
 }
 
 .image-container {

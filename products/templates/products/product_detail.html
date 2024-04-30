@@ -13,7 +13,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="col-6">
                 <div class="image-container mt-5">
                     {% if product.offers %}
                         <p class="on-sale"><i class="fa-solid fa-circle-exclamation fa-sm"></i> on sale</p>                   
@@ -31,7 +31,25 @@
                         </a>
                     {% endif %}
                 </div>
-                {% if product.producttags %}
+            </div>
+            <div class="col-6">
+                <div class="row product-details-container mb-5 mt-md-5">
+                    <p class="mb-0">{{ product.name }}</p>
+                    {% if product.offers %}
+                        <p>
+                            <span class="discount-price">It was: <i class="fas fa-euro-sign fa-xs"></i> {{ product.price }} <br></span>
+                            <span class="new-price">Now is only <i class="fas fa-euro-sign fa-xs"></i> {{ product.price|discount:15 }}!</span>
+                        </p>
+                    {% else %}
+                        <p class="lead mb-0 text-left fw-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                    {% endif %}
+                    {% if product.rating %}
+                        <small class="text-muted"><i class="fas fa-star me-1"></i>{{ product.rating }} / 5</small>
+                    {% else %}
+                        <small class="text-muted">No rating yet</small>
+                    {% endif %}
+                    <p class="mt-3">{{ product.description }} </p>
+                    {% if product.producttags %}
                         <p class="mt-3">
                             <table class="table table-sm text-center table-striped">
                                 <caption>Product Specifications</caption>
@@ -74,41 +92,20 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        {% else %}
-                            <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f7b801;"></i> digital art</p>
-                            <p> You'll can buy this digital art and it will be printed on and will be printed on card paper, 
-                                A4 size, landscape or portrait (according to the orientation in the picture).</p>
-                        {% endif %}
-                <a href="{% url 'products' %}" class="btn d-none d-md-block d-lg-block d-xl-block d-xxl-block">
-                    <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    {% if product.offers %}
-                        <p>
-                            <span class="discount-price">It was: <i class="fas fa-euro-sign fa-xs"></i> {{ product.price }} <br></span>
-                            <span class="new-price">Now is only <i class="fas fa-euro-sign fa-xs"></i> {{ product.price|discount:15 }}!</span>
-                        </p>
                     {% else %}
-                        <p class="lead mb-0 text-left fw-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ product.price }}</p>
+                        <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f7b801;"></i> digital art</p>
+                        <p> You'll can buy this digital art and it will be printed on and will be printed on card paper, 
+                            A4 size, landscape or portrait (according to the orientation in the picture).</p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star me-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No rating yet</small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }} </p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <p><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-dark rounded-0 decrement-qty_{{ product.id }}" 
+                                            <button class="decrement-qty btn btn-dark decrement-qty_{{ product.id }}" 
                                                 data-item_id="{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
@@ -119,7 +116,7 @@
                                             name="quantity" value="1" min="1" max="99"
                                             data-item_id="{{ product.id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn rounded-0 increment-qty_{{ product.id }}"
+                                            <button class="increment-qty btn increment-qty_{{ product.id }}"
                                                 data-item_id="{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
@@ -127,35 +124,26 @@
                                             </button>
                                         </div>
                                         <input type="submit" class="btn btn-dark btn-products" value="Add to Bag">
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}" class="btn btn-dark btn-products">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    
-                        
+                        </div>                        
                     </form>
-
-                    <div class="col{% if s %}-12 mt-2{% endif %} text-center">
+                    <div class="d-flex">
                         {% if product_in_wishlist %}
-                            <p>na wishlist</p>
-                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-danger">Remove from Wishlist</a>
+                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish w-50"><i class="fa-solid fa-heart"></i> Remove <br>from Wishlist</a>
                         {% else %}
-                            <p>fora wishlist</p>
                             <form action="{% url 'add_to_wishlist' product.id %}" method="post">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-primary">Add to Wishlist</button>
+                                <button type="submit" class="btn btn-wish w-50"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
                             </form>
                         {% endif %}
-                        
-                    </div>
-                    
-                    <div class="col text-center">
-                        <a href="{% url 'checkout' %}" class="btn btn-dark btn-buynow">
-                            <span class="text-uppercase"><i class="fa-solid fa-credit-card"></i> Buy now</span>
+                        <a href="{% url 'checkout' %}" class="btn btn-buynow text-uppercase w-50">
+                            <i class="fa-solid fa-credit-card"></i> Buy now
                         </a>
                     </div>
-                    <a href="{% url 'products' %}" class="btn d-block d-md-none d-lg-none d-xl-none d-xxl-none">
+                    <a href="{% url 'products' %}" >
                         <span class="btn btn-dark btn-products"><i class="fas fa-chevron-left"></i> Keep Shopping</span>
                     </a>
                 </div>
