@@ -33,7 +33,7 @@
                 <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
                 <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
                 {% if event.date_and_time > now %}
-                  <p><i class="fa-regular fa-clock"></i> Remaining Time:<br><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
+                  <p><i class="fa-regular fa-clock"nn ,.></i> Remaining Time:<br><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
                 {% else %}
                   <p><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
                 {% endif %}
@@ -59,7 +59,7 @@
           </div>
         {% endfor %}
       {% else %}
-        <p>No events available at the moment.</p>
+        <p class="text-center">No events available at the moment.</p>
       {% endif %}
     </div>
   </div>
@@ -67,6 +67,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super }}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Function to update countdown timer

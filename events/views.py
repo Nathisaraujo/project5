@@ -18,7 +18,6 @@ def event_list(request):
         saved_event_ids = Event.objects.filter(save_event=request.user).values_list('id', flat=True)
     else:
         saved_event_ids = []
-
     # Serialize events queryset to JSON object
     events_json = serializers.serialize('json', events)
     
@@ -35,20 +34,21 @@ def event_list(request):
 @login_required
 def save_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
+    tomorrow = timezone.now() + timezone.timedelta(days=1)
     event.save_event.add(request.user)
     event.save()
+    send_event_reminders(event) 
 
-    send_event_reminders(event)
-
-    messages.success(request, f'{event.title} to your events. A reminder email will be sent one day before the event.')
-
-    return redirect('event_list')
+    if event.date_and_time.date() == tomorrow.date():
+        messages.info(request, f'{event.title} added to your events. A reminder email will be sent one day before the event.')
+    else:
+        messages.info(request, f'{event.title} added to your events.')
+    return redirect('event_list' )
 
 def send_event_reminders(event):
     tomorrow = timezone.now() + timezone.timedelta(days=1)
 
     if event.date_and_time.date() == tomorrow.date():
-        # Find users who have saved the event and send them reminders
         for user in event.save_event.all():
             profile = UserProfile.objects.get(user=user)
             send_mail(
@@ -58,14 +58,19 @@ def send_event_reminders(event):
                 [profile.user.email],
                 fail_silently=False,
             )
-        
-    event.has_passed = event.date_and_time < timezone.now()
-    event.save()
 
 @login_required
 def unsave_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     event.save_event.remove(request.user)
     event.save()
-    messages.success(request, f'Event "{event.title}" removed from saved events')
+    messages.info(request, f'Event "{event.title}" removed from saved events')
     return redirect('event_list')
+
+@login_required
+def unsave_event_profile(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    event.save_event.remove(request.user)
+    event.save()
+    messages.info(request, f'Event "{event.title}" removed from saved events')
+    return redirect('saved_events')

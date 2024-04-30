@@ -14,36 +14,69 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col text-center mt-4 fifty-height">
-            <h5 class="logo-font mb-4">{{ request.user.username }} Wishlist</h5>
-            <br>
+        <div class="col text-center mt-5">
+            <h1 class="logo-font mb-4"><i class="fa-solid fa-heart"></i><br> {{ request.user.username }}'s' Wishlist</h1>
+            <hr>
             {% if wishlist_items %}
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Price Now</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Added to Wishlist at</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for wishlist_item in wishlist_items %}
-                <tr>
-                    <th scope="row"><a href="{% url 'product_detail' wishlist_item.product.id %}" >{{ wishlist_item.product }}</a></th>
-                    <td>{{ wishlist_item.product.price }}</td>
-                    <td>{{ wishlist_item.product.stock }}</td>
-                    <td>{{ wishlist_item.added_at }}</td>
-                    <td><a href="{% url 'remove_from_wishlist' wishlist_item.product.id %}"
-                           class="btn btn-outline-black rounded">Remove</a></td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Remove</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for wishlist_item in wishlist_items %}
+                        <tr>
+                            <td scope="row" class="align-middle" style="max-width:2px;">
+                                {% if wishlist_item.product.offers %}
+                                    <p style="padding-left: 2.5em;"><i class="fa-solid fa-piggy-bank fa-beat-fade fa-xl" style="color: #FFD43B;"></i><br> sale</p>                   
+                                
+                                {% elif wishlist_item.product.community %}
+                                    <p style="padding-left: 2.5em;"><i class="fa-solid fa-users fa-fade fa-xl" style="color: #574294;"></i><br> community</p> 
+                                
+                                {% else %}
+                                    <p style="padding-left: 2.5em;"><i class="fa-solid fa-square-check fa-xl" style="color: #27511f;"></i><br> Standard</p>
+                                {% endif %}
+                            </td>
+                            <th scope="row">
+                                {% if wishlist_item.product.image %}
+                                    <a href="{{ wishlist_item.product.image.url }}" target="_blank">
+                                        <img class="card-img-top img-fluid img-thumbnail" style="max-width: 10em;" src="{{ wishlist_item.product.image.url }}" alt="{{ wishlist_item.product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="">
+                                        <img class="card-img-top img-fluid img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}
+                            </th>
+                            <th scope="row"><a href="{% url 'product_detail' wishlist_item.product.id %}" >{{ wishlist_item.product }}</a></th>
+                            <td>
+                                {% if wishlist_item.product.offers %}
+                                    <p>
+                                        <span class="discount-price">It was: <i class="fas fa-euro-sign fa-xs"></i> {{ wishlist_item.product.price }} <br></span>
+                                        <span class="new-price">Now is only <i class="fas fa-euro-sign fa-xs"></i> {{ wishlist_item.product.price|discount:15 }}!</span>
+                                    </p>
+                                {% else %}
+                                    <p class="lead mb-0 text-left fw-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ wishlist_item.product.price }}</p>
+                                {% endif %}</td>
+                            <td>
+                                <a href="{% url 'remove_from_wishlist' wishlist_item.product.id %}"
+                                class="btn btn-outline-dark rounded">Remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             {% else %}
-            <h2>You don't have any items in your wishlist</h2>
+                <h2>You don't have any items in your wishlist</h2>
             {% endif %}
         </div>
+        <a class="btn btn-outline-dark mb-2 mt-2" href="{% url 'profile' %}">Back to profile</a>
     </div>
 </div>
 {% endblock %}
