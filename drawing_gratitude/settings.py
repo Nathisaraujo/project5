@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)k2f#r3*p96%io0q03(6*47d6jh*5#id1u#ekecrdjh#unxepw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-nathisaraujo-project5-fzptatqfext.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['8000-nathisaraujo-project5-fzptatqfext.ws-eu111.gitpod.io']
 
 
 # Application definition
@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-nathisaraujo-project5-fzptatqfext.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-nathisaraujo-project5-fzptatqfext.ws-eu111.gitpod.io']
 
 ROOT_URLCONF = 'drawing_gratitude.urls'
 

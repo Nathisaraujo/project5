@@ -93,16 +93,15 @@ def all_products(request):
     
     return render(request, 'products/products.html', context)
 
-
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    product_in_wishlist = Wishlist.objects.filter(product=product, user=request.user).exists()
+    # product_in_wishlist = Wishlist.objects.filter(product=product, user=request.user).exists()
 
     context = {
         'product': product,
-        'product_in_wishlist': product_in_wishlist,
+        # 'product_in_wishlist': product_in_wishlist,
     }
 
     return render(request, 'products/product_detail.html', context)
