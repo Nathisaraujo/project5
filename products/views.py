@@ -109,7 +109,17 @@ def product_detail(request, product_id):
 
 def add_product(request):
     """ Add a product to the store """
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -118,10 +128,21 @@ def add_product(request):
     return render(request, template, context)
 
 def add_product_tags(request):
-    form = ProductTagsForm()
+    if request.method == 'POST':
+        form = ProductTagsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product tags!')
+            return redirect(reverse('add_product_tags'))
+        else:
+            messages.error(request, 'Failed to add product tags. Please ensure the form is valid.')
+    else:
+        form = ProductTagsForm()
+        
     template = 'products/add_product_tags.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+    
