@@ -60,6 +60,7 @@ class ProductTags(models.Model):
     def __str__(self):
         return str(self.product)
 
+
 class Material(models.Model):
     name = models.CharField(max_length=100)
 

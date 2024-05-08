@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from decimal import Decimal
 from django.db.models.functions import Lower
-from .models import Product, Category, Surface, Paint
+from .models import Product, Category, Surface, Paint,  ProductTags
 from wishlist.models import Wishlist
 from .forms import ProductForm, ProductTagsForm
 
@@ -142,6 +142,35 @@ def add_product_tags(request):
     template = 'products/add_product_tags.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+def edit_product(request, product_id):
+    """ Edit a product in the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product_tags, created = ProductTags.objects.get_or_create(product=product)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        tags_form = ProductTagsForm(request.POST, instance=product_tags)
+        if form.is_valid():
+            form.save()
+            tags_form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        tags_form = ProductTagsForm(instance=product_tags)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+        'tags_form': tags_form,
     }
 
     return render(request, template, context)
