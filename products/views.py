@@ -5,7 +5,7 @@ from decimal import Decimal
 from django.db.models.functions import Lower
 from .models import Product, Category, Surface, Paint
 from wishlist.models import Wishlist
-from .forms import ProductForm
+from .forms import ProductForm, ProductTagsForm
 
 # Create your views here.
 
@@ -111,6 +111,15 @@ def add_product(request):
     """ Add a product to the store """
     form = ProductForm()
     template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+def add_product_tags(request):
+    form = ProductTagsForm()
+    template = 'products/add_product_tags.html'
     context = {
         'form': form,
     }
