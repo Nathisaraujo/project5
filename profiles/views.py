@@ -11,6 +11,7 @@ from checkout.models import Order
 
 # Create your views here.
 
+@login_required
 def profile(request):
     """ Display the user's profile. """
     if request.user.is_authenticated:
@@ -24,6 +25,7 @@ def profile(request):
 
     return render(request, template, context)
 
+@login_required
 def update_profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
 
@@ -56,6 +58,7 @@ def wishlist(request):
     wishlist_items = Wishlist.objects.filter(user=request.user)
     return render(request, 'profiles/wishlist.html', {'wishlist_items': wishlist_items})
 
+@login_required
 def orders(request):
 
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -70,6 +73,7 @@ def orders(request):
 
     return render(request, template, context)
 
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
@@ -86,6 +90,7 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+@login_required
 def recommend(request):
     if request.method == 'POST':
         form = RecommendationForm(request.POST)
@@ -103,6 +108,7 @@ def recommend(request):
 def recommendation_success(request):
     return render(request, 'profiles/recommendation_success.html')
 
+@login_required
 def saved_events(request):
     saved_events = Event.objects.filter(save_event=request.user)
 
