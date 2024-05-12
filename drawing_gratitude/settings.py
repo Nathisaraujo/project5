@@ -31,7 +31,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-nathisaraujo-project5-fzptatqfext.ws-eu111.gitpod.io',
-    '.herokuapp.com'
+    'https://*.herokuapp.com',
+    'https://*drawing-gratitude-07bcca57b95d.herokuapp.com/',
 ]
 
 
