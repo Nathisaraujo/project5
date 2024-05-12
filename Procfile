@@ -1,0 +1,1 @@
+web: gunicorn drawing_gratitude.wsgi
