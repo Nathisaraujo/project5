@@ -1,0 +1,23 @@
+[
+    {
+        "model": "products.surface",
+        "pk": 1,
+        "fields": {
+            "name": "Paper"
+        }
+    },
+    {
+        "model": "products.surface",
+        "pk": 2,
+        "fields": {
+            "name": "Canvas"
+        }
+    },
+    {
+        "model": "products.surface",
+        "pk": 3,
+        "fields": {
+            "name": "Wood Panel"
+        }
+    }
+]

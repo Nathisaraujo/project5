@@ -1,0 +1,30 @@
+[
+    {
+        "model": "products.frame",
+        "pk": 1,
+        "fields": {
+            "name": "Wood"
+        }
+    },
+    {
+        "model": "products.frame",
+        "pk": 2,
+        "fields": {
+            "name": "Black"
+        }
+    },
+    {
+        "model": "products.frame",
+        "pk": 3,
+        "fields": {
+            "name": "White"
+        }
+    },
+    {
+        "model": "products.frame",
+        "pk": 4,
+        "fields": {
+            "name": "No Frame"
+        }
+    }
+]

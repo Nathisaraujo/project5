@@ -1,0 +1,72 @@
+[
+    {
+        "model": "products.material",
+        "pk": 1,
+        "fields": {
+            "name": "Paint"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 2,
+        "fields": {
+            "name": "Pencil"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 3,
+        "fields": {
+            "name": "Coloured Pencil"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 4,
+        "fields": {
+            "name": "Ink Pens"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 5,
+        "fields": {
+            "name": "Markers"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 6,
+        "fields": {
+            "name": "Stickers"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 7,
+        "fields": {
+            "name": "Stamps"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 8,
+        "fields": {
+            "name": "Crayons"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 9,
+        "fields": {
+            "name": "Charcoal"
+        }
+    },
+    {
+        "model": "products.material",
+        "pk": 10,
+        "fields": {
+            "name": "Digitan Pen"
+        }
+    }
+]
