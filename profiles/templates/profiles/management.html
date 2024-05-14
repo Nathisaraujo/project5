@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col mt-5">
+                <h2 class="text-center"><i class="fa-solid fa-gears"></i><br>Website Management</h2>
+                <hr>
+                <p class="text-center"> Here you can manage your website! <br>Click where would you like to do:
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Manage existing products</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Go to all products page to edit or delete products</h6>
+                  <p class="card-text">You can click on the product you'd like to manage. 
+                    From there, you can edit or delete it using the buttons on the card, or click the product to view its details.
+                  </p>
+                  <a href="{% url 'products' %}" class="card-link">All Products</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Add a product</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Add a new product by simply filling out a form.</h6>
+                  <p class="card-text">Add a new product by clicking on the provided link. 
+                    This action will direct them to the necessary form where they can input
+                     all relevant details for the new product.
+                  </p>
+                  <a href="{% url 'add_product' %}" class="card-link">Add Product</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Add an event</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Add a new product by simply filling out a form.</h6>
+                  <p class="card-text">Add a new product by clicking on the provided link. 
+                    This action will direct them to the necessary form where they can input
+                     all relevant details for the new product.
+                  </p>
+                  <a href="{% url 'add_product' %}" class="card-link">Add Product</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Add or edit an "About Me" description</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Add a new product by simply filling out a form.</h6>
+                  <p class="card-text">Add a new product by clicking on the provided link. 
+                    This action will direct them to the necessary form where they can input
+                     all relevant details for the new product.
+                  </p>
+                  <a href="{% url 'add_product' %}" class="card-link">Add Product</a>
+                </div>
+            </div>
+            <a class="btn btn-outline-dark mb-2 mt-2" href="{% url 'profile' %}">Back to profile</a>
+        </div>
+    </div>
+
+{% endblock %}
+

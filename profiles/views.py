@@ -113,3 +113,7 @@ def saved_events(request):
     saved_events = Event.objects.filter(save_event=request.user)
 
     return render(request, 'profiles/saved_events.html', {'saved_events': saved_events})
+
+def management(request):
+    
+    return render(request, 'profiles/management.html')
