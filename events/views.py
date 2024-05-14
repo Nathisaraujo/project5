@@ -108,6 +108,7 @@ def add_event(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_event(request, event_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -128,3 +129,15 @@ def edit_event(request, event_id):
         messages.info(request, f'You are editing {event.title}')
     
     return render(request, 'events/edit_event.html', {'form': form, 'event': event})
+
+
+@login_required
+def delete_event(request, event_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    event = get_object_or_404(Event, id=event_id)
+    event.delete()
+    messages.success(request, 'Event deleted!')
+    return redirect(reverse('event_list'))
