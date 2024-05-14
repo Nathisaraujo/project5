@@ -16,7 +16,11 @@
     <div class="row">
         {% for about_me in about %}
             <div class="col-6 text-center">
-                <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo">
+                {% if about_me.image %}
+                    <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo">
+                {% else %}
+                    <img src="{% static 'media/me.jpg' %}" alt="backup artist photo" class="artist-photo">
+                {% endif %}
                 <div class="about-artist">
                     <ul class="text-start ml-1">
                         <li><i class="fa-solid fa-location-dot"></i> Brazilian in Ireland</li>
