@@ -114,6 +114,7 @@ def saved_events(request):
 
     return render(request, 'profiles/saved_events.html', {'saved_events': saved_events})
 
+@login_required
 def management(request):
     
     return render(request, 'profiles/management.html')

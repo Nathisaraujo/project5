@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.utils import timezone
 from profiles.models import UserProfile
 from datetime import datetime
+from .forms import EventForm
+from django.urls import reverse
 
 from django.db.models import Q
 
@@ -74,3 +76,34 @@ def unsave_event_profile(request, event_id):
     event.save()
     messages.info(request, f'Event "{event.title}" removed from saved events')
     return redirect('saved_events')
+
+
+@login_required
+def add_event(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save(commit=False)
+            date_and_time = form.cleaned_data.get('date_and_time')
+            if date_and_time is not None and date_and_time < timezone.now():
+                messages.error(request, "Event date must be in the future.")
+                return render(request, 'events/add_event.html', {'form': form})
+            else:
+                event.save()
+                messages.success(request, 'Successfully added event!')
+                return redirect(reverse('event_list'))
+        else:
+            messages.error(request, 'Failed to add event. Please ensure the form is valid.')
+    else:
+        form = EventForm()
+    
+    template = 'events/add_event.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
