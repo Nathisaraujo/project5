@@ -77,7 +77,6 @@ def unsave_event_profile(request, event_id):
     messages.info(request, f'Event "{event.title}" removed from saved events')
     return redirect('saved_events')
 
-
 @login_required
 def add_event(request):
     if not request.user.is_superuser:
