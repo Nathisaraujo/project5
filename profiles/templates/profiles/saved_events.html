@@ -15,9 +15,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5">
+<div class="container-fluid">
     <div class="row text-center m-5">
-        <h1 class="text-uppercase"><i class="fa-solid fa-calendar-days"></i><br>Saved Events</h1>        <hr>
+        <h1 class="text-uppercase mt-4"><i class="fa-solid fa-calendar-days"></i><br>Saved Events</h1>        <hr>
         {% if saved_events %}
             {% for event in saved_events %}
             <div class="col-3 mt-3" id="event-{{ event.pk }}">

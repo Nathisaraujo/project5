@@ -542,15 +542,8 @@ li {
 }
 
 .event-card {
-    border: 2px solid #3d2b3d;
     border-radius: 20px;
     background-color: #9684a172;
-}
-
-.event-section {
-    background-image: url('/media/events/events_bgd.png');
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 /* Product Form */

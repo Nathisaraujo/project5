@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5 event-section">
+<div class="container-fluid mt-5">
   <div class="row text-center m-5">
-      <h1 class="text-uppercase"><i class="fa-solid fa-calendar-days"></i><br>Events</h1>
+      <h1 class="text-uppercase mt-3"><i class="fa-solid fa-calendar-days"></i><br>Events</h1>
       <p>Check out all of my events!<br>
         Here you'll discover all my hosted events. <br>
         You'll have access to event details such as the date, location, 
@@ -54,9 +54,9 @@
                     {% endif %}
                   {% endif %}
                   {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                      <a href="{% url 'edit_event' event.id %}">Edit</a> | 
-                      <a class="text-danger" href="{% url 'delete_event' event.id %}">Delete</a>
+                    <small>
+                      <a href="{% url 'edit_event' event.id %}" class="btn btn-info p-1 mt-2">Edit</a> | 
+                      <a class=" btn btn-danger p-1 mt-2" href="{% url 'delete_event' event.id %}">Delete</a>
                     </small>
                   {% endif %}
                 {% endif %}

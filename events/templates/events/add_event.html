@@ -12,10 +12,9 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Event Management</h2>
+                <h2 class="logo-font mt-4"><i class="fa-solid fa-gear"></i> Event Management</h2>
                 <h5 class="text-muted">Add an Event</h5>
                 <hr>
             </div>
@@ -27,8 +26,8 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'profile' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Event</button>
+                        <a class="btn btn-outline-dark" href="{% url 'profile' %}">Cancel</a>
+                        <button class="btn btn-dark" type="submit">Add Event</button>
                     </div>
                 </form>
             </div>            

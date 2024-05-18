@@ -13,7 +13,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row mt-2">
         <div class="col text-center mt-5">
             <h1 class="logo-font mb-4"><i class="fa-solid fa-heart"></i><br> {{ request.user.username }}'s' Wishlist</h1>
             <hr>
@@ -76,8 +76,8 @@
                 <h2>You don't have any items in your wishlist</h2>
             {% endif %}
         </div>
-        <a class="btn btn-outline-dark mb-2 mt-2" href="{% url 'profile' %}">Back to profile</a>
     </div>
+    <a class="btn btn-outline-dark " href="{% url 'profile' %}">Back to profile</a>
 </div>
 {% endblock %}
 

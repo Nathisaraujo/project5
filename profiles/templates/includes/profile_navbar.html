@@ -2,18 +2,24 @@
     <div class="d-block d-sm-none mb-3" id="profile-nav-h">
         <p class="mb-2 mt-5 text-muted"><i class="fa-solid fa-gears"></i> Menu</p>
         <ul>
-            <li><a href="{{ 'orders' }}">Orders</a></li>
+            <li><a href="{{ 'orders' }}">Order History</a></li>
             <li><a href="{{ 'wishlist' }}">Wishlist</a></li>
-            <li><a href="{{ 'recommend' }}">Community</a></li>
-            <li><a href="{{ 'saved_events' }}">Events</a></li>
+            <li><a href="{{ 'recommend' }}">Community Suggestion</a></li>
+            <li><a href="{{ 'saved_events' }}">Saved Events</a></li>
+            {% if request.user.is_superuser %}
+                <li><a href="{{ 'management' }}">Management</a></li>
+            {% endif %}
         </ul>
     </div>
     <div class="d-none d-lg-block" id="profile-nav-v">
         <p class="mb-2 text-muted"><i class="fa-solid fa-gears"></i> Menu</p>
         <ul>
-            <li><a href="{{ 'orders' }}">Orders</a></li>
+            <li><a href="{{ 'orders' }}">Order History</a></li>
             <li><a href="{{ 'wishlist' }}">Wishlist</a></li>
-            <li><a href="{{ 'recommend' }}">Community</a></li>
-            <li><a href="{{ 'saved_events' }}">Events</a></li>
+            <li><a href="{{ 'recommend' }}">Community Suggestion</a></li>
+            <li><a href="{{ 'saved_events' }}">Saved Events</a></li>
+            {% if request.user.is_superuser %}
+                <li><a href="{{ 'management' }}">Management</a></li>
+            {% endif %}
         </ul>
     </div>
