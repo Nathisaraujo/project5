@@ -291,12 +291,24 @@ body {
     padding: 2px;
 }
 
+.remove-item:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
 .update-link {
     background-color: #3F6c51;
     color: white;
     text-decoration: none;
     border-radius: 2px;
     padding: 2px;
+}
+
+.update-link:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .artist-photo {

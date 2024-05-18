@@ -18,10 +18,9 @@
 {% block content %}
     
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Checkout</h2>
+                <h2 class="logo-font mt-4"><i class="fa-solid fa-credit-card"></i> Checkout</h2>
                 <hr>
             </div>
         </div>
@@ -51,10 +50,10 @@
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0 small text-muted mb-1">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-end"> <!-- Adjusted text alignment -->
-                            <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <p class="my-0 small text-muted"><i class="fa-solid fa-euro-sign fa-sm"></i> {{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -66,9 +65,9 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
-                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-sm"></i> {{ total | floatformat:2 }}</p>
+                        <p class="my-0"><i class="fa-solid fa-euro-sign fa-sm"></i> {{ delivery | floatformat:2 }}</p>
+                        <p class="my-0"><strong><i class="fa-solid fa-euro-sign fa-sm"></i> {{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -113,13 +112,13 @@
                     </fieldset>
 
                     <div class="submit-button text-end mt-5 mb-2"> <!-- Adjusted alignment -->
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-dark rounded-0"> <!-- Changed to btn-outline-dark -->
+						<a href="{% url 'view_bag' %}" class="btn btn-outline-dark"> <!-- Changed to btn-outline-dark -->
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="fw-bold">Adjust Bag</span>
 						</a>
-						<button id="submit-button" class="btn btn-dark rounded-0"> <!-- Changed to btn-dark -->
+						<button id="submit-button" class="btn btn-dark"> <!-- Changed to btn-dark -->
 							<span class="fw-bold">Complete Order</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>
@@ -129,7 +128,7 @@
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+							<span>Your card will be charged <strong><i class="fa-solid fa-euro-sign fa-sm"></i> {{ grand_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
                 </form>
