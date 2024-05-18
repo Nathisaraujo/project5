@@ -14,13 +14,13 @@
     <!-- home page first section -->
     <div class="container-fluid fst-section mt-5">
         <div class="row justify-content-center">
-            <div class="col-4 text-center mt-4">
+            <div class="col-12 col-md-4 text-center mt-4">
                 <h1>Welcome to <br>Drawing Gratitude!<br></h1>
                 <p>My name is Nathalia and I sell my art! <br> You can see (and buy) my drawings here:</p>
                 <a href="{% url 'products' %}" class="btn btn-dark btn-home"><i class="fa-solid fa-bag-shopping fa-shake"></i><br> start shopping</a>
             </div>
 
-            <div class="col-4 mt-4 text-center">
+            <div class="col-12 col-md-4 mt-4 text-center">
                 <a href="{% url 'about_me' %}">
                     <img src="{{ MEDIA_URL }}home/knowme.png" alt="get to know me" class="knowme-image">
                 </a>
@@ -31,12 +31,12 @@
     <!-- home page second section -->
     <div class="container-fluid scd-section">
         <div class="row">
-            <div class="col margin-offers-image">
+            <div class="col-12 col-md-4 margin-offers-image">
                 <a href="{% url 'products' %}?offers=True">
                     <img src="{{ MEDIA_URL }}home/offers.png" alt="get to know me" class="offers-image">
                 </a>
             </div>
-            <div class="col text-center margin-offers-text">
+            <div class="col-12 col-md-4 text-center margin-offers-text">
                 <h2>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> I have super special offers on selected products!</h2>
             </div>
         </div>

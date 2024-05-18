@@ -112,7 +112,7 @@ body {
 }
 
 .btn-products {
-    margin: 1em 0em;
+    /* margin: 1em 0em; */
     /* max-width: 10em; */
     min-width: 8em;
     border-radius: 5px;
@@ -184,8 +184,8 @@ body {
 .btn-wish {
     background-color: #000;
     color: #fff;
-    margin: 1em;
-    min-width: 8em;
+    /* margin: 1em; */
+    /* min-width: 8em; */
 }
 
 .btn-wish:hover {
@@ -596,30 +596,40 @@ li {
 /* Slightly larger container on xl screens */
 
 @media (min-width: 1400px) {
-    /* Example: Change font family */
-    .margin-offers-image {
+    .trd-section {
+        height: 16em;
+    }
+    /* .margin-offers-image {
         margin-top: 10em;
         margin-left: 12em;
         margin-right: 3em;
-    }
-    .trd-section {
-        height: 16em;
     }
     .margin-offers-text {
         margin-top: 5em;
         margin-left: 0em;
         margin-right: 4em;
-    }
+    } */
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 80%;
+    /* home page */
+    .knowme-image {
+        max-width: 12em;
     }
-    .btn-buynow {
-        min-width: 10em;
+    .h2, h2 {
+        font-size: 1.5rem;
     }
+    .trd-section {
+        height: 15em;
+    }
+    .margin-offers-text {
+        margin-top: 2em;
+        margin-left: 0em;
+        margin-right: 0em;
+    } 
+
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -634,10 +644,6 @@ li {
     .header-container {
         padding-top: 164px;
     }
-
-    .btn-buynow {
-        min-width: 10em;
-    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -648,5 +654,62 @@ li {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+@media (min-width: 350px) {
+    .fst-section {
+        font-size: 1em;  
+    }
+
+    .fth-section {
+        font-size: 1em;
+        
+    }
+
+    .trd-section {
+        font-size: 1em;
+        height: 30vh;
+    }
+
+    #delivery-banner {
+        max-width: 100vw;
+        font-size: smaller;
+    }
+
+    .scd-section {
+        display: none;
+    }
+
+    .margin-offers-image {
+        display: none;
+    }
+
+    .margin-offers-text {
+        margin: 0px;
+    }
+
+    .btn-home {
+        width: 6em;
+    }
+
+    .home-community {
+        width: 10em;
+    }
+
+    .why-art {
+        width: 6em;
+    }
+
+    .offers-image {
+        max-width: 5em;
+    }
+
+    .h2, h2 {
+        font-size: 0.5em;
+    }
+
+    .product-padding {
+        padding: 0px;
     }
 }
