@@ -12,11 +12,11 @@
 {% block content %}
     <div class="container mt-5">
         <div class="row m-5">
-          <div class="col-6">
+          <div class="col-6 mt-5 text-center">
             {% if post.image %}
-                <div class="image-container img-thumbnail" style="background-image: url('{{ post.image.url }}');"></div>
+                <div class="image-container img-thumbnail post-image" style="background-image: url('{{ post.image.url }}');"></div>
             {% else %}
-                <div class="image-container img-thumbnail" style="background-image: url('/media/about/digital.png');"></div>
+                <div class="image-container img-thumbnail post-image" style="background-image: url('/media/about/digital.png');"></div>
             {% endif %}
             <hr>
             <div class="d-flex justify-content-center">
@@ -30,7 +30,7 @@
             
             
           </div>
-          <div class="col-6">
+          <div class="col-6 mt-5">
             <h1 class="post-title">{{ post.title }}</h1>
             <hr>
             <div class="card card-body post-card">

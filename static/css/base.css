@@ -133,6 +133,10 @@ body {
     color: white;
 }
 
+.post-image {
+    margin-left: 10em;
+}
+
 .btn-products:hover {
     background-color: #9684A1;
 }

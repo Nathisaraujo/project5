@@ -13,9 +13,8 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">About Me Management</h2>
+            <div class="col-12 col-md-6 mt-5">
+                <h2 class="logo-font mt-4"><i class="fa-solid fa-gear"></i> About Me Management</h2>
                 <h5 class="text-muted">Edit "About Me" Page</h5>
                 <hr>
             </div>
@@ -27,8 +26,8 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'profile' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update About Me</button>
+                        <a class="btn btn-outline-dark" href="{% url 'profile' %}">Cancel</a>
+                        <button class="btn btn-dark" type="submit">Update About Me</button>
                     </div>
                 </form>
             </div>            
