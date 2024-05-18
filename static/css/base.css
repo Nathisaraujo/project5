@@ -546,6 +546,10 @@ li {
     background-color: #9684a172;
 }
 
+.allauth-form-inner-content a {
+    color: black;
+}
+
 /* Product Form */
 
 .btn-file {
