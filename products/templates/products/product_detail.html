@@ -11,9 +11,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container mt-3">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 product-padding">
                 <div class="image-container mt-5">
                     {% if product.offers %}
                         <p class="on-sale"><i class="fa-solid fa-circle-exclamation fa-sm"></i> on sale</p>                   
@@ -45,54 +45,53 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-info p-1">Edit</a> | 
+                            <a class="btn btn-danger p-1" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                     {% endif %}
                     <p class="mt-3">{{ product.description | safe }} </p>
+                    <p class="text-uppercase">Product Specifications: </p>
                     {% if product.producttags %}
-                        <p class="mt-3">
-                            <table class="table table-sm text-center table-striped">
-                                <caption>Product Specifications</caption>
-                                <thead>
+                        <table class="table table-sm text-center table-striped">
+                            <thead>
+                            <tr>
+                                <th><i class="fa-solid fa-fill-drip"></i><br>Paints</th>
+                                <th><i class="fa-solid fa-pen-ruler"></i><br>Other materials</th>
+                                <th><i class="fa-regular fa-note-sticky"></i><br>Paper</th>
+                                <th><i class="fa-solid fa-crop-simple"></i><br>Frame</th>
+                                <th><i class="fa-solid fa-chess-board"></i><br>Surface</th>
+                            </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <th><i class="fa-solid fa-fill-drip"></i><br>Paints</th>
-                                    <th><i class="fa-solid fa-pen-ruler"></i><br>Other materials</th>
-                                    <th><i class="fa-regular fa-note-sticky"></i><br>Paper</th>
-                                    <th><i class="fa-solid fa-crop-simple"></i><br>Frame</th>
-                                    <th><i class="fa-solid fa-chess-board"></i><br>Surface</th>
+                                    <td>
+                                        {% for paint in product.producttags.paint.all %}
+                                        <li>{{ paint.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for material in product.producttags.materials.all %}
+                                        <li>{{ material.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for paper in product.producttags.paper.all %}
+                                        <li>{{ paper.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for frame in product.producttags.frame.all %}
+                                        <li>{{ frame.name }}</li>
+                                        {% endfor %}    
+                                    </td>
+                                    <td>
+                                        {% for surface in product.producttags.surface.all %}
+                                        <li>{{ surface.name }}</li>
+                                        {% endfor %}    
+                                    </td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% for paint in product.producttags.paint.all %}
-                                            <li>{{ paint.name }}</li>
-                                            {% endfor %}    
-                                        </td>
-                                        <td>
-                                            {% for material in product.producttags.materials.all %}
-                                            <li>{{ material.name }}</li>
-                                            {% endfor %}    
-                                        </td>
-                                        <td>
-                                            {% for paper in product.producttags.paper.all %}
-                                            <li>{{ paper.name }}</li>
-                                            {% endfor %}    
-                                        </td>
-                                        <td>
-                                            {% for frame in product.producttags.frame.all %}
-                                            <li>{{ frame.name }}</li>
-                                            {% endfor %}    
-                                        </td>
-                                        <td>
-                                            {% for surface in product.producttags.surface.all %}
-                                            <li>{{ surface.name }}</li>
-                                            {% endfor %}    
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>                        
+                            </tbody>
+                        </table>                        
                     {% endif %}
                     {% if product.digital %}
                         <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f7b801;"></i> digital art</p>
@@ -118,28 +117,28 @@
                                             name="quantity" value="1" min="1" max="99"
                                             data-item_id="{{ product.id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn increment-qty_{{ product.id }}"
+                                            <button class="increment-qty btn btn-outline-dark increment-qty_{{ product.id }}"
                                                 data-item_id="{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input type="submit" class="btn btn-dark btn-products" value="Add to Bag">
+                                        <input type="submit" class="btn btn-products rounded-1 m-0" value="Add to Bag">
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}" class="btn btn-dark btn-products">
                                     </div>
                                 </div>
                             </div>
                         </div>                        
                     </form>
-                    <div class="d-flex">
+                    <div class="d-flex p-0 m-0">
                         {% if user.is_authenticated  %}
                             {% if product_in_wishlist %}
-                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish w-50"><i class="fa-solid fa-heart"></i> Remove <br>from Wishlist</a>
+                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish"><i class="fa-solid fa-heart"></i> Remove <br>from Wishlist</a>
                             {% else %}
                                 <form action="{% url 'add_to_wishlist' product.id %}" method="post">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-wish w-50"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
+                                    <button type="submit" class="btn btn-wish"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
                                 </form>
                             {% endif %}
                         {% else %}
