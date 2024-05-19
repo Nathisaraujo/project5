@@ -20,7 +20,7 @@
         <h1 class="text-uppercase mt-4"><i class="fa-solid fa-calendar-days"></i><br>Saved Events</h1>        <hr>
         {% if saved_events %}
             {% for event in saved_events %}
-            <div class="col-3 mt-3" id="event-{{ event.pk }}">
+            <div class="col-12 col-md-3 mt-3" id="event-{{ event.pk }}">
               <div class="card event-card">
                 <div class="card-body">
                   <span class="text-uppercase">{{ event.title }}</span>

@@ -24,7 +24,7 @@
             <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i> </p>
         </div>
         <div class="row text-center m-5">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4><i class="fa-regular fa-newspaper"></i> Subscribe to our Newslettler! </h4>
                 <p> Subscribe with your email here to receive our newsletter. <br>
                     Stay updated with the latest news! Be the first to know about sales, <br>
@@ -32,15 +32,16 @@
                 </p>
                 
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="{{ MEDIA_URL }}community/newsletter.gif" alt="newsletter examples" class="suggestion-img">
             </div>
         </div>
+        <hr>
         <div class="row text-center m-5">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="{{ MEDIA_URL }}community/suggestions.png" alt="users suggestions" class="suggestion-img">
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4><i class="fa-solid fa-message"></i> Submit drawing suggestions </h4>
                 <p> Registered users have the opportunity to submit drawing suggestions. <br>
                     Each month, I'll randomly select one suggestion to bring to life!!<br>
@@ -58,8 +59,9 @@
                 {% endif %}
             </div>
         </div>
+        <hr>
         <div class="row text-center m-5">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4><i class="fa-solid fa-calendar-days"></i> Keep track of our events </h4>
                 <p> Discover an array of exciting events I'm participating! 
                     <br> Explore comprehensive event details including dates, locations, <br>
@@ -71,15 +73,16 @@
                 </p>
                 <a href="{% url 'event_list' %}" class="btn btn-dark">Go to Events</a>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="{{ MEDIA_URL }}community/events.png" alt="users suggestions" class="suggestion-img">
             </div>
         </div>
+        <hr>
         <div class="row text-center m-5">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="{{ MEDIA_URL }}community/wishlist.png" alt="users suggestions" class="suggestion-img">
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h4><i class="fa-solid fa-cart-shopping"></i> Simplify your shopping experience </h4>
                 <ul>
                     <li class="p-1"><i class="fa-brands fa-gratipay"></i><br> Registered users have the option to save products to their wishlist,
@@ -89,9 +92,9 @@
                     <li class="p-1"><i class="fa-solid fa-clock-rotate-left"></i><br> You can also keep track of your order history!</li>
                 </ul>
                 {% if user.is_authenticated  %}
-                    <a href="{% url 'profile' %}" class="btn btn-dark">Go to your profile</a> 
+                    <a href="{% url 'profile' %}" class="btn btn-dark mb-2">Go to your profile</a> 
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="btn btn-dark">register now!</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-dark  mb-2">register now!</a>
                 {% endif %}
             </div>
         </div>

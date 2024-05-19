@@ -15,6 +15,14 @@ body {
     /* margin-left: 3em; */
 }
 
+.written-by-md {
+    display: none;
+}
+
+.written-by {
+    display: block;
+}
+
 .knowme-image {
     max-width: 15em;
 }
@@ -28,6 +36,15 @@ body {
     font-size: 30px;
     border-radius: 20px;
     border-style: none;
+}
+
+.product-title {
+    margin-top: 1em;
+    text-transform: uppercase;
+}
+
+.btn-all-products {
+    margin-top: 3em;
 }
 
 .btn-home:hover {
@@ -628,6 +645,10 @@ li {
         margin-right: 0em;
     } 
 
+    .md-offers-section {
+        display:none;
+    }
+
 }
 
 
@@ -657,9 +678,13 @@ li {
     }
 }
 
-@media (min-width: 350px) {
+@media (max-width: 480px) {
     .fst-section {
         font-size: 1em;  
+    }
+
+    .knowme-image {
+        max-width: 10em;
     }
 
     .fth-section {
@@ -681,14 +706,6 @@ li {
         display: none;
     }
 
-    .margin-offers-image {
-        display: none;
-    }
-
-    .margin-offers-text {
-        margin: 0px;
-    }
-
     .btn-home {
         width: 6em;
     }
@@ -701,15 +718,85 @@ li {
         width: 6em;
     }
 
-    .offers-image {
-        max-width: 5em;
-    }
-
     .h2, h2 {
         font-size: 0.5em;
     }
 
     .product-padding {
         padding: 0px;
+    }
+
+    .margin-offers-text {
+        /* margin-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em; */
+        margin: 0.5em;
+        font-size: 2em;
+        width: 50vw;
+    }
+
+    .margin-offers-image{
+        margin-left:1.5em;
+        margin-top:1em;
+        margin-bottom:1em;
+        /* height: 8em; */
+        width: 50vw;
+    }
+
+    .md-offers-section {
+        background-image: url('/media/home/scd_section_md.png');
+        background-size: cover;
+    }
+
+    .margin-products {
+        margin: 0px;
+        vertical-align: super;
+    }
+
+    .margin-sorting {
+        margin: 0px
+    }
+
+    .product-title {
+        margin: 0px;
+    }
+
+    .btn-products {
+        /* min-width: 3em; */
+        width: 2em;
+    }
+
+    .btn-all-products {
+        margin-top: 0em;
+        margin-bottom: 1em;
+    }
+
+    .btn-top {
+        margin-left: 10em;
+    }
+
+    .list-community {
+        padding-left: 3em;
+    }
+
+    .suggestion-img {
+        max-width: 18em;
+    }
+
+    .card-deck {
+        margin-left: 0em;
+        margin-bottom: 1em;
+    }
+
+    .post-image {
+        margin-left: 0em;
+    }
+
+    .written-by {
+        display: none;
+    }
+
+    .written-by-md {
+        display: block;
     }
 }

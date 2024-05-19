@@ -22,13 +22,13 @@
     </div>
     <div class="row">
         {% for about_me in about %}
-            <div class="col-6 text-center">
+            <div class="row text-center">
                 {% if about_me.image %}
-                    <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo">
+                    <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo col-6">
                 {% else %}
-                    <img src="{% static 'media/me.jpg' %}" alt="backup artist photo" class="artist-photo">
+                    <img src="{% static 'media/me.jpg' %}" alt="backup artist photo" class="artist-photo col-6">
                 {% endif %}
-                <div class="about-artist">
+                <div class="col-6 about-artist">
                     <ul class="text-start ml-1">
                         <li><i class="fa-solid fa-location-dot"></i> Brazilian in Ireland</li>
                         <li><i class="fa-solid fa-person-breastfeeding" style="color: #990070;"></i> Mum to Thomas</li>
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <h3 class="text-center">{{ about_me.title }}</h3>
                 <p>{{ about_me.content }} </p>
                 <p>With love, <br>{{ about_me.artist }} </p>
@@ -48,22 +48,22 @@
     </div>
     <div class="row justify-contents-center">
         <p>My recommendations:</p>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="{% url 'products' %}?digital=True" class="dropdown-item items-site digital">Digital Creations</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="{% url 'products' %}?community=True" class="dropdown-item items-site community">Community <br>Suggestions</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="{% url 'products' %}?paint=Watercolor" class="watercolor dropdown-item items-site">Made w/ <br>Watercolor</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="{% url 'products' %}?offers=True" class="dropdown-item items-site special">Special Offers</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="#" class="dropdown-item items-site blog">Why Art Blog</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-md-2">
             <a href="" class="dropdown-item items-site favorites">Something<br> Here</a>
         </div>
     </div>

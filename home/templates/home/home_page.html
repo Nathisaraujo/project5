@@ -28,6 +28,20 @@
         </div>
     </div>
 
+    <div class="container-fluid md-offers-section">
+        <div class="row justify-content-center">
+            <div class="col-4 margin-offers-text text-center">
+                <h2>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> 
+                    I have super special offers <br>on selected products! <br> Click here to check it out! <i class="fa-solid fa-arrow-down"></i></h2>
+                
+            </div>
+            <div class="col-4 margin-offers-image text-center">
+                <a href="{% url 'products' %}?offers=True">
+                    <img src="{{ MEDIA_URL }}home/offers.png" alt="get to know me" class="offers-image">
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- home page second section -->
     <div class="container-fluid scd-section">
         <div class="row">

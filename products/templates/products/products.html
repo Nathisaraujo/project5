@@ -14,11 +14,12 @@
     <div class="container-fluid">
         <div class="row mt-3">
             <div class="col justify-content-center margin-products">
-                <h2 class="mt-5 text-uppercase">Products</h2>
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}" class="btn btn-dark btn-products btn-all-products"><i class="fa-solid fa-chevron-left"></i> All Products</a></span>
+                {% endif %}
+                <h2 class="product-title">Products</h2>
                 <p class="text-muted">
-                    {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'products' %}" class="btn btn-dark btn-products">All Products</a></span>
-                    {% endif %}
+                    
                     {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
             </div>
