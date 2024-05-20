@@ -3,14 +3,14 @@ from .models import Post
 
 # Register your models here.
 
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     """
     Customizes the admin interface for Post model.
 
     This admin option allows managing Post instances including fields such as
-    title, slug, status, created_on, and author. It enables rich text editing
-    for the content field using the Summernote editor.
+    title, slug, status, created_on, and author.
     """
 
     list_display = ('title', 'slug', 'created_on', 'author')

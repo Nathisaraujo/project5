@@ -10,58 +10,55 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row m-5">
-          <div class="col-12 col-md-6 mt-5 text-center">
-            {% if post.image %}
-                <div class="image-container img-thumbnail post-image" style="background-image: url('{{ post.image.url }}');"></div>
+  <div class="container mt-5">
+    <div class="row m-5">
+      <div class="col-12 col-md-6 mt-5 text-center">
+        {% if post.image %}
+            <div class="image-container img-thumbnail post-image" style="background-image: url('{{ post.image.url }}');"></div>
+        {% else %}
+            <div class="image-container img-thumbnail post-image" style="background-image: url('/media/about/noimage.png');"></div>
+        {% endif %}
+        <hr>
+        <div class="written-by">
+          <div class="d-flex justify-content-center">
+            <img src="{{ MEDIA_URL }}about/myself.jpg" alt="Author's picture" style="max-width: 4em; border-radius: 50%; margin-right: 1em;">
+            <p class="text-muted mt-4">Written by {{ post.author }} </p>
+          </div>
+          <div class="text-center mt-3">
+            <p class="text-muted"> Curious to learn more about the author behind the post? <br> Click <a href="{% url 'about_me' %}">here</a></p>
+            <a class="btn btn-outline-dark mb-2 mt-2 justify-content-center" href="{% url 'blog' %}">Back to all posts</a> 
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mt-5">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <hr>
+        <div class="card card-body post-card">
+          {{ post.content | safe }}
+          <span class="text-muted">{{ post.created_on }} </span>
+        </div>
+        <form action="{% url 'like_post' slug=post.slug %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="like-btn mt-2">
+            {% if request.user in post.like.all %}
+              <i class="fa-solid fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
             {% else %}
-                <div class="image-container img-thumbnail post-image" style="background-image: url('/media/about/digital.png');"></div>
+              <i class="fa-regular fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
             {% endif %}
-            <hr>
-            <div class="written-by">
-              <div class="d-flex justify-content-center">
-                <img src="{{ MEDIA_URL }}about/myself.jpg" alt="Author's picture" style="max-width: 4em; border-radius: 50%; margin-right: 1em;">
-                <p class="text-muted mt-4">Written by {{ post.author }} </p>
-              </div>
-              <div class="text-center mt-3">
-                <p class="text-muted"> Curious to learn more about the author behind the post? <br> Click <a href="{% url 'about_me' %}">here</a></p>
-                <a class="btn btn-outline-dark mb-2 mt-2 justify-content-center" href="{% url 'blog' %}">Back to all posts</a> 
-              </div>
-            </div>
-            
-            
-          </div>
-          <div class="col-12 col-md-6 mt-5">
-            <h1 class="post-title">{{ post.title }}</h1>
-            <hr>
-            <div class="card card-body post-card">
-              {{ post.content | safe }}
-              <span class="text-muted">{{ post.created_on }} </span>
-            </div>
-            <form action="{% url 'like_post' slug=post.slug %}" method="post">
-              {% csrf_token %}
-              <button type="submit" class="like-btn mt-2">
-                {% if request.user in post.like.all %}
-                  <i class="fa-solid fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
-                {% else %}
-                  <i class="fa-regular fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
-                {% endif %}
-              </button>
-            </form>
-            
-          </div>
-          <div class=" col-12 mt-3 written-by-md">
-            <hr>
-            <div class="d-flex justify-content-center">
-              <img src="{{ MEDIA_URL }}about/myself.jpg" alt="Author's picture" style="max-width: 4em; border-radius: 50%; margin-right: 1em;">
-              <p class="text-muted mt-4">Written by {{ post.author }} </p>
-            </div>
-            <div class="text-center mt-3">
-              <p class="text-muted"> Curious to learn more about the author behind the post? <br> Click <a href="{% url 'about_me' %}">here</a></p>
-              <a class="btn btn-outline-dark mb-2 mt-2 justify-content-center" href="{% url 'blog' %}">Back to all posts</a> 
-            </div>
-          </div>
-    </div>
-    
+          </button>
+        </form>
+      </div>
+      <!-- written by for medium and small devices -->
+      <div class=" col-12 mt-3 written-by-md">
+        <hr>
+        <div class="d-flex justify-content-center">
+          <img src="{{ MEDIA_URL }}about/myself.jpg" alt="Author's picture" style="max-width: 4em; border-radius: 50%; margin-right: 1em;">
+          <p class="text-muted mt-4">Written by {{ post.author }} </p>
+        </div>
+        <div class="text-center mt-3">
+          <p class="text-muted"> Curious to learn more about the author behind the post? <br> Click <a href="{% url 'about_me' %}">here</a></p>
+          <a class="btn btn-outline-dark mb-2 mt-2 justify-content-center" href="{% url 'blog' %}">Back to all posts</a> 
+        </div>
+      </div>
+  </div>
 {% endblock %}

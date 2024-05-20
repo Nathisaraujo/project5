@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from about.models import AboutMe
 from django.utils.text import slugify
+from about.models import AboutMe
 
 
 # Create your models here.
@@ -19,7 +19,7 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | sent by {self.author.artist} "
-    
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)

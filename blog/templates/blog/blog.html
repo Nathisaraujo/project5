@@ -22,24 +22,22 @@
             </p>
             <hr>
             {% for post in post_list %}
-            <!-- <div class="col-3"> -->
                 <div class="card-deck">
                     <div class="card">
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             {% if post.image %}
                                 <div class="image-container img-thumbnail" style="background-image: url('{{ post.image.url }}');"></div>
                             {% else %}
-                                <div class="image-container img-thumbnail" style="background-image: url('/media/1.jpg');"></div>
+                                <div class="image-container img-thumbnail" style="background-image: url('/media/noimage.png');"></div>
                             {% endif %}
                         </a>
+                    </div>
                     <div class="card-body">
                         <span class="text-uppercase">{{ post.title }}</span>
                         <hr>
                         <p class="card-text mt-3"><small class="text-muted">Written by {{ post.author}} <br> on {{ post.created_on}}</small></p>
                     </div>
-                    </div>
                 </div>
-            <!-- </div> -->
             {% endfor %}
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-4">
