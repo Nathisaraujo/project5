@@ -1,6 +1,24 @@
-html {
+/* html {
     height: 100%;
-}
+} */
+
+/* common to all website */
+
+/* Scrollbar - Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #aaacb0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #9684a1;
+    border-radius: 20px;
+    border: 3px solid #3d2b3d;
+  }
+
 
 body {
     background-color: white;
@@ -10,21 +28,75 @@ body {
     color: black;
 }
 
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+li {
+    list-style: none;
+}
+
+/* Convenience classes - colors from Bootstrap 5 */
+.arrow-primary {
+    border-bottom-color: #0d6efd !important; /* Bootstrap 5 primary color */
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important; /* Bootstrap 5 secondary color */
+}
+
+.arrow-success {
+    border-bottom-color: #198754 !important; /* Bootstrap 5 success color */
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important; /* Bootstrap 5 danger color */
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important; /* Bootstrap 5 warning color */
+}
+
+.arrow-info {
+    border-bottom-color: #0dcaf0 !important; /* Bootstrap 5 info color */
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important; /* Bootstrap 5 light color */
+}
+
+.arrow-dark {
+    border-bottom-color: #212529 !important; /* Bootstrap 5 dark color */
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* Home Page */
+
 .fst-section {
     font-size: 20px;
-    /* margin-left: 3em; */
-}
-
-.written-by-md {
-    display: none;
-}
-
-.written-by {
-    display: block;
+    margin-left: 3em;
 }
 
 .knowme-image {
-    max-width: 15em;
+    max-width: 20em;
+    margin-right: 20em;
 }
 
 .btn-home {
@@ -38,29 +110,10 @@ body {
     border-style: none;
 }
 
-.product-title {
-    margin-top: 1em;
-    text-transform: uppercase;
-}
-
-.btn-all-products {
-    margin-top: 3em;
-}
-
 .btn-home:hover {
     background-color: #AAACB0;
     color:#000000;
 }
-
-.btn-qty {
-    margin-left:20px;
-}
-
-/* .btn-products:hover {
-    background-color: #AAACB0;
-    color:#000000;
-    border-style: none;
-} */
 
 .scd-section {
     background-image: url('/media/home/scd_section.png');
@@ -106,9 +159,7 @@ body {
 }
 
 .margin-offers-text {
-    margin-top: 2em;
-    margin-left: 5em;
-    margin-right: 2em;
+    margin-top: 20em;
 }
 
 .offers-image {
@@ -123,35 +174,110 @@ body {
 }
 
 .logo-img {
-    margin-top: 1em; 
-    max-width: 15em; 
-    
+    margin-top: 1em;
+    max-width: 15em;
+
 }
 
-.btn-products {
-    /* margin: 1em 0em; */
-    /* max-width: 10em; */
-    min-width: 8em;
-    border-radius: 5px;
-    background-color: #000;
-    color: white;
+/* About Me Page  */
+
+
+.items-site {
+    background-color: #9684A1;
+    border-radius: 20px;
+    height: 10em;
+    margin-bottom: 2em;
+    text-align: center;
+    padding-top: 4em;
 }
 
-.product-padding {
-    padding-left: 20em;
+.items-site:hover {
+    background-image: url('/media/35.jpeg');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
 }
 
-.increment-qty {
-    margin-right: 1em;
+.community.items-site:hover {
+    background-image: url('/media/about/community.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
 }
 
-.increment-qty:hover {
-    background-color: #000;
-    color: white;
+.watercolor.items-site:hover {
+    background-image: url('/media/about/watercolor.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
 }
 
-.post-image {
-    margin-left: 10em;
+.special.items-site:hover {
+    background-image: url('/media/about/special.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
+}
+
+.blog.items-site:hover {
+    background-image: url('/media/about/blog.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
+}
+
+.digital.items-site:hover {
+    background-image: url('/media/about/digital.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
+}
+
+.favorites.items-site:hover {
+    background-image: url('/media/about/favorites.png');
+    font-size: larger;
+    background-size: cover;
+    padding-top: 0em;
+    color: #000000;
+}
+
+.about-artist {
+    margin: 1em 0em 1em 15em;
+    font-size: smaller;
+}
+
+.written-by-md {
+    display: none;
+}
+
+.written-by {
+    display: block;
+}
+
+.artist-photo {
+    max-width: 20em;
+    border-radius: 20px;
+}
+
+/* Products Page  */
+
+.btn-top {
+    background-color: #000000;
+    text-decoration: none;
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+    align-items: center;
+}
+
+.btn-top:hover {
+    background-color: #AAACB0;
 }
 
 .btn-products:hover {
@@ -210,8 +336,8 @@ body {
 }
 
 .image-container {
-    width: 25em; 
-    height: 20em; 
+    width: 25em;
+    height: 20em;
     background-size: cover;
     background-position: center;
 }
@@ -246,59 +372,73 @@ body {
     /* max-width: 23em; */
 }
 
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 99999999999;
+.product-title {
+    margin-top: 1em;
+    text-transform: uppercase;
 }
 
-.custom-toast {
-    overflow: visible;
+.btn-all-products {
+    margin-top: 3em;
 }
 
-.toast-capper {
-    height: 2px;
+.btn-products {
+    /* margin: 1em 0em; */
+    /* max-width: 10em; */
+    min-width: 8em;
+    border-radius: 5px;
+    background-color: #000;
+    color: white;
 }
 
-/* Convenience classes - colors from Bootstrap 5 */
-.arrow-primary {
-    border-bottom-color: #0d6efd !important; /* Bootstrap 5 primary color */
+.product-padding {
+    padding-left: 20em;
 }
 
-.arrow-secondary {
-    border-bottom-color: #6c757d !important; /* Bootstrap 5 secondary color */
+.increment-qty {
+    margin-right: 1em;
 }
 
-.arrow-success {
-    border-bottom-color: #198754 !important; /* Bootstrap 5 success color */
+.increment-qty:hover {
+    background-color: #000;
+    color: white;
 }
 
-.arrow-danger {
-    border-bottom-color: #dc3545 !important; /* Bootstrap 5 danger color */
+/* Product Detail Page  */
+
+.btn-qty {
+    margin-left:20px;
 }
 
-.arrow-warning {
-    border-bottom-color: #ffc107 !important; /* Bootstrap 5 warning color */
+/* Blog Page  */
+
+.card-deck {
+    width: 25em;
+    margin-left: 6.5em;
 }
 
-.arrow-info {
-    border-bottom-color: #0dcaf0 !important; /* Bootstrap 5 info color */
+.page-link {
+    color:#9684A1;
 }
 
-.arrow-light {
-    border-bottom-color: #f8f9fa !important; /* Bootstrap 5 light color */
+
+.page-item.active .page-link {
+    background-color:#3d2b3d;
+    border-color: #3d2b3d;
 }
 
-.arrow-dark {
-    border-bottom-color: #212529 !important; /* Bootstrap 5 dark color */
+/* Post Detail Page  */
+
+.post-image {
+    margin-left: 10em;
 }
 
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
+.like-btn {
+    border: none;
+    background-color: #fff;
+    color: rgb(158, 15, 15);
 }
+
+/* bag page */
 
 .remove-item {
     background-color: red;
@@ -328,101 +468,16 @@ body {
     cursor: pointer;
 }
 
-.artist-photo {
-    max-width: 20em;
-    border-radius: 20px;
+
+/* community page */
+.list-community {
+    padding-left: 27em;
 }
 
-.items-site {
-    background-color: #9684A1;
-    border-radius: 20px;
-    height: 10em;
-    margin-bottom: 2em;
-    text-align: center;
-    padding-top: 4em;
+.suggestion-img {
+    max-width: 30em;
 }
 
-.items-site:hover {
-    background-image: url('/media/35.jpeg');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;
-}
-
-.community.items-site:hover {
-    background-image: url('/media/about/community.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.watercolor.items-site:hover {
-    background-image: url('/media/about/watercolor.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.special.items-site:hover {
-    background-image: url('/media/about/special.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.blog.items-site:hover {
-    background-image: url('/media/about/blog.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.digital.items-site:hover {
-    background-image: url('/media/about/digital.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.favorites.items-site:hover {
-    background-image: url('/media/about/favorites.png');
-    font-size: larger;
-    background-size: cover;
-    padding-top: 0em;
-    color: #000000;    
-}
-
-.about-artist {
-    margin: 1em 0em 1em 15em;
-    font-size: smaller;
-}
-
-.card-deck {
-    width: 25em; 
-    margin-left: 6.5em;
-}
-
-.page-link {
-    
-    color:#9684A1;
-    
-}
-
-.like-btn {
-    border: none;
-    background-color: #fff;
-    color: rgb(158, 15, 15);
-}
-.page-item.active .page-link {
-    background-color:#3d2b3d;
-    border-color: #3d2b3d;
-}
 
 /* from Bulma */
 .icon {
@@ -443,11 +498,6 @@ body {
     min-width: 260px;
 }
 
-/* .btn-dark {
-    background: black;
-    color: white;
-} */
-
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -461,59 +511,6 @@ body {
 .text-black {
     color: #000 !important;
 }
-
-/* .border-black {
-    border: 1px solid black !important;
-} */
-
-li {
-    list-style: none;
-}
-
-.btn-top {
-    background-color: #000000;
-    text-decoration: none;
-    height: 4em;
-    width: 4em;
-    border-radius: 100%;
-    align-items: center;
-}
-
-.btn-top:hover {
-    background-color: #AAACB0;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: #aaacb0;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: #9684a1;
-    border-radius: 20px;
-    border: 3px solid #3d2b3d;
-  }
-
-.list-community {
-    padding-left: 27em;
-}
-
-/* .fst-section-community {
-    background-image: url('/media/community/community_1.png');
-    height: 100vh;
-    width: 100vw;
-    background-attachment: fixed;
-    background-size: cover;
-} */
-
-.suggestion-img {
-    max-width: 30em;
-}
-
 
 
 /* Allauth form formatting */
@@ -560,7 +557,7 @@ li {
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-content input[type='submit']:hover {
 	color: #fff;
     background-color: #222;
     border-color: #222;
@@ -579,7 +576,7 @@ li {
     color: black;
 }
 
-/* Product Form */
+/* Add Product Form - from walkthrough*/
 
 .btn-file {
     position: relative;
@@ -612,7 +609,7 @@ li {
 
 /* Slightly larger container on xl screens */
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
     .trd-section {
         height: 16em;
     }
@@ -631,7 +628,7 @@ li {
 @media (min-width: 1200px) {
     /* home page */
     .knowme-image {
-        max-width: 12em;
+        min-width: 12em;
     }
     .h2, h2 {
         font-size: 1.5rem;
@@ -643,7 +640,7 @@ li {
         margin-top: 2em;
         margin-left: 0em;
         margin-right: 0em;
-    } 
+    }
 
     .md-offers-section {
         display:none;
@@ -702,21 +699,36 @@ li {
         max-width: 20em;
         margin-top: 8em;
     }
-    
+
+    .btn-home {
+        width: 8em;
+    }
+    .scd-section {
+        display: none;
+    }
+
+    .margin-offers-image {
+        margin-top: 0em;
+
+    }
+
+    .trd-section {
+        height: 18em;
+    }
 }
 
 @media (max-width: 480px) {
     .fst-section {
-        font-size: 1em;  
+        font-size: 1em;
     }
 
     .knowme-image {
-        max-width: 10em;
+        min-width: 10em;
     }
 
     .fth-section {
         font-size: 1em;
-        
+
     }
 
     .trd-section {
