@@ -31,7 +31,7 @@ DEBUG = True
 # 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-nathisaraujo-project5-fzptatqfext.ws-eu111.gitpod.io',
+    '8000-nathisaraujo-project5-fzptatqfext.ws-eu114.gitpod.io',
     '.herokuapp.com',
     'https://*drawing-gratitude-07bcca57b95d.herokuapp.com/',
     'drawing-gratitude-07bcca57b95d.herokuapp.com/',
@@ -79,7 +79,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-nathisaraujo-project5-fzptatqfext.ws-eu111.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-nathisaraujo-project5-fzptatqfext.ws-eu114.gitpod.io']
 
 ROOT_URLCONF = 'drawing_gratitude.urls'
 

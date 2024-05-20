@@ -13,15 +13,15 @@
 {% block content %}
     <div class="container">
         <div class="row mt-5">
-            <div class="col-12 col-md-6">
-                <h2 class="logo-font mt-4"><i class="fa-solid fa-gear"></i> Post Management</h2>
+            <div class="col-12 col-md-12 col-sm-6">
+                <h2 class="logo-font mt-4 profiles-titles"><i class="fa-solid fa-gear"></i> Post Management</h2>
                 <h5 class="text-muted">Add a Post</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-12 col-sm-6">
                 <form method="POST" action="{% url 'add_post' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
