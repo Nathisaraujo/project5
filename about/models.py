@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class AboutMe(models.Model):
 
@@ -12,6 +11,3 @@ class AboutMe(models.Model):
 
     def __str__(self):
         return self.artist
-    
-        
-
