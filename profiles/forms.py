@@ -3,6 +3,16 @@ from .models import UserProfile, Recommendation
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for updating user profiles.
+
+    Excludes:
+    - user (User): The associated user.
+    - default_phone_number (CharField): Default phone number.
+
+    Methods:
+    - __init__: Initializes the form with placeholders, classes, and removes auto-generated labels.
+    """
     class Meta:
         model = UserProfile
         exclude = ('user', 'default_phone_number',)
@@ -35,6 +45,15 @@ class UserProfileForm(forms.ModelForm):
 
 
 class RecommendationForm(forms.ModelForm):
+    """
+    Form for submitting recommendations.
+
+    Fields:
+    - recommendation_text (Textarea): Text field for the recommendation.
+
+    Methods:
+    - __init__: Initializes the form with custom label for recommendation_text.
+    """
     class Meta:
         model = Recommendation
         fields = ['recommendation_text']

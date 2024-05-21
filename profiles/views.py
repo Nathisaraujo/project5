@@ -12,7 +12,9 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """ Display the user's profile.
+    Retrieve the user's profile information.
+    """
     if request.user.is_authenticated:
         user_info = UserProfile.objects.get(user=request.user)
 
@@ -27,6 +29,9 @@ def profile(request):
 
 @login_required
 def update_profile(request):
+    """Update the user's profile.
+    Retrieve the user's profile and handle form submission
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -66,12 +71,10 @@ def wishlist(request):
 
 @login_required
 def orders(request):
-
+    """Display the user's orders."""
     profile = get_object_or_404(UserProfile, user=request.user)
-
     orders = profile.orders.all()
     template = 'profiles/orders.html'
-
     context = {
         'orders': orders,
         'on_profile_page': True,
@@ -82,6 +85,7 @@ def orders(request):
 
 @login_required
 def order_history(request, order_number):
+    """Display the details of a specific order."""
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -100,6 +104,7 @@ def order_history(request, order_number):
 
 @login_required
 def recommend(request):
+    """Allow users to submit recommendations."""
     if request.method == 'POST':
         form = RecommendationForm(request.POST)
         if form.is_valid():
@@ -124,6 +129,7 @@ def recommendation_success(request):
 
 @login_required
 def saved_events(request):
+    """Displays events saved by the user."""
     saved_events = Event.objects.filter(save_event=request.user)
 
     return render(
@@ -135,5 +141,6 @@ def saved_events(request):
 
 @login_required
 def management(request):
+    """Displays the admin management page."""
 
     return render(request, 'profiles/management.html')

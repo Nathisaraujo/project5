@@ -9,8 +9,20 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     """
-    A user profile model for maintaining default
-    delivery information and order history
+    Model to maintain user profiles.
+
+    Fields:
+    - user (OneToOneField): Associated user.
+    - default_phone_number (CharField): Default phone number.
+    - default_street_address1 (CharField): Default street address line 1.
+    - default_street_address2 (CharField): Default street address line 2.
+    - default_town_or_city (CharField): Default town or city.
+    - default_county (CharField): Default county.
+    - default_country (CountryField): Default country.
+    - default_postcode (CharField): Default postal code.
+
+    Methods:
+    - __str__: Returns the username of the associated user.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(
@@ -48,7 +60,12 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Create or update the user profile
+    Signal receiver function to create or update user profiles.
+
+    Parameters:
+    - sender: The model class.
+    - instance: The instance being saved.
+    - created: True if a new record was created.
     """
     if created:
         UserProfile.objects.create(user=instance)
@@ -58,7 +75,15 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 class Recommendation(models.Model):
     """
-    A model for storing user recommendations
+    Model to store user recommendations.
+
+    Fields:
+    - user (ForeignKey): Associated user.
+    - recommendation_text (TextField): Text of the recommendation.
+    - timestamp (DateTimeField): Timestamp of the recommendation creation.
+
+    Methods:
+    - __str__: Returns a string representation of the recommendation.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     recommendation_text = models.TextField()
