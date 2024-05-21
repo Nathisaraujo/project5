@@ -113,7 +113,6 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     context = {
         'product': product,
-        # 'product_in_wishlist': product_in_wishlist,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -150,6 +149,7 @@ def add_product(request):
 
 @login_required
 def add_product_tags(request):
+    """ Edit product tags to a specific product"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

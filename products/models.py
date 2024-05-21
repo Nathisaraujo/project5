@@ -2,7 +2,17 @@ from django.db import models
 
 
 class Category(models.Model):
+    """
+    Model representing a product category.
 
+    Fields:
+    - name (CharField): Name of the category.
+    - friendly_name (CharField, optional): Friendly name of the category.
+
+    Methods:
+    - __str__: Returns a string representation of the category.
+    - get_friendly_name: Returns the friendly name of the category.
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -17,7 +27,24 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Model representing a product.
 
+    Fields:
+    - category (ForeignKey to Category, nullable): Category of the product.
+    - sku (CharField, nullable): Stock keeping unit of the product.
+    - name (CharField): Name of the product.
+    - description (TextField): Description of the product.
+    - price (DecimalField): Price of the product.
+    - image_url (URLField, optional): URL of the product image.
+    - image (ImageField, optional): Image of the product.
+    - digital (BooleanField): Indicates if the product is digital.
+    - offers (BooleanField): Indicates if the product has offers.
+    - community (BooleanField): Indicates if the product is community-related.
+
+    Methods:
+    - __str__: Returns a string representation of the product.
+    """
     DIGITAL_CHOICES = [
         (True, '0'),
         (False, '1'),
@@ -54,6 +81,21 @@ class Product(models.Model):
 
 
 class ProductTags(models.Model):
+    """
+    Model representing product tags.
+
+    Fields:
+    - product (OneToOneField to Product): Product associated with the tags.
+    - materials (ManyToManyField to Material):
+        Materials related to the product.
+    - surface (ManyToManyField to Surface): Surfaces related to the product.
+    - paint (ManyToManyField to Paint): Paints related to the product.
+    - frame (ManyToManyField to Frame): Frames related to the product.
+    - paper (ManyToManyField to Paper): Papers related to the product.
+
+    Methods:
+    - __str__: Returns a string representation of the associated product.
+    """
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
     materials = models.ManyToManyField('Material')
     surface = models.ManyToManyField('Surface')
@@ -64,6 +106,7 @@ class ProductTags(models.Model):
     def __str__(self):
         return str(self.product)
 
+# The following models are related to the ProductTags model above
 
 class Material(models.Model):
     name = models.CharField(max_length=100)

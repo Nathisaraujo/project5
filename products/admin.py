@@ -14,6 +14,11 @@ from .models import (
 
 # Register your models here.
 class ProductAdmin(SummernoteModelAdmin):
+    """
+    Admin view for Product model.
+
+    Provides a summernote editor for the description field.
+    """
     list_display = (
         'name',
         'sku',

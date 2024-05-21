@@ -13,7 +13,11 @@ from .models import (
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Form for adding or editing a product.
 
+    This form includes a custom clearable file input widget for the image field.
+    """
     class Meta:
         model = Product
         fields = '__all__'
@@ -35,6 +39,11 @@ class ProductForm(forms.ModelForm):
 
 
 class ProductTagsForm(forms.ModelForm):
+    """
+    Form for adding or editing product tags.
+
+    This form customizes queryset for related fields and sets CSS classes.
+    """
     class Meta:
         model = ProductTags
         fields = '__all__'
@@ -53,4 +62,4 @@ class ProductTagsForm(forms.ModelForm):
         self.fields['paper'].queryset = Paper.objects.all()
 
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black rounded-0'
+            field.widget.attrs['class'] = 'border-dark'

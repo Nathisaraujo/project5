@@ -194,6 +194,14 @@ def edit_event(request, event_id):
 
 @login_required
 def delete_event(request, event_id):
+    """
+    Delete an event.
+
+    Allows only admins to delete events. Fetches the event
+    by its ID and deletes it from the database. Redirects to the event list
+    page upon successful deletion.
+
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
