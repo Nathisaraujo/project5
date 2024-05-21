@@ -12,7 +12,6 @@ class PostAdmin(admin.ModelAdmin):
     This admin option allows managing Post instances including fields such as
     title, slug, status, created_on, and author.
     """
-
     list_display = ('title', 'slug', 'created_on', 'author')
     search_fields = ['title', 'content']
     list_filter = ('created_on',)

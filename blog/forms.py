@@ -4,7 +4,9 @@ from .widgets import CustomClearableFileInput
 
 
 class PostForm(forms.ModelForm):
-
+    """
+    Form for creating a blog post.
+    """
     class Meta:
         model = Post
         fields = ['title', 'content', 'author', 'image']

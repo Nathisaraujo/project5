@@ -5,6 +5,7 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """Function to generate context for bag contents"""
     bag_items = []
     total = 0
     total_discounted_price = 0

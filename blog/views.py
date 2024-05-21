@@ -11,13 +11,18 @@ from .forms import PostForm
 
 
 class blog(generic.ListView):
-    """ A view to return the blog page """
+    """
+    View to display the list of blog posts.
+    """
     queryset = Post.objects.all()
     template_name = "blog/blog.html"
     paginate_by = 3
 
 
 def post_detail(request, slug):
+    """
+    View to display details of a blog post.
+    """
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
 
@@ -27,6 +32,9 @@ def post_detail(request, slug):
 
 
 class like_posts(generic.RedirectView):
+    """
+    View to handle liking/unliking a blog post.
+    """
     def get_redirect_url(self, *args, **kwargs):
         return reverse("post_detail", kwargs={"slug": self.kwargs.get("slug")})
 
@@ -43,6 +51,9 @@ class like_posts(generic.RedirectView):
 
 @login_required
 def add_post(request):
+    """
+    View to add a new blog post.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
