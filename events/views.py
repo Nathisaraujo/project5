@@ -12,6 +12,13 @@ from .models import Event
 
 
 def event_list(request):
+    """
+    Display a list of events, including those saved by the user.
+
+    Retrieves all events from the database and determines if each event
+    has been saved by the authenticated user. Generates JSON data for the
+    events. Passes the events data to the template for rendering.
+    """
     events = Event.objects.all()
     now = datetime.now()
 
@@ -37,6 +44,13 @@ def event_list(request):
 
 @login_required
 def save_event(request, event_id):
+    """
+    Save an event to the user's saved events list.
+
+    Fetches the event by its ID and adds the current user to the list of users
+    who have saved the event. Sends a reminder email if the event is happening
+    tomorrow. Redirects to the event list page.
+    """
     event = get_object_or_404(Event, pk=event_id)
     tomorrow = timezone.now() + timezone.timedelta(days=1)
     event.save_event.add(request.user)
@@ -71,6 +85,12 @@ def send_event_reminders(event):
 
 @login_required
 def unsave_event(request, event_id):
+    """
+    Remove an event from the user's saved events list.
+
+    Fetches the event by its ID and removes the current user from the list
+    of users who have saved the event. Redirects to the event list page.
+    """
     event = get_object_or_404(Event, pk=event_id)
     event.save_event.remove(request.user)
     event.save()
@@ -80,6 +100,12 @@ def unsave_event(request, event_id):
 
 @login_required
 def unsave_event_profile(request, event_id):
+    """
+    Remove an event from the user's saved events list from the profile page.
+
+    Fetches the event by its ID and removes the current user from the list
+    of users who have saved the event. Redirects to the saved events page.
+    """
     event = get_object_or_404(Event, pk=event_id)
     event.save_event.remove(request.user)
     event.save()
@@ -89,6 +115,13 @@ def unsave_event_profile(request, event_id):
 
 @login_required
 def add_event(request):
+    """
+    Add a new event.
+
+    Allows store owners to add new events. Validates the form data and saves
+    the event to the database. Redirects to the event list page upon success.
+
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -123,6 +156,13 @@ def add_event(request):
 
 @login_required
 def edit_event(request, event_id):
+    """
+    Edit an existing event.
+
+    Allows store owners to edit existing events. Validates the form data and
+    updates the event in the database. Redirects to the event list page upon
+    success.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
