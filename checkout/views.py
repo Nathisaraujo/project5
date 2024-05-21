@@ -20,6 +20,16 @@ from bag.contexts import bag_contents
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Caches checkout data in Stripe.
+
+    Retrieves the PaymentIntent ID from the request,
+    modifies it with additional metadata,
+    and saves the bag and user information to Stripe.
+
+    Returns:
+    - HttpResponse: 200 status code on success, 400 status code on error.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -36,6 +46,18 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Handles the checkout process.
+
+    Retrieves the bag from the session,
+    processes the form data, creates an order and line items,
+    and creates a Stripe PaymentIntent. On successful form validation,
+    redirects to checkout success page.
+
+    Returns:
+    - HttpResponse: Renders the checkout page with context
+    or redirects based on form validation.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -150,7 +172,14 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handles successful checkouts.
+
+    Retrieves the order based on the order number,
+    saves user profile information if the user is authenticated,
+    and displays a success message.
+
+    Returns:
+    - HttpResponse: Renders the checkout success page with context.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

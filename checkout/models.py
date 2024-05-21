@@ -10,6 +10,36 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    Model representing an order.
+
+    Fields:
+    - order_number (CharField): Unique identifier for the order.
+    - user_profile (ForeignKey): User profile associated with the order.
+    - full_name (CharField): Full name of the customer.
+    - email (EmailField): Email address of the customer.
+    - phone_number (CharField): Phone number of the customer.
+    - country (CountryField): Country of the customer.
+    - postcode (CharField): Postal code of the customer.
+    - town_or_city (CharField): Town or city of the customer.
+    - street_address1 (CharField): First line of the customer's street address.
+    - street_address2 (CharField): Scd line of the customer's street address.
+    - county (CharField): County, state, or locality of the customer.
+    - date (DateTimeField): Date and time when the order was created.
+    - delivery_cost (DecimalField): Cost of delivery for the order.
+    - order_total (DecimalField): Total cost of the order.
+    - grand_total (DecimalField): Grand total cost of the order.
+    - original_bag (TextField): Original bag content for the order.
+    - stripe_pid (CharField): Stripe payment ID associated with the order.
+
+    Methods:
+    - _generate_order_number: Generates a random,
+        unique order number using UUID.
+    - update_total: Updates the order total and grand total based on line
+    item totals and delivery cost.
+    - save: Custom save method to set the order number if not already set.
+    - __str__: Returns a string representation of the order.
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile,
@@ -73,6 +103,20 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Model representing a line item in an order.
+
+    Fields:
+    - order (ForeignKey to Order): Order associated with the line item.
+    - product (ForeignKey to Product): Product associated with the line item.
+    - quantity (IntegerField): Quantity of the product in the order.
+    - lineitem_total (DecimalField): Total cost of the line item.
+
+    Methods:
+    - save: Custom save method to set the line item total
+    and update the order total.
+    - __str__: Returns a string representation of the line item.
+    """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
