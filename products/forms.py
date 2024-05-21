@@ -1,6 +1,15 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Category, ProductTags, Material, Surface, Paint, Frame, Paper
+from .models import (
+    Product,
+    Category,
+    ProductTags,
+    Material,
+    Surface,
+    Paint,
+    Frame,
+    Paper
+)
 
 
 class ProductForm(forms.ModelForm):
@@ -9,7 +18,11 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -28,7 +41,7 @@ class ProductTagsForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         self.fields['materials'].queryset = Material.objects.all()
 
         self.fields['surface'].queryset = Surface.objects.all()

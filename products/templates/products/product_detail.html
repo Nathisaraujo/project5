@@ -54,13 +54,13 @@
                     {% if product.producttags %}
                         <table class="table table-sm text-center table-striped">
                             <thead>
-                            <tr>
-                                <th><i class="fa-solid fa-fill-drip"></i><br>Paints</th>
-                                <th><i class="fa-solid fa-pen-ruler"></i><br>Other materials</th>
-                                <th><i class="fa-regular fa-note-sticky"></i><br>Paper</th>
-                                <th><i class="fa-solid fa-crop-simple"></i><br>Frame</th>
-                                <th><i class="fa-solid fa-chess-board"></i><br>Surface</th>
-                            </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-fill-drip"></i><br>Paints</th>
+                                    <th><i class="fa-solid fa-pen-ruler"></i><br>Other materials</th>
+                                    <th><i class="fa-regular fa-note-sticky"></i><br>Paper</th>
+                                    <th><i class="fa-solid fa-crop-simple"></i><br>Frame</th>
+                                    <th><i class="fa-solid fa-chess-board"></i><br>Surface</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
@@ -96,7 +96,8 @@
                     {% if product.digital %}
                         <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f7b801;"></i> digital art</p>
                         <p> You'll can buy this digital art and it will be printed on and will be printed on card paper, 
-                            A4 size, landscape or portrait (according to the orientation in the picture).</p>
+                            A4 size, landscape or portrait (according to the orientation in the picture).
+                        </p>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
@@ -155,7 +156,6 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
 
 {% block postloadjs %}

@@ -1,6 +1,16 @@
 from django.contrib import admin
-from .models import Product, Category, ProductTags, Material, Frame, Paper, Paint, Surface
 from django_summernote.admin import SummernoteModelAdmin
+from .models import (
+    Product,
+    Category,
+    ProductTags,
+    Material,
+    Frame,
+    Paper,
+    Paint,
+    Surface
+)
+
 
 # Register your models here.
 class ProductAdmin(SummernoteModelAdmin):
@@ -17,36 +27,43 @@ class ProductAdmin(SummernoteModelAdmin):
     search_fields = ['title']
     summernote_fields = ('description',)
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
 
+
 class MaterialAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
 
 class SurfaceAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
 
+
 class PaintAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
 
 class FrameAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
 
+
 class PaperAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
 
 class ProducttagsAdmin(admin.ModelAdmin):
     list_display = (
@@ -55,6 +72,7 @@ class ProducttagsAdmin(admin.ModelAdmin):
         'surface',
         'materials',
     )
+
 
 admin.site.register(Material, MaterialAdmin)
 admin.site.register(Surface, SurfaceAdmin)
