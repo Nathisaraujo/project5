@@ -13,7 +13,7 @@
     <div class="container mt-5">
         <div class="row text-center">
             <h1 class="mt-2"><i class="fa-solid fa-users"></i><br>Welcome to our community!</h1>
-            <p>Joining our community offers you the opportunity to: </p>
+            <p>Joining our community offers you the opportunity to:</p>
             <ul class="text-start list-community">
                 <li class="p-1"><i class="fa-solid fa-star"></i> Stay updated with our Newsletter by subscribing</li>
                 <li class="p-1"><i class="fa-solid fa-star"></i> Submit drawing suggestions</li>
@@ -21,7 +21,7 @@
                 <li class="p-1"><i class="fa-solid fa-star"></i> Keep track of events by saving them to your profile and receive email reminders</li>
                 <li class="p-1"><i class="fa-solid fa-star"></i> Engage with our "WHY ART" blog posts</li>
             </ul>
-            <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i> </p>
+            <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i></p>
         </div>
         <div class="row text-center m-5">
             <div class="col-12 col-md-6">
@@ -30,7 +30,6 @@
                     Stay updated with the latest news! Be the first to know about sales, <br>
                     new products, blog posts, and features!
                 </p>
-                
             </div>
             <div class="col-12 col-md-6">
                 <img src="{{ MEDIA_URL }}community/newsletter.gif" alt="newsletter examples" class="suggestion-img">
@@ -94,10 +93,9 @@
                 {% if user.is_authenticated  %}
                     <a href="{% url 'profile' %}" class="btn btn-dark mb-2">Go to your profile</a> 
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="btn btn-dark  mb-2">register now!</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-dark  mb-2">Register now!</a>
                 {% endif %}
             </div>
         </div>
-    </div>
-    
+    </div> 
 {% endblock %}
