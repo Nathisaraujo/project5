@@ -10,6 +10,10 @@ from .forms import AboutMeForm
 
 
 def about_me(request):
+    """
+    View function to render the About Me page.
+    Retrieves all AboutMe objects and passes them to the template.
+    """
     about = AboutMe.objects.all()
     context = {'about': about}
     return render(request, 'about/about_me.html', context)
@@ -17,6 +21,10 @@ def about_me(request):
 
 @login_required
 def edit_about_me(request):
+    """
+    View function to edit the About Me page.
+    Admin can edit the About Me page content.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
