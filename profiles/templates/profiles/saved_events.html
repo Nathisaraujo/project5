@@ -16,42 +16,38 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row text-center m-5">
-        <h1 class="text-uppercase mt-4"><i class="fa-solid fa-calendar-days"></i><br>Saved Events</h1>        <hr>
-        {% if saved_events %}
-            {% for event in saved_events %}
-            <div class="col-12 col-md-6 col-sm-3 mt-3" id="event-{{ event.pk }}">
-              <div class="card event-card">
-                <div class="card-body">
-                  <span class="text-uppercase">{{ event.title }}</span>
-                  <hr>
-                  <p>{{ event.description }}</p>
-                  <p><i class="fa-solid fa-id-badge"></i> Organizer: {{ event.organizer }}</p>
-                  <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
-                  <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
-                  {% if event.date_and_time > now %}
-                    <p><i class="fa-regular fa-clock"></i> Remaining Time:<br><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
-                  {% else %}
-                    <p><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
-                  {% endif %}
-
-                    
+  <div class="row text-center m-5">
+      <h1 class="text-uppercase mt-4"><i class="fa-solid fa-calendar-days"></i><br>Saved Events</h1>        <hr>
+      {% if saved_events %}
+        {% for event in saved_events %}
+          <div class="col-12 col-md-6 col-sm-3 mt-3" id="event-{{ event.pk }}">
+            <div class="card event-card">
+              <div class="card-body">
+                <span class="text-uppercase">{{ event.title }}</span>
+                <hr>
+                <p>{{ event.description }}</p>
+                <p><i class="fa-solid fa-id-badge"></i> Organizer: {{ event.organizer }}</p>
+                <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
+                {% if event.date_and_time > now %}
+                  <p><i class="fa-regular fa-clock"></i> Remaining Time:<br><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
+                {% else %}
+                  <p><span id="countdown-{{ event.pk }}">{{ event.date_and_time }}</span></p>
+                {% endif %}
                 <form action="{% url 'unsave_event_profile' event.id %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
                 </form>
-
-                </div>
               </div>
             </div>
-          {% endfor %}
-        {% else %}
-          <p class="text-center">No events saved yet.</p>
-        {% endif %}
-      </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="text-center">No events saved yet.</p>
+      {% endif %}
     </div>
-    <a class="btn btn-outline-dark m-5" href="{% url 'profile' %}">Back to profile</a>
-
   </div>
+  <a class="btn btn-outline-dark m-5" href="{% url 'profile' %}">Back to profile</a>
+</div>
 
 {% endblock %}

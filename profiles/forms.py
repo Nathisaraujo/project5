@@ -5,7 +5,7 @@ from .models import UserProfile, Recommendation
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user','default_phone_number',)
+        exclude = ('user', 'default_phone_number',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -28,8 +28,11 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 profile-form-input'
+            )
             self.fields[field].label = False
+
 
 class RecommendationForm(forms.ModelForm):
     class Meta:
@@ -42,5 +45,3 @@ class RecommendationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['recommendation_text'].label = 'Your Recommendation'
-
-    

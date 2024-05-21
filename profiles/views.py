@@ -3,13 +3,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm, RecommendationForm
-
 from events.models import Event
 from wishlist.models import Wishlist
-
 from checkout.models import Order
 
 # Create your views here.
+
 
 @login_required
 def profile(request):
@@ -24,6 +23,7 @@ def profile(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def update_profile(request):
@@ -50,13 +50,19 @@ def update_profile(request):
 
     return render(request, template, context)
 
+
 @login_required
 def wishlist(request):
     """
     This view displays the user's wishlist
     """
     wishlist_items = Wishlist.objects.filter(user=request.user)
-    return render(request, 'profiles/wishlist.html', {'wishlist_items': wishlist_items})
+    return render(
+        request,
+        'profiles/wishlist.html',
+        {'wishlist_items': wishlist_items}
+    )
+
 
 @login_required
 def orders(request):
@@ -72,6 +78,7 @@ def orders(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def order_history(request, order_number):
@@ -90,6 +97,7 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 @login_required
 def recommend(request):
     if request.method == 'POST':
@@ -98,23 +106,34 @@ def recommend(request):
             recommendation = form.save(commit=False)
             recommendation.user = request.user
             recommendation.save()
-            messages.success(request, (f'Recommendation Submitted Successfully.Thank you for your recommendation!'))
+            messages.success(
+                request,
+                'Recommendation Submitted Successfully. '
+                'Thank you for your recommendation!'
+            )
             return redirect('profile')
     else:
         form = RecommendationForm()
 
     return render(request, 'profiles/recommendation_form.html', {'form': form})
 
+
 def recommendation_success(request):
     return render(request, 'profiles/recommendation_success.html')
+
 
 @login_required
 def saved_events(request):
     saved_events = Event.objects.filter(save_event=request.user)
 
-    return render(request, 'profiles/saved_events.html', {'saved_events': saved_events})
+    return render(
+        request,
+        'profiles/saved_events.html',
+        {'saved_events': saved_events}
+    )
+
 
 @login_required
 def management(request):
-    
+
     return render(request, 'profiles/management.html')

@@ -1,32 +1,30 @@
-     <!-- Menu for small and medium screens -->
-    <div class="d-block d-sm-none d-md-block d-lg-none mb-3" id="profile-nav-h">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-gears"></i> Menu
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a href="{{ 'orders' }}">Order History</a></li>
-                <li><a href="{{ 'wishlist' }}">Wishlist</a></li>
-                <li><a href="{{ 'recommend' }}">Community<br> Suggestion</a></li>
-                <li><a href="{{ 'saved_events' }}">Saved Events</a></li>
-                {% if request.user.is_superuser %}
-                    <li><a href="{{ 'management' }}">Management</a></li>
-                {% endif %}
-            </ul>
-          </li>
-    </div>
-    <!-- Menu for large screens -->
-    <div class="d-none d-lg-block" id="profile-nav-v">
-        <p class="mb-2 text-muted"><i class="fa-solid fa-gears"></i> Menu</p>
-        <ul>
+    <!-- Menu for small and medium screens -->
+<div class="d-block d-sm-none d-md-block d-lg-none mb-3" id="profile-nav-h">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-gears"></i> Menu
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a href="{{ 'orders' }}">Order History</a></li>
             <li><a href="{{ 'wishlist' }}">Wishlist</a></li>
-            <li><a href="{{ 'recommend' }}">Community Suggestion</a></li>
+            <li><a href="{{ 'recommend' }}">Community<br> Suggestion</a></li>
             <li><a href="{{ 'saved_events' }}">Saved Events</a></li>
             {% if request.user.is_superuser %}
                 <li><a href="{{ 'management' }}">Management</a></li>
             {% endif %}
         </ul>
-    </div>
-
-
+        </li>
+</div>
+<!-- Menu for large screens -->
+<div class="d-none d-lg-block" id="profile-nav-v">
+    <p class="mb-2 text-muted"><i class="fa-solid fa-gears"></i> Menu</p>
+    <ul>
+        <li><a href="{{ 'orders' }}">Order History</a></li>
+        <li><a href="{{ 'wishlist' }}">Wishlist</a></li>
+        <li><a href="{{ 'recommend' }}">Community Suggestion</a></li>
+        <li><a href="{{ 'saved_events' }}">Saved Events</a></li>
+        {% if request.user.is_superuser %}
+            <li><a href="{{ 'management' }}">Management</a></li>
+        {% endif %}
+    </ul>
+</div>

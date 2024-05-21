@@ -26,7 +26,6 @@
                         <th scope="col">Title</th>
                         <th scope="col">Price</th>
                         <th scope="col">Remove</th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -35,10 +34,8 @@
                             <td scope="row" class="align-middle" style="max-width:2px;">
                                 {% if wishlist_item.product.offers %}
                                     <p class="padding-wishlist"><i class="fa-solid fa-piggy-bank fa-beat-fade fa-xl" style="color: #FFD43B;"></i><br> sale</p>                   
-                                
                                 {% elif wishlist_item.product.community %}
                                     <p class="padding-wishlis"><i class="fa-solid fa-users fa-fade fa-xl" style="color: #574294;"></i><br> community</p> 
-                                
                                 {% else %}
                                     <p class="padding-wishlist"><i class="fa-solid fa-square-check fa-xl" style="color: #27511f;"></i><br> Standard</p>
                                 {% endif %}

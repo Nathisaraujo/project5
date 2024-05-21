@@ -20,7 +20,8 @@
         <div class="col mt-5">
           <h2 class="text-center profiles-titles"><i class="fa-solid fa-gears"></i><br>Website Management</h2>
           <hr>
-          <p class="text-center"> Here you can manage your website! <br>Click where would you like to do:
+          <p class="text-center"> 
+            Here you can manage your website! <br>Click where would you like to do:
           </p>
         </div>
       </div>
@@ -37,16 +38,16 @@
           </div>
         </div>
         <div class="card m-2" style="width: 18rem;">
-            <div class="card-body text-center">
-              <p class="bg-warning rounded"><i class="fa-solid fa-boxes-packing"></i> Products</p>
-              <h5 class="card-title">Add a product</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Add a new product by simply filling out a form.</h6>
-              <p class="card-text">Add a new product by clicking on the provided link. 
-                This action will direct them to the necessary form where they can input
-                  all relevant details for the new product.
-              </p>
-              <a href="{% url 'add_product' %}" class="btn btn-dark card-link">Add Product</a>
-            </div>
+          <div class="card-body text-center">
+            <p class="bg-warning rounded"><i class="fa-solid fa-boxes-packing"></i> Products</p>
+            <h5 class="card-title">Add a product</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Add a new product by simply filling out a form.</h6>
+            <p class="card-text">Add a new product by clicking on the provided link. 
+              This action will direct them to the necessary form where they can input
+                all relevant details for the new product.
+            </p>
+            <a href="{% url 'add_product' %}" class="btn btn-dark card-link">Add Product</a>
+          </div>
         </div>
         <div class="card m-2" style="width: 18rem;">
           <div class="card-body text-center">
@@ -56,19 +57,19 @@
             <p class="card-text">You can edit or delete it using the buttons on the event card.</p>
             <a href="{% url 'event_list' %}" class="btn btn-dark card-link">All Events</a>
           </div>
-      </div>
-      <div class="card m-2" style="width: 18rem;">
-        <div class="card-body text-center">
-          <p class="bg-info rounded"><i class="fa-solid fa-calendar-days"></i> Events</p>
-          <h5 class="card-title">Add an event</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Add a new event by simply filling out a form.</h6>
-          <p class="card-text">Add a new event by clicking on the provided link. 
-            This action will direct you to the necessary form where you can input
-              all relevant details for the new event.
-          </p>
-          <a href="{% url 'add_event' %}" class="btn btn-dark card-link">Add Event</a>
         </div>
-    </div>
+        <div class="card m-2" style="width: 18rem;">
+          <div class="card-body text-center">
+            <p class="bg-info rounded"><i class="fa-solid fa-calendar-days"></i> Events</p>
+            <h5 class="card-title">Add an event</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Add a new event by simply filling out a form.</h6>
+            <p class="card-text">Add a new event by clicking on the provided link. 
+              This action will direct you to the necessary form where you can input
+                all relevant details for the new event.
+            </p>
+            <a href="{% url 'add_event' %}" class="btn btn-dark card-link">Add Event</a>
+        </div>
+      </div>
     <div class="card m-2" style="width: 18rem;">
       <div class="card-body text-center">
         <p class="bg-success rounded"><i class="fa-solid fa-user"></i> About</p>
@@ -80,23 +81,21 @@
         </p>
         <a href="{% url 'edit_about_me' %}" class="btn btn-dark card-link">Edit About Me</a>
       </div>
-  </div>
-  <div class="card m-2" style="width: 18rem;">
-    <div class="card-body text-center">
-      <p class="bg-danger rounded"><i class="fa-solid fa-newspaper"></i> Blog</p>
-      <h5 class="card-title">Add blog posts</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Add a new post by simply filling out a form.</h6>
-      <p class="card-text">Add a new post by clicking on the provided link. 
-        This action will direct you to the necessary form where you can input
-          all relevant details for the new product.
-      </p>
-      <a href="{% url 'add_post' %}" class="btn btn-dark card-link">Add Post</a>
     </div>
-  </div>
+    <div class="card m-2" style="width: 18rem;">
+      <div class="card-body text-center">
+        <p class="bg-danger rounded"><i class="fa-solid fa-newspaper"></i> Blog</p>
+        <h5 class="card-title">Add blog posts</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Add a new post by simply filling out a form.</h6>
+        <p class="card-text">Add a new post by clicking on the provided link. 
+          This action will direct you to the necessary form where you can input
+            all relevant details for the new product.
+        </p>
+        <a href="{% url 'add_post' %}" class="btn btn-dark card-link">Add Post</a>
       </div>
-     
+    </div>
+      </div>
       <a class="btn btn-outline-dark mt-3 mb-3" href="{% url 'profile' %}">Back to profile</a>
     </div>
-
 {% endblock %}
 
