@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.urls import reverse
-
 from products.models import Product
 from wishlist.models import Wishlist
 
@@ -18,7 +17,10 @@ def add_to_wishlist(request, product_id):
     it displays an error message
     """
     product = get_object_or_404(Product, pk=product_id)
-    exist_wishlist_item = Wishlist.objects.filter(product=product, user=request.user)
+    exist_wishlist_item = Wishlist.objects.filter(
+        product=product,
+        user=request.user
+    )
 
     if not exist_wishlist_item:
         Wishlist.objects.create(
@@ -27,12 +29,16 @@ def add_to_wishlist(request, product_id):
         )
 
         messages.success(
-            request, 'The product has been successfully added to your wishlist!')
+            request,
+            'The product has been successfully added to your wishlist!'
+        )
     else:
-        messages.error(request, 'You have already added this product in your wishlist!')
+        messages.error(
+            request,
+            'You have already added this product in your wishlist!'
+        )
 
     return redirect('product_detail', product_id=product_id)
-
 
 
 @login_required
