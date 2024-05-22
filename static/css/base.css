@@ -572,6 +572,11 @@ li {
     background-color: #9684a172;
 }
 
+.login-text {
+    text-decoration: none;
+    color: #3d2b3d;
+}
+
 .allauth-form-inner-content a {
     color: black;
 }
