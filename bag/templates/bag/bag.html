@@ -2,7 +2,6 @@
 {% load static %}
 {% load bag_tools %}
 
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -65,22 +64,17 @@
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-dark decrement-qty_{{ item.item_id }} 
-                                                            {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
-                                                            data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                        <button class="decrement-qty btn btn-sm btn-dark" data-item_id="{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} 
-                                                        {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" type="number"
+                                                    <input class="form-control form-control-sm qty_input" type="number"
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                        data-item_id="{{ item.item_id }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-dark increment-qty_{{ item.item_id }} 
-                                                            {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
-                                                            data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                        <button class="increment-qty btn btn-sm btn-dark" data-item_id="{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
@@ -90,7 +84,7 @@
                                             </div>
                                         </form>
                                         <a class="update-link p-1 rounded"><small> Update </small></a>
-                                        <a class="remove-item float-right p-1 m-1 rounded" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small> Remove </small></a>
+                                        <a class="remove-item float-right p-1 m-1 rounded" id="remove_{{ item.item_id }}"><small> Remove </small></a>
                                     </td>
                                     <td class="py-3">
                                         {% if item.product.offers %}
@@ -165,10 +159,11 @@
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
+        e.preventDefault();
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {
