@@ -89,17 +89,23 @@
                                                 </form>
                                             </div>
                                             <div class="col p-0">
-                                                {% if user.is_authenticated  %}
-                                                    {% if item in wishlist_items %}
-                                                        <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish"><i class="fa-solid fa-heart"></i> Remove <br>from Wishlist</a>
+                                                {% if user.is_authenticated %}
+                                                    {% if product in wishlist_items %}
+                                                        <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish">
+                                                            <i class="fa-solid fa-heart-circle-minus"></i> Wishlist
+                                                        </a>
                                                     {% else %}
                                                         <form action="{% url 'add_to_wishlist' product.id %}" method="post">
                                                             {% csrf_token %}
-                                                            <button type="submit" class="btn btn-wish"><i class="fa-regular fa-heart"></i> Wishlist</button>
+                                                            <button type="submit" class="btn btn-wish">
+                                                                <i class="fa-solid fa-heart-circle-plus"></i> Wishlist
+                                                            </button>
                                                         </form>
                                                     {% endif %}
                                                 {% else %}
-                                                    <p>Register to<br> add to wishlist</p>
+                                                    <small><a href="{% url 'account_login' %}" class="login-text">
+                                                        <i class="fa-solid fa-right-to-bracket"></i> Login</a> to add to wishlist!
+                                                    </small>
                                                 {% endif %}
                                             </div>
                                         </div>

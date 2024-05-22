@@ -32,6 +32,7 @@ def save_event(request, event_id):
     messages.info(request, f'{event.title} added to your events.')
     return redirect('event_list')
 
+
 @login_required
 def unsave_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)

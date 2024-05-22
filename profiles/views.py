@@ -62,11 +62,10 @@ def wishlist(request):
     This view displays the user's wishlist
     """
     wishlist_items = Wishlist.objects.filter(user=request.user)
-    return render(
-        request,
-        'profiles/wishlist.html',
-        {'wishlist_items': wishlist_items}
-    )
+    context = {
+        'wishlist_items': [item.product for item in wishlist_items],
+    }
+    return render(request, 'profiles/wishlist.html', context)
 
 
 @login_required

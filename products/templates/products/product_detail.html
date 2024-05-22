@@ -133,17 +133,24 @@
                         </div>                        
                     </form>
                     <div class="d-flex p-0 m-0">
-                        {% if user.is_authenticated  %}
-                            {% if product_in_wishlist %}
-                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-wish btn-wish-detail"><i class="fa-solid fa-heart"></i> Remove <br>from Wishlist</a>
+                        
+                        {% if user.is_authenticated %}
+                            {% if product in wishlist_items %}
+                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-outline-black rounded">
+                                    <i class="fa-regular fa-heart"></i> Remove
+                                </a>
                             {% else %}
                                 <form action="{% url 'add_to_wishlist' product.id %}" method="post">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-wish btn-wish-detail"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
+                                    <button type="submit" class="btn btn-wish">
+                                        <i class="fa-regular fa-heart"></i> Wishlist
+                                    </button>
                                 </form>
                             {% endif %}
                         {% else %}
-                            <p>Register to add to wishlist</p>
+                            <small><a href="{% url 'account_login' %}" class="login-text">
+                                <i class="fa-solid fa-right-to-bracket"></i> Login</a> to add to wishlist!
+                            </small>
                         {% endif %}
                         <a href="{% url 'checkout' %}" class="btn btn-buynow text-uppercase w-50">
                             <i class="fa-solid fa-credit-card"></i> Buy now

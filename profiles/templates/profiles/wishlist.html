@@ -47,10 +47,11 @@
                                     </a>
                                 {% else %}
                                     <a href="">
-                                        <img class="card-img-top img-fluid img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        <img class="card-img-top img-fluid img-thumbnail"  style="max-width: 10em;" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                     </a>
                                 {% endif %}
                             </th>
+                            <!-- bug -->
                             <th scope="row"><a href="{% url 'product_detail' wishlist_item.product.id %}" >{{ wishlist_item.product }}</a></th>
                             <td>
                                 {% if wishlist_item.product.offers %}
@@ -62,6 +63,7 @@
                                     <p class="lead mb-0 text-left fw-bold"><i class="fas fa-euro-sign fa-xs"></i> {{ wishlist_item.product.price }}</p>
                                 {% endif %}</td>
                             <td>
+                                <!-- bug -->
                                 <a href="{% url 'remove_from_wishlist' wishlist_item.product.id %}"
                                 class="btn btn-outline-dark rounded">Remove</a>
                             </td>
@@ -74,7 +76,7 @@
             {% endif %}
         </div>
     </div>
-    <a class="btn btn-outline-dark " href="{% url 'profile' %}">Back to profile</a>
+    <a class="btn btn-outline-dark" href="{% url 'profile' %}">Back to profile</a>
 </div>
 {% endblock %}
 
