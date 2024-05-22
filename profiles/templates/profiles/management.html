@@ -51,6 +51,17 @@
         </div>
         <div class="card m-2" style="width: 18rem;">
           <div class="card-body text-center">
+            <p class="bg-warning rounded"><i class="fa-solid fa-boxes-packing"></i> Products</p>
+            <h5 class="card-title">Add product tags</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Add product tags</h6>
+            <p class="card-text">Here you can add tags to an existing product by simply filling a form.
+              If you'd like to just update existing tags, please go to "Manage existing products".
+            </p>
+            <a href="{% url 'add_product_tags' %}" class="btn btn-dark card-link">Add tags</a>
+          </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+          <div class="card-body text-center">
             <p class="bg-info rounded"><i class="fa-solid fa-calendar-days"></i> Events</p>
             <h5 class="card-title">Manage existing events</h5>
             <h6 class="card-subtitle mb-2 text-muted">Go to events list page to edit or delete events</h6>
