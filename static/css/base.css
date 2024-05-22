@@ -239,8 +239,8 @@ li {
     color: #000000;
 }
 
-.favorites.items-site:hover {
-    background-image: url('/media/about/favorites.png');
+.events.items-site:hover {
+    background-image: url('/media/about/event.png');
     font-size: larger;
     background-size: cover;
     padding-top: 0em;

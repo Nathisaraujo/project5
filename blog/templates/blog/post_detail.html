@@ -37,16 +37,20 @@
           {{ post.content | safe }}
           <span class="text-muted">{{ post.created_on }} </span>
         </div>
-        <form action="{% url 'like_post' slug=post.slug %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="like-btn mt-2">
-            {% if request.user in post.like.all %}
-              <i class="fa-solid fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
-            {% else %}
-              <i class="fa-regular fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
-            {% endif %}
-          </button>
-        </form>
+        {% if request.user.is_authenticated %}
+          <form action="{% url 'like_post' slug=post.slug %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="like-btn mt-2">
+              {% if request.user in post.like.all %}
+                <i class="fa-solid fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
+              {% else %}
+                <i class="fa-regular fa-heart fa-beat-fade fa-xl"></i> {{ post.like.count }}
+              {% endif %}
+            </button>
+          </form>
+        {% else %}
+          <p><a href="{% url 'account_login' %}" class="login-text"><i class="fa-solid fa-right-to-bracket"></i> Login</a> to like the post!</p>
+        {% endif %}
       </div>
       <!-- written by section for medium and small devices -->
       <div class=" col-12 mt-3 written-by-md">
