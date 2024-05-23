@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import AnonymousUser
 from django.db.models import Q
 from decimal import Decimal
 from django.db.models.functions import Lower
@@ -17,7 +18,7 @@ def all_products(request):
     including sorting and search queries
     """
     products = Product.objects.all()
-    wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
+
     query = None
     categories = None
     materials = None
@@ -103,7 +104,6 @@ def all_products(request):
         'digital': digital,
         'offers': offers,
         'community': community,
-        'wishlist_items': wishlist_items,
     }
 
     return render(request, 'products/products.html', context)
@@ -113,10 +113,14 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
+    wishlist_items = []
+
+    if not isinstance(request.user, AnonymousUser):
+        wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
+
     context = {
         'product': product,
-        'wishlist_items': wishlist_items,
+        'wishlist_items': [item.product for item in wishlist_items],
     }
 
     return render(request, 'products/product_detail.html', context)

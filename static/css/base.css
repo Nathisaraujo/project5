@@ -409,6 +409,16 @@ li {
     margin-left:20px;
 }
 
+.see-more-btn {
+    background-color: #9684A1;
+    text-decoration: none;
+    color: white;
+}
+
+.see-more-btn:hover {
+    background-color:#000;
+}
+
 /* Blog Page  */
 
 .card-deck {
