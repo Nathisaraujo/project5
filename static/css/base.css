@@ -314,7 +314,7 @@ li {
 }
 
 .btn-buynow {
-    background-color: #9684A1;
+    background-color: #3D2B3D;
     text-transform: uppercase;
     border: none;
     color: #fff;
@@ -322,6 +322,11 @@ li {
     max-height: 2em; */
     margin: 16px;
     align-content: center;
+}
+
+.btn-buynow:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 .btn-wish {
@@ -413,11 +418,15 @@ li {
     background-color: #9684A1;
     text-decoration: none;
     color: white;
+    height: 1.7em;
+    border-radius: 5px;
 }
 
 .see-more-btn:hover {
     background-color:#000;
+    color: white;
 }
+
 
 /* Blog Page  */
 
@@ -446,6 +455,20 @@ li {
     border: none;
     background-color: #fff;
     color: rgb(158, 15, 15);
+}
+
+.btn-edit {
+    border-radius: 5px;
+    background-color: #3F6C51;
+    color: white;
+    padding: 6px;
+}
+
+.btn-delete {
+    border-radius: 5px;
+    background-color: #d91e36;
+    color: white;
+    padding: 6px;
 }
 
 /* bag page */
