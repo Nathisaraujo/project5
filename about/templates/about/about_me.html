@@ -15,7 +15,7 @@
         <h1 class="text-center mt-3">About the Artist</h1>
         {% if request.user.is_superuser %}
             <small class="ml-3 text-center m-2">
-                <a href="{% url 'edit_about_me' %}" class="btn btn-info p-1">Edit</a>
+                <a href="{% url 'edit_about_me' %}" class="btn btn-edit p-1"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
             </small>
         {% endif %}
         <hr>
@@ -46,6 +46,7 @@
             </div>
         {% endfor %}
     </div>
+    
     <div class="row justify-contents-center">
         <p>My recommendations:</p>
         <div class="col-12 col-md-6 col-sm-2">

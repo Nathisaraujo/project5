@@ -4,6 +4,29 @@
 
 /* common to all website */
 
+/* Footer */
+.footer-container {
+    background-color: #3d2b3d;
+    color: #fff;
+    max-width: 100vw;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #9684a1;
+    
+}
+
+.payment-icons {
+    font-size: larger;
+}
+
 /* Scrollbar - Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 12px;
@@ -26,7 +49,14 @@ body {
     font-optical-sizing: auto;
     font-weight: 600;
     color: black;
+    overflow-x: hidden;
 }
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 
 .message-container {
     position: fixed;
@@ -96,7 +126,7 @@ li {
 
 .knowme-image {
     max-width: 20em;
-    margin-right: 20em;
+    /* margin-right: 20em; */
 }
 
 .btn-home {
@@ -180,7 +210,6 @@ li {
 }
 
 /* About Me Page  */
-
 
 .items-site {
     background-color: #9684A1;

@@ -64,13 +64,13 @@
                                             <p class="text-uppercase"><i class="fa-solid fa-circle-exclamation" style="color: #f7b801;"></i> digital art</p>
                                         {% endif %}
                                         {% if request.user.is_superuser %}
-                                            <small class="ml-3 d-flex">
+                                            <div class="ml-3 d-flex">
                                                 <a href="{% url 'edit_product' product.id %}" class="btn btn-edit m-1"> <i class="fa-solid fa-pen-to-square"></i> </a>
                                                 <form id="delete-product-form" action="{% url 'delete_product' product.id %}" method="post">
                                                     {% csrf_token %}
                                                     <button type="submit" onclick="return confirmDelete();" class="btn btn-delete m-1"> <i class="fa-solid fa-trash"></i> </button>
                                                 </form>
-                                            </small>
+                                            </div>
                                         {% endif %}
                                     </div>
                                     
