@@ -103,7 +103,7 @@ def all_products(request):
         'digital': digital,
         'offers': offers,
         'community': community,
-        'wishlist_items': [item.product for item in wishlist_items],
+        'wishlist_items': wishlist_items,
     }
 
     return render(request, 'products/products.html', context)
@@ -116,7 +116,7 @@ def product_detail(request, product_id):
     wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
     context = {
         'product': product,
-        'wishlist_items': [item.product for item in wishlist_items],
+        'wishlist_items': wishlist_items,
     }
 
     return render(request, 'products/product_detail.html', context)
