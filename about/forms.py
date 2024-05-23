@@ -1,6 +1,6 @@
 from django import forms
 from .models import AboutMe
-
+from django_summernote.widgets import SummernoteWidget
 
 class AboutMeForm(forms.ModelForm):
     """
@@ -10,3 +10,6 @@ class AboutMeForm(forms.ModelForm):
     class Meta:
         model = AboutMe
         fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+        }

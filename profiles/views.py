@@ -63,7 +63,7 @@ def wishlist(request):
     """
     wishlist_items = Wishlist.objects.filter(user=request.user)
     context = {
-        'wishlist_items': [item.product for item in wishlist_items],
+        'wishlist_items': wishlist_items,
     }
     return render(request, 'profiles/wishlist.html', context)
 
