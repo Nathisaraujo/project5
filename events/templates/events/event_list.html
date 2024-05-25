@@ -18,63 +18,61 @@
           You'll have access to event details such as the date, location, 
           and whether it's virtual or in-person. <br> <i class="fa-solid fa-circle-exclamation"></i> 
           If you register on the website, you can conveniently save events for future reference on your profile. <br>
-          <i class="fa-solid fa-envelope"></i> You'll receive a friendly email reminder one day before the event!
+          <i class="fa-solid fa-heart"></i> Also discover how many community members are excited about these events!
         </p>
         <hr>
-        
-            {% if events %}
-              {% for event in events %}
-                <div class="col-12 col-lg-3 col-md-6 col-sm-3 mt-3 mb-2" id="event-{{ event.pk }}">
-                  <div class="card event-card">
-                    <div class="card-body">
-                      <span class="text-uppercase">{{ event.title }}</span>
-                      <hr>
-                      <p>{{ event.description }}</p>
-                      <p><i class="fa-solid fa-id-badge"></i> Organizer: {{ event.organizer }}</p>
-                      {% if event.date_and_time > now %}
-                        <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
+        {% if events %}
+          {% for event in events %}
+            <div class="col-12 col-md-6 col-lg-4 mt-3 mb-2" id="event-{{ event.pk }}">
+              <div class="card event-card">
+                <div class="card-body">
+                  <span class="text-uppercase">{{ event.title }}</span>
+                  <hr>
+                  <p>{{ event.description }}</p>
+                  <p><i class="fa-solid fa-id-badge"></i> Organizer: {{ event.organizer }}</p>
+                  {% if event.date_and_time > now %}
+                    <p><i class="fa-solid fa-calendar-days"></i> {{ event.date_and_time }}</p>
+                  {% else %}
+                      <p style="color: red;">Event already happened</p>
+                  {% endif %}
+                  <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
+                  <p><i class="fa-regular fa-face-grin-stars"></i> People interested: {{ event.save_event.count }} <br></i>
+                  {% if not request.user.is_authenticated %}
+                    <p><a href="{% url 'account_login' %}" class="login-text"><i class="fa-solid fa-right-to-bracket"></i> Login</a> to save this event!</p>
+                  {% endif %}
+                  {% now "Y-m-d H:i:s" as current_time %}
+                  {% if request.user.is_authenticated %}
+                      {% if event.id in saved_event_ids %}
+                        <form action="{% url 'unsave_event' event.id %}" method="post" id="unsave-form-{{ event.id }}">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
+                        </form>
                       {% else %}
-                          <p style="color: red;">Event already happened</p>
-                      {% endif %}
-                      <p><i class="fa-solid fa-location-dot"></i> {{ event.location }}</p>
-                      <p><i class="fa-regular fa-face-grin-stars"></i> People interested: {{ event.save_event.count }} <br></i>
-                      {% if not request.user.is_authenticated %}
-                        <p><a href="{% url 'account_login' %}" class="login-text"><i class="fa-solid fa-right-to-bracket"></i> Login</a> to save this event!</p>
-                      {% endif %}
-                      {% now "Y-m-d H:i:s" as current_time %}
-                      {% if request.user.is_authenticated %}
-                          {% if event.id in saved_event_ids %}
-                            <form action="{% url 'unsave_event' event.id %}" method="post" id="unsave-form-{{ event.id }}">
-                              {% csrf_token %}
-                              <button type="submit" class="btn btn-dark"><i class="fa-solid fa-bookmark"></i> Saved</button>
-                            </form>
-                          {% else %}
-                            {% if event.date_and_time|date:"Y-m-d H:i:s" > current_time %}
-                              <form action="{% url 'save_event' event.id %}" method="post" id="save-form-{{ event.id }}">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
-                              </form>
-                            {% endif %}
-                          {% endif %}
-                      {% endif %}
-
-                      {% if request.user.is_superuser %}
-                        <div class="d-flex justify-content-center">
-                          <a href="{% url 'edit_event' event.id %}" class="btn btn-edit m-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                          <form id="delete-product-form" action="{% url 'delete_event' event.id %}" method="post">
+                        {% if event.date_and_time|date:"Y-m-d H:i:s" > current_time %}
+                          <form action="{% url 'save_event' event.id %}" method="post" id="save-form-{{ event.id }}">
                             {% csrf_token %}
-                            <button type="submit" onclick="return confirmDelete();" class="btn btn-delete m-1"> <i class="fa-solid fa-trash"></i> </button>
+                            <button type="submit" class="btn btn-dark"><i class="fa-regular fa-bookmark"></i> Save</button>
                           </form>
-                        </div>
+                        {% endif %}
                       {% endif %}
+                  {% endif %}
+
+                  {% if request.user.is_superuser %}
+                    <div class="d-flex justify-content-center">
+                      <a href="{% url 'edit_event' event.id %}" class="btn btn-edit m-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <form id="delete-product-form" action="{% url 'delete_event' event.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirmDelete();" class="btn btn-delete m-1"> <i class="fa-solid fa-trash"></i> </button>
+                      </form>
                     </div>
-                  </div>
+                  {% endif %}
                 </div>
-              {% endfor %}
-            {% else %}
-              <p class="text-center">No events available at the moment.</p>
-            {% endif %}
-        
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-center">No events available at the moment.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

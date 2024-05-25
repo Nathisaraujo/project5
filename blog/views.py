@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.utils.text import slugify
+from about.models import AboutMe
 from .models import Post
 from .forms import PostForm
 
@@ -25,9 +26,15 @@ def post_detail(request, slug):
     """
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
+    about_me = AboutMe.objects.first()
+
+    context = {
+        "post": post,
+        "about_me": about_me
+    }
 
     return render(
-        request, "blog/post_detail.html", {"post": post, },
+        request, "blog/post_detail.html", context
     )
 
 
