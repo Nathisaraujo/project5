@@ -769,7 +769,14 @@ li {
 }
 
 @media (max-width: 576px) {
-    
+    .margin-products {
+        margin: 0px;
+        vertical-align: super;
+    }
+
+    .margin-sorting {
+        margin: 0px
+    }
 }
 
 @media (max-width: 480px) {
