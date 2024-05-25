@@ -13,42 +13,47 @@
     <!-- home page first section -->
     <div class="container-fluid fst-section mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-sm-4 text-center mt-4">
+            <div class="col-12 col-lg-6 text-center mt-4">
                 <h1>Welcome to <br>Drawing Gratitude!<br></h1>
                 <p>My name is Nathalia and I sell my art! <br> You can see (and buy) my drawings here:</p>
                 <a href="{% url 'products' %}" class="btn btn-dark btn-home"><i class="fa-solid fa-bag-shopping fa-shake"></i><br> start shopping</a>
             </div>
-            <div class="col-12 col-md-6 col-sm-4 mt-4 text-center">
+            <div class="col-12 col-lg-6 text-center p-0">
                 <a href="{% url 'about_me' %}">
                     <img src="{{ MEDIA_URL }}home/knowme.png" alt="get to know me" class="knowme-image">
                 </a>
             </div>
         </div>
     </div>
-    <div class="container-fluid md-offers-section">
+
+    <!-- home page second section -->
+
+   <!-- offers section for screens smaller than large (xs, sm, md) -->
+    <div class="container-fluid d-block d-lg-none">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-sm-4 margin-offers-text text-center">
-                <h2>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> 
+            <div class="col-12 col-xl-6 text-center offers-font-md">
+                <p class="mt-2">But let me tell you a secret:<br><br><span class="text-uppercase offers-text">every month<br></span><br> 
                     I have super special offers <br>on selected products! <br> Click here to check it out! 
                     <i class="fa-solid fa-arrow-down"></i>
-                </h2>
+                </p>
             </div>
-            <div class="col-12 col-md-6 col-sm-4 margin-offers-image text-center">
+            <div class="col-12 col-xl-6 text-center">
                 <a href="{% url 'products' %}?offers=True">
                     <img src="{{ MEDIA_URL }}home/offers.png" alt="get to know me" class="offers-image">
                 </a>
             </div>
         </div>
     </div>
-    <!-- home page second section -->
-    <div class="container-fluid scd-section">
+
+    <!-- offers section for large screens and larger (lg, xl, xxl) -->
+    <div class="container-fluid scd-section d-none d-lg-block">
         <div class="row">
-            <div class="col-12 col-md-4 margin-offers-image">
+            <div class="col-12 col-xl-6 p-offers-image">
                 <a href="{% url 'products' %}?offers=True">
                     <img src="{{ MEDIA_URL }}home/offers.png" alt="get to know me" class="offers-image">
                 </a>
             </div>
-            <div class="col-12 col-md-4 text-center margin-offers-text">
+            <div class="col-12 col-xl-6 text-center p-offers-text">
                 <h2>But let me tell you a secret:<br><br><span class="text-uppercase offers-text">
                     every month<br></span><br> I have super special offers on selected products!
                 </h2>
@@ -59,8 +64,8 @@
     <!-- home page third section -->
     <div class="container-fluid trd-section">
         <div class="row text-center ">
-            <i class="fa-solid fa-users fa-beat fa-2xl"></i><br>
-            <p class="mb-5">
+            <i class="fa-solid fa-users fa-2xl"></i><br>
+            <p class="mb-5 p-5">
                 Enhance your shopping experience and unlock exclusive features by joining our vibrant community! <br>
                 Click here and start exploring!<br>
             </p>
@@ -74,8 +79,8 @@
     <!-- home page fourth section -->
     <div class="container-fluid fth-section">
         <div class="row text-center">
-            <i class="fa-regular fa-newspaper fa-flip fa-2xl"></i><br>
-            <p> Explore captivating insights about art <br> and discover inspiration to enrich your life with creativity. 
+            <i class="fa-regular fa-newspaper fa-2xl"></i><br>
+            <p class="p-5"> Explore captivating insights about art <br> and discover inspiration to enrich your life with creativity. 
                 <br>Dive into my blog, where you'll find thought-provoking articles <br>
                 that delve into the world of art:
             </p>

@@ -13,8 +13,8 @@
 {% block content %}
     <div class="container mt-3">
         <div class="row">
-            <div class="col-12 col-xl-6 product-padding">
-                <div class="image-container mt-5">
+            <div class="col-12 col-lg-6">
+                <div class=" mt-5">
                     {% if product.offers %}
                         <p class="on-sale"><i class="fa-solid fa-circle-exclamation fa-sm"></i> on sale</p>                   
                     {% endif %}
@@ -32,7 +32,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-lg-6">
                 <div class="row product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
                     {% if product.offers %}
@@ -108,7 +108,7 @@
                             <div class="col-12">
                                 <p><strong>Quantity:</strong></p>
                                 <div class="form-group width-qty-btn">
-                                    <div class="display-qty-btn input-group input-group-{{ product.id }}">
+                                    <div class="display-qty-btn input-group mb-2 input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-dark decrement-qty_{{ product.id }}" 
                                                 data-item_id="{{ product.id }}">
@@ -143,7 +143,7 @@
                                     <i class="fa-regular fa-heart"></i> Remove
                                 </a>
                             {% else %}
-                                <form action="{% url 'add_to_wishlist' product.id %}" method="post">
+                                <form action="{% url 'add_to_wishlist' product.id %}" method="post" class="p-3">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-wish">
                                         <i class="fa-regular fa-heart"></i> Wishlist
