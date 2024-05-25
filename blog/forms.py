@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'content', 'author', 'image']
         widgets = {
-            'description': SummernoteWidget(),
+            'content': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}),
         }
 
     image = forms.ImageField(

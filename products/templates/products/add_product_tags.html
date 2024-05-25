@@ -12,15 +12,19 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-12 col-sm-6 mt-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-6 mt-5">
                 <h2 class="logo-font profiles-titles"><i class="fa-solid fa-gear"></i> Product Management</h2>
                 <h5 class="text-muted">Add Product Tags</h5>
+                <p><i class="fa-solid fa-triangle-exclamation" style="color: #FFD43B;"></i> 
+                    Adding more than one tag:
+                    please, hold ctrl + click on the tag you'd like.
+                </p>
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-12 col-sm-6">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_product_tags' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}

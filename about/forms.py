@@ -11,5 +11,5 @@ class AboutMeForm(forms.ModelForm):
         model = AboutMe
         fields = '__all__'
         widgets = {
-            'description': SummernoteWidget(),
+            'content': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}),
         }

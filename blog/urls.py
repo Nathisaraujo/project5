@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
         views.like_posts.as_view(),
         name='like_post'
     ),
+    path('summernote/', include('django_summernote.urls')),
 ]
