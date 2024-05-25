@@ -109,18 +109,21 @@
     background-color: #9684a1;
     border-radius: 20px;
     border: 3px solid #3d2b3d;
-  }
+}
+
+@media (max-width: 768px) {
+    .profile-table {
+        max-width: 30em;
+    }
+}
 
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .profile-table {
         max-width: 20em;
     }
 
     .btn-profile {
         margin: 0em 0em 2em 5em;
-    }
-
-   
-    
-  }
+    } 
+}

@@ -21,19 +21,19 @@
             <hr>
         </div>
         <div class="row">
-            <div class="col-12 col-md-2">
+            <div class="col-12 col-sm-2">
                 <!-- navbar -->
                 {% include 'includes/profile_navbar.html' %}
                 <!-- navbar -->
             </div>
-            <div class="col-12 col-md-8 col-sm-4">
-                <p class="text-muted default-text text-center"><i class="fa-solid fa-circle-info fa-lg" style="color: #b0b2b5;"></i> Your details</p>
+            <div class="col-12 col-sm-8">
+                <p class="text-muted default-text text-center"><i class="fa-solid fa-circle-info fa-lg"></i> Your details</p>
                 <div class="m-5">
                     <p><i class="fa-solid fa-user"></i> Username: {{ user_info.user.username }}</p>
                     <p><i class="fa-solid fa-envelope"></i> Email: {{ user_info.user.email }}</p>
                     <p><i class="fa-solid fa-phone"></i> Phone Number: {{ user_info.default_phone_number }}</p>
                 </div>
-                <p class="text-muted default-text text-center"><i class="fa-solid fa-truck fa-lg" style="color: #b0b2b5;"></i> Default Delivery Information</p>
+                <p class="text-muted default-text text-center"><i class="fa-solid fa-truck fa-lg"></i> Default Delivery Information</p>
                 <table class="table table-hover profile-table m-5">
                     <tbody>
                     <tr>

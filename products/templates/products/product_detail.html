@@ -139,7 +139,7 @@
                         
                         {% if user.is_authenticated %}
                             {% if product in wishlist_items %}
-                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-outline-black rounded">
+                                <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-outline-black rounded p-3">
                                     <i class="fa-regular fa-heart"></i> Remove
                                 </a>
                             {% else %}
