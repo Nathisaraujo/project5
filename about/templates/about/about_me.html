@@ -20,26 +20,27 @@
         {% endif %}
         <hr>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
         {% for about_me in about %}
-            <div class="row text-center">
+            <div class="col-12 col-md-6 col-xl-3 text-center">
                 {% if about_me.image %}
                     <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo col-6">
                 {% else %}
                     <img src="{% static 'media/1.jpg' %}" alt="backup artist photo" class="artist-photo col-6">
                 {% endif %}
-                <div class="col-6 about-artist">
-                    <ul class="text-start ml-1">
-                        <li><i class="fa-solid fa-location-dot"></i> Brazilian in Ireland</li>
-                        <li><i class="fa-solid fa-person-breastfeeding" style="color: #990070;"></i> Mum to Thomas</li>
-                        <li><i class="fa-solid fa-palette" style="color: #f7b801;"></i> Artist</li>
-                        <li><i class="fa-solid fa-gamepad" style="color: #270490;"></i> Gamer</li>
-                        <li><i class="fa-solid fa-tree" style="color: #2e511f;"></i> Nature Lover</li>
-                        <li><i class="fa-solid fa-utensils" style="color: #cc0000;"></i> Master Chef</li>
-                    </ul>
-                </div>
             </div>
-            <div class="col-12 col-md-12 col-sm-6">
+            <div class="col-12 col-md-6 col-xl-2 text-start">
+                <p class="text-uppercase text-bold m-0 interests-aboutme">My Passions and Interests</p>
+                <ul class="pt-3 interests-aboutme">
+                    <li><i class="fa-solid fa-location-dot"></i> Brazilian in Ireland</li>
+                    <li><i class="fa-solid fa-person-breastfeeding" style="color: #990070;"></i> Mum to Thomas</li>
+                    <li><i class="fa-solid fa-palette" style="color: #f7b801;"></i> Artist</li>
+                    <li><i class="fa-solid fa-gamepad" style="color: #270490;"></i> Gamer</li>
+                    <li><i class="fa-solid fa-tree" style="color: #2e511f;"></i> Nature Lover</li>
+                    <li><i class="fa-solid fa-utensils" style="color: #cc0000;"></i> Master Chef</li>
+                </ul>
+            </div>
+            <div class="col-12 col-xl-4">
                 <h3 class="text-center">{{ about_me.title }}</h3>
                 <p>{{ about_me.content }} </p>
                 <p>With love, <br>{{ about_me.artist }} </p>
@@ -48,23 +49,23 @@
     </div>
     
     <div class="row justify-contents-center">
-        <p>My recommendations:</p>
-        <div class="col-12 col-md-6 col-sm-2">
+        <p class="text-uppercase text-bold">My recommendations:</p>
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'products' %}?digital=True" class="dropdown-item items-site digital">Digital Creations</a>
         </div>
-        <div class="col-12 col-md-6 col-sm-2">
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'products' %}?community=True" class="dropdown-item items-site community">Community <br>Suggestions</a>
         </div>
-        <div class="col-12 col-md-6 col-sm-2">
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'products' %}?paint=Watercolor" class="watercolor dropdown-item items-site">Made w/ <br>Watercolor</a>
         </div>
-        <div class="col-12 col-md-6 col-sm-2">
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'products' %}?offers=True" class="dropdown-item items-site special">Special Offers</a>
         </div>
-        <div class="col-12 col-md-6 col-sm-2">
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'blog' %}" class="dropdown-item items-site blog">Why Art Blog</a>
         </div>
-        <div class="col-12 col-md-6 col-sm-2">
+        <div class="col-12 col-md-4 col-lg-2">
             <a href="{% url 'event_list' %}" class="dropdown-item items-site events">Events</a>
         </div>
     </div>

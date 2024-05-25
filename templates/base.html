@@ -134,56 +134,57 @@
 
     {% block page_header %}
     {% endblock %}
-
-    {% block content %}
-    {% endblock %}
-    
-    {% block footer %}
-    <footer>
-        <div class="row footer-container justify-content-center pt-3 mt-2">
-            <div class="col-3 text-center">
-                <h5>Contact Me</h5>
-                <hr>
-                <p><i class="fa-regular fa-envelope fa-xl"></i> drawinggratitude@email.com</p>
-                <p><i class="fa-solid fa-square-phone-flip fa-xl"></i> +353 123 456 789</p>
-                <p><i class="fa-solid fa-location-dot fa-xl"></i> Somewhere, Limerick, Ireland</p>
-            </div>
-            <div class="col-3 text-center">
-              <h5>Follow Me</h5>
-              <hr>
-              <div>
-                  <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                  <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook fa-xl"></i></a>
-                  <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
-                  <a href="https://www.pinterest.com" target="_blank"><i class="fa-brands fa-pinterest fa-xl"></i></a>
+    <div class="wrapper">
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+      <footer>
+          <div class="row footer-container justify-content-center pt-3">
+              <div class="col-3 text-center">
+                  <h5>Contact Me</h5>
+                  <hr>
+                  <p><i class="fa-regular fa-envelope fa-xl"></i> drawinggratitude@email.com</p>
+                  <p><i class="fa-solid fa-square-phone-flip fa-xl"></i> +353 123 456 789</p>
+                  <p><i class="fa-solid fa-location-dot fa-xl"></i> Somewhere, Limerick, Ireland</p>
               </div>
-            </div>
-            <div class="col-3 text-center">
-                <h5>Payment Methods</h5>
+              <div class="col-3 text-center">
+                <h5>Follow Me</h5>
                 <hr>
-                <div class="payment-icons">
-                    <i class="fa-brands fa-cc-visa fa-2xl"></i>
-                    <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
+                <div>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook fa-xl"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
+                    <a href="https://www.pinterest.com" target="_blank"><i class="fa-brands fa-pinterest fa-xl"></i></a>
                 </div>
-            </div>
-            <div class="col-3 text-center">
-              <h5>Quick Links</h5>
-              <hr>
-              <ul>
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'products' %}?offers=True">Sale</a></li>
-                  <li><a href="{% url 'products' %}">Shop</a></li>
-                  <li><a href="{% url 'about_me' %}">About the Artist</a></li>
-                  <li><a href="{% url 'blog' %}">Blog</a></li>
-                  <li><a href="{% url 'event_list' %}">Events</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="row footer-container text-center">
-            <p>&copy; 2024 Drawing Gratitude. For educational purposes.</p>
-        </div>
-    </footer>
-    {% endblock %}
+              </div>
+              <div class="col-3 text-center">
+                  <h5>Payment Methods</h5>
+                  <hr>
+                  <div class="payment-icons">
+                      <i class="fa-brands fa-cc-visa fa-2xl"></i>
+                      <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
+                  </div>
+              </div>
+              <div class="col-3 text-center">
+                <h5>Quick Links</h5>
+                <hr>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'products' %}?offers=True">Sale</a></li>
+                    <li><a href="{% url 'products' %}">Shop</a></li>
+                    <li><a href="{% url 'about_me' %}">About the Artist</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'event_list' %}">Events</a></li>
+                </ul>
+              </div>
+          </div>
+          <div class="row footer-container text-center">
+              <p>&copy; 2024 Drawing Gratitude. For educational purposes.</p>
+          </div>
+      </footer>
+    </div>
 
     {% block postloadjs %}
     <script type="text/javascript">

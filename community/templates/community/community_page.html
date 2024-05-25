@@ -11,36 +11,38 @@
 
 {% block content %}
     <div class="container mt-5">
-        <div class="row text-center">
-            <h1 class="mt-2"><i class="fa-solid fa-users"></i><br>Welcome to our community!</h1>
-            <p>Joining our community offers you the opportunity to:</p>
-            <ul class="text-start list-community">
-                <li class="p-1"><i class="fa-solid fa-star"></i> Stay updated with our Newsletter by subscribing</li>
-                <li class="p-1"><i class="fa-solid fa-star"></i> Submit drawing suggestions</li>
-                <li class="p-1"><i class="fa-solid fa-star"></i> Simplify your shopping experience</li>
-                <li class="p-1"><i class="fa-solid fa-star"></i> Keep track of events by saving them to your profile and receive email reminders</li>
-                <li class="p-1"><i class="fa-solid fa-star"></i> Engage with our "WHY ART" blog posts</li>
-            </ul>
-            <p> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i></p>
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-6 col-xxl-4">
+                <h1 class="mt-2 text-center"><i class="fa-solid fa-users"></i><br>Welcome to our community!</h1>
+                <p class="text-center">Joining our community offers you the opportunity to:</p>
+                <ul class="text-start">
+                    <li class="p-1"><i class="fa-solid fa-star"></i> Stay updated with our Newsletter by subscribing</li>
+                    <li class="p-1"><i class="fa-solid fa-star"></i> Submit drawing suggestions</li>
+                    <li class="p-1"><i class="fa-solid fa-star"></i> Simplify your shopping experience</li>
+                    <li class="p-1"><i class="fa-solid fa-star"></i> Keep track of events by saving them to your profile and receive email reminders</li>
+                    <li class="p-1"><i class="fa-solid fa-star"></i> Engage with our "WHY ART" blog posts</li>
+                </ul>
+                <p class="text-center"> Let's explore how to become a part of this!<br><i class="fa-solid fa-chevron-down"></i></p>
+            </div>
         </div>
         <div class="row text-center m-5">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <h4><i class="fa-regular fa-newspaper"></i> Subscribe to our Newslettler! </h4>
                 <p> Subscribe with your email here to receive our newsletter. <br>
                     Stay updated with the latest news! Be the first to know about sales, <br>
                     new products, blog posts, and features!
                 </p>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <img src="{{ MEDIA_URL }}community/newsletter.gif" alt="newsletter examples" class="suggestion-img">
             </div>
         </div>
         <hr>
         <div class="row text-center m-5">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <img src="{{ MEDIA_URL }}community/suggestions.png" alt="users suggestions" class="suggestion-img">
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <h4><i class="fa-solid fa-message"></i> Submit drawing suggestions </h4>
                 <p> Registered users have the opportunity to submit drawing suggestions. <br>
                     Each month, I'll randomly select one suggestion to bring to life!!<br>
@@ -60,7 +62,7 @@
         </div>
         <hr>
         <div class="row text-center m-5">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <h4><i class="fa-solid fa-calendar-days"></i> Keep track of our events </h4>
                 <p> Discover an array of exciting events I'm participating! 
                     <br> Explore comprehensive event details including dates, locations, <br>
@@ -72,16 +74,16 @@
                 </p>
                 <a href="{% url 'event_list' %}" class="btn btn-dark">Go to Events</a>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <img src="{{ MEDIA_URL }}community/events.png" alt="users suggestions" class="suggestion-img">
             </div>
         </div>
         <hr>
         <div class="row text-center m-5">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <img src="{{ MEDIA_URL }}community/wishlist.png" alt="users suggestions" class="suggestion-img">
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <h4><i class="fa-solid fa-cart-shopping"></i> Simplify your shopping experience </h4>
                 <ul>
                     <li class="p-1"><i class="fa-brands fa-gratipay"></i><br> Registered users have the option to save products to their wishlist,
