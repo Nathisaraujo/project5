@@ -1,6 +1,6 @@
-/* html {
-    height: 100vh;
-} */
+html {
+    height: 100%;
+}
 
 
 /* common to all website */
@@ -826,7 +826,7 @@ li {
     }
 
     .margin-sorting {
-        margin: 0px
+        margin: 0px;
     }
 
     .product-title {
@@ -882,10 +882,10 @@ li {
     }
 
     .btn-wish-detail {
-        margin: 16px;
+       margin: 16px;
     }
 
-    .profiles-titles {
+    /* .profiles-titles {
         font-size: 2em;
-    }
+    } */
 }
