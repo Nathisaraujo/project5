@@ -88,10 +88,6 @@
     max-width: 10em;
 }
 
-.profiles-titles {
-    font-size: 2em;
-}
-
 .padding-wishlist {
     padding-left: 2.5em;
 }
@@ -117,6 +113,19 @@
     }
 }
 
+@media (max-width: 992px) {
+    .logo-font {
+        font-size: 1.5em;
+    }
+
+    .order-img {
+        max-width: 7em;
+    }
+
+    .profiles-titles {
+        font-size: 1.5em;
+    }
+}
 
 @media (max-width: 480px) {
     .profile-table {

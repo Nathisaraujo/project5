@@ -760,6 +760,23 @@ li {
         max-width: 12em;
         padding-top: 3em;
     }
+
+    .logo-font {
+        font-size: 1.5em;
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+    }
+
+    #delivery-banner h4 {
+        font-size: .9rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -884,8 +901,4 @@ li {
     .btn-wish-detail {
        margin: 16px;
     }
-
-    /* .profiles-titles {
-        font-size: 2em;
-    } */
 }
