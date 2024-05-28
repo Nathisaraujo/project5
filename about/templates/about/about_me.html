@@ -26,7 +26,7 @@
                 {% if about_me.image %}
                     <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo col-6">
                 {% else %}
-                    <img src="{% static 'media/1.jpg' %}" alt="backup artist photo" class="artist-photo col-6">
+                    <img src="{% static 'media/noimage.png' %}" alt="broken image - no image to display" class="artist-photo col-6">
                 {% endif %}
             </div>
             <div class="col-12 col-md-6 col-xl-2 text-start">

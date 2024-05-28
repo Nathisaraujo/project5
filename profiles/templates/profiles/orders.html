@@ -42,7 +42,7 @@
                                         {% for item in order.lineitems.all %}
                                             <li >
                                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                                                    <img src="{{ item.product.image.url }}" class="order-img img-thumbnail" >
+                                                    <img src="{{ item.product.image.url }}" class="order-img img-thumbnail" alt="{{ item.product.name }}">
                                                 </a>
                                             </li>
                                         {% endfor %}

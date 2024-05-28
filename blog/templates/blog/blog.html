@@ -27,9 +27,9 @@
                     <div class="card">
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             {% if post.image %}
-                                <div class="image-container img-thumbnail" style="background-image: url('{{ post.image.url }}');"></div>
+                                <img class="image-container img-thumbnail" src="{{ post.image.url }}" alt="{{ post.title }}">
                             {% else %}
-                                <div class="image-container img-thumbnail" style="background-image: url('/media/noimage.png');"></div>
+                                <img class="image-container img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="broken image - no image to display">
                             {% endif %}
                         </a>
                     </div>

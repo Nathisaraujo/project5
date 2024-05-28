@@ -14,9 +14,9 @@
     <div class="row m-5">
       <div class="col-12 col-md-6 mt-5 text-center">
         {% if post.image %}
-            <div class="img-thumbnail post-image" style="background-image: url('{{ post.image.url }}');"></div>
+            <img class="image-container img-thumbnail" src="{{ post.image.url }}" alt="{{ post.title }}">
         {% else %}
-            <div class="img-thumbnail post-image" style="background-image: url('/media/about/noimage.png');"></div>
+            <img class="image-container img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="broken image - no image to display">
         {% endif %}
         <hr>
         <div class="d-none d-md-block">
@@ -24,7 +24,7 @@
             {% if about_me and about_me.image %}
               <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo-blog col-6">
             {% else %}
-                <img src="{% static 'noimage.png' %}" alt="backup artist photo" class="artist-photo-blog col-6">
+                <img src="{% static 'noimage.png' %}" alt="broken image - no image to display" class="artist-photo-blog col-6">
             {% endif %}
             <p class="text-muted mt-4">Written by {{ post.author }} </p>
           </div>
@@ -63,7 +63,7 @@
           {% if about_me and about_me.image %}
               <img src="{{ about_me.image.url }}" alt="artist photo" class="artist-photo-blog col-6">
           {% else %}
-              <img src="{% static 'noimage.png' %}" alt="backup artist photo" class="artist-photo-blog col-6">
+              <img src="{% static 'noimage.png' %}" alt="broken image - no image to display" class="artist-photo-blog col-6">
           {% endif %}
           <p class="text-muted mt-4">Written by {{ post.author }} </p>
         </div>
