@@ -675,6 +675,10 @@ li {
     border-radius: 0;
 }
 
+.container-404 {
+    height: 70vh;
+    padding-top: 10em;
+}
 
 /* -------------------------------- Media Queries */
 

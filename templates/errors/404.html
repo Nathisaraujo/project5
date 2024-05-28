@@ -6,17 +6,21 @@
             <div class="col"></div>
         </div>
     </div>
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-dark">
-                    The page you are looking for isn't available
-                </h1>
+    <div class="container container-404 mt-5">
+        <div class="row">
+            <div class="col-4 col-md-6 mt-5 justify-content-end">
+                <img src="{{ MEDIA_URL }}home/404.png" alt="page not found icon">
+            </div>
+            <div class="col-4 col-md-6 mt-5">
+                <h1>OOPS!</h1>
+                <h3 class="display-4 logo-font text-dark">
+                    The page you are looking for isn't available.
+                </h3>
                 <div class="my-5">
                     <h4>
                         <a href="{% url 'products' %}" 
                             class=" btn btn-dark text-uppercase py-3">
-                                Return to shop
+                            <i class="fa-solid fa-bag-shopping"></i> Return to shop
                         </a>
                     </h4>
                 </div>
