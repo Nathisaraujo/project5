@@ -26,6 +26,11 @@ footer a:hover {
     
 }
 
+.footer-titles {
+    background-color: #ffffff2b;
+    border-radius: 5px;
+}
+
 .payment-icons {
     font-size: larger;
 }

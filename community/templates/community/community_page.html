@@ -44,14 +44,17 @@
             </div>
             <div class="col-12 col-lg-6">
                 <h4><i class="fa-solid fa-message"></i> Submit drawing suggestions </h4>
-                <p> Registered users have the opportunity to <strong>submit drawing suggestions.</strong><br>
+                <p> Registered users have the opportunity to submit drawing suggestions.<br>
                     Each month, I'll randomly select one suggestion to bring to life!!<br>
                 </p>
                 <a href="{% url 'products' %}?community=True" class="btn btn-dark pt-0"> Check out some<br> community suggestions!</a>
                 <p class="mt-3">
                     <i class="fa-solid fa-circle-exclamation fa-lg" style="color: #f7b801;"></i><br>
-                    If your suggestion is chosen, you'll receive a free copy!<br>
-                    Each community suggestion drawing is priced at just <i class="fa-solid fa-euro-sign fa-xs"></i>10!
+                    If your suggestion is chosen, you'll receive a free copy.<br>
+                    If you're lucky, you'l get an <em>unique handmande art</em>!<br>
+                    For the rest of our community, we are committed to providing <br>
+                    <em>affordable art</em>. Each community-suggested drawing is priced <br>
+                    at just <i class="fa-solid fa-euro-sign fa-xs"></i>10!
                 </p>
                 {% if user.is_authenticated  %}
                     <a href="{% url 'recommend' %}" class="btn btn-dark btn-community">Send a Suggestion now!</a> 
@@ -67,10 +70,8 @@
                 <p> Discover an array of exciting events I'm participating! 
                     <br> Explore comprehensive event details including dates, locations, <br>
                     and whether they're virtual or in-person, all at your fingertips. <br>
-                    <i class="fa-solid fa-user"></i><br> By registering on the website, you unlock the ability to effortlessly <br>
+                    <i class="fa-solid fa-right-to-bracket"></i> By registering on the website, you unlock the ability to effortlessly <br>
                     bookmark events for future reference directly on your profile. <br>
-                    <i class="fa-solid fa-envelope"></i><br> Plus, anticipate a delightful email reminder one day prior to each event, <br>
-                    ensuring you never miss out on an exciting opportunity.
                 </p>
                 <a href="{% url 'event_list' %}" class="btn btn-dark">Go to Events</a>
             </div>
