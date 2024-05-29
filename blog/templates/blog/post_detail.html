@@ -39,7 +39,16 @@
         <hr>
         <div class="card card-body post-card">
           {{ post.content | safe }}
-          <span class="text-muted">{{ post.created_on }} </span>
+          <span class="text-muted mt-3">{{ post.created_on }} </span>
+          {% if post.learn_more_link1 or post.learn_more_link2 or post.learn_more_link3 or post.learn_more_link4 or post.learn_more_link5 %}
+              <hr>
+              <h5 class="m-4">Learn More</h5>
+              <ul>
+                  {% if post.learn_more_link1 %}<li><a href="{{ post.learn_more_link1 }}" target="_blank"><i class="fa-solid fa-star"></i> {{ post.learn_more_text1 }}</a></li>{% endif %}
+                  {% if post.learn_more_link2 %}<li><a href="{{ post.learn_more_link2 }}" target="_blank"><i class="fa-solid fa-star"></i> {{ post.learn_more_text2 }}</a></li>{% endif %}
+                  {% if post.learn_more_link3 %}<li><a href="{{ post.learn_more_link3 }}" target="_blank"><i class="fa-solid fa-star"></i> {{ post.learn_more_text3 }}</a></li>{% endif %}
+              </ul>
+          {% endif %}
         </div>
         {% if request.user.is_authenticated %}
           <form action="{% url 'like_post' slug=post.slug %}" method="post">

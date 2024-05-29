@@ -18,6 +18,9 @@ class Post(models.Model):
     - like (ManyToManyField to User): Users who liked the post.
     - author (ForeignKey to AboutMe): Author of the post.
     - image (ImageField): Image associated with the post.
+    - learn_more_link1 (URLField): First learn more link.
+    - learn_more_link2 (URLField): Second learn more link.
+    - learn_more_link3 (URLField): Third learn more link.
 
     Methods:
     - __str__: Returns a string representation of the post.
@@ -32,6 +35,12 @@ class Post(models.Model):
     )
     author = models.ForeignKey(AboutMe, on_delete=models.CASCADE)
     image = models.ImageField(null=True, blank=True, upload_to='media/posts/')
+    learn_more_link1 = models.URLField(blank=True, null=True, verbose_name="Learn More Link 1")
+    learn_more_text1 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Learn More Text 1")
+    learn_more_link2 = models.URLField(blank=True, null=True, verbose_name="Learn More Link 2")
+    learn_more_text2 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Learn More Text 2")
+    learn_more_link3 = models.URLField(blank=True, null=True, verbose_name="Learn More Link 3")
+    learn_more_text3 = models.CharField(max_length=200, blank=True, null=True, verbose_name="Learn More Text 3")
 
     def __str__(self):
         return f"{self.title} | sent by {self.author.artist} "
