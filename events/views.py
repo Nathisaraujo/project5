@@ -14,7 +14,9 @@ def event_list(request):
     saved_event_ids = []
 
     if request.user.is_authenticated:
-        saved_event_ids = request.user.saved_events.values_list('id', flat=True)
+        saved_event_ids = request.user.saved_events.values_list(
+            'id', flat=True
+        )
 
     context = {
         'events': events,

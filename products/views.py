@@ -3,9 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import AnonymousUser
 from django.db.models import Q
-from decimal import Decimal
 from django.db.models.functions import Lower
-from .models import Product, Category, Surface, Paint,  ProductTags
+from .models import Product, Category, ProductTags
 from wishlist.models import Wishlist
 from .forms import ProductForm, ProductTagsForm
 
@@ -116,8 +115,8 @@ def product_detail(request, product_id):
     wishlist_items = []
 
     if not isinstance(request.user, AnonymousUser):
-        wishlist_items = Wishlist.objects.filter(user=request.user).select_related('product')
-
+        wishlist_items = Wishlist.objects.filter(user=request.user)\
+                                 .select_related('product')
     context = {
         'product': product,
         'wishlist_items': [item.product for item in wishlist_items],

@@ -2,7 +2,6 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
 from django.utils.text import slugify
 from about.models import AboutMe
 from .models import Post

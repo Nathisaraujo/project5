@@ -17,13 +17,16 @@ class ProductForm(forms.ModelForm):
     """
     Form for adding or editing a product.
 
-    This form includes a custom clearable file input widget for the image field.
+    This form includes a custom clearable file
+    input widget for the image field.
     """
     class Meta:
         model = Product
         fields = '__all__'
         widgets = {
-            'description': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}),
+            'description': SummernoteWidget(
+                attrs={'summernote': {'width': '100%', 'height': '400px'}}
+            ),
         }
 
     image = forms.ImageField(
@@ -62,7 +65,7 @@ class ProductTagsForm(forms.ModelForm):
         self.fields['paint'].queryset = Paint.objects.all()
 
         self.fields['frame'].queryset = Frame.objects.all()
-        
+
         self.fields['paper'].queryset = Paper.objects.all()
 
         for field_name, field in self.fields.items():

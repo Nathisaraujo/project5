@@ -1,8 +1,6 @@
-from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
-from django.urls import reverse
 from products.models import Product
 from wishlist.models import Wishlist
 
@@ -22,11 +20,12 @@ def add_to_wishlist(request, product_id):
 
     if not exist_wishlist_item:
         Wishlist.objects.create(product=product, user=request.user)
-        messages.success(request, 'The product has been successfully added to your wishlist!')
+        messages.success(request, 'Product added to wishlist!')
     else:
-        messages.error(request, 'You have already added this product in your wishlist!')
+        messages.error(request, 'Product already in wishlist!')
 
     return redirect('product_detail', product_id=product_id)
+
 
 @login_required
 def remove_from_wishlist(request, product_id):

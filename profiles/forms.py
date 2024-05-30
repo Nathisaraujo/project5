@@ -11,7 +11,8 @@ class UserProfileForm(forms.ModelForm):
     - default_phone_number (CharField): Default phone number.
 
     Methods:
-    - __init__: Initializes the form with placeholders, classes, and removes auto-generated labels.
+    - __init__: Initializes the form with placeholders, classes,
+                and removes auto-generated labels.
     """
     class Meta:
         model = UserProfile

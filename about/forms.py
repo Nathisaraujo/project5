@@ -2,6 +2,7 @@ from django import forms
 from .models import AboutMe
 from django_summernote.widgets import SummernoteWidget
 
+
 class AboutMeForm(forms.ModelForm):
     """
     Form for updating the About Me page.
@@ -11,5 +12,7 @@ class AboutMeForm(forms.ModelForm):
         model = AboutMe
         fields = '__all__'
         widgets = {
-            'content': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}),
+            'content': SummernoteWidget(
+                attrs={'summernote': {'width': '100%', 'height': '400px'}}
+            ),
         }

@@ -108,6 +108,7 @@ class ProductTags(models.Model):
 
 # The following models are related to the ProductTags model above
 
+
 class Material(models.Model):
     name = models.CharField(max_length=100)
 
