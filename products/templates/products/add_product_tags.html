@@ -16,10 +16,6 @@
             <div class="col-12 col-md-6 margin-top">
                 <h2 class="logo-font"><i class="fa-solid fa-gear"></i> Product Management</h2>
                 <h5 class="text-muted">Add Product Tags</h5>
-                <p><i class="fa-solid fa-triangle-exclamation" style="color: #FFD43B;"></i> 
-                    Adding more than one tag:
-                    please, hold ctrl + click on the tag you'd like.
-                </p>
                 <hr>
             </div>
         </div>
@@ -36,4 +32,14 @@
             </div>            
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('select[multiple]').select2({
+                placeholder: "Select options",
+                allowClear: true,
+                width: '100%'
+            });
+        });
+    </script>
 {% endblock %}

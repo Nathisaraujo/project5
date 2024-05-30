@@ -62,8 +62,10 @@ class ProductTagsForm(forms.ModelForm):
         self.fields['paint'].queryset = Paint.objects.all()
 
         self.fields['frame'].queryset = Frame.objects.all()
-
+        
         self.fields['paper'].queryset = Paper.objects.all()
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-dark'
+            if isinstance(field.widget, forms.SelectMultiple):
+                field.widget.attrs['class'] += ' select2-multiple'
