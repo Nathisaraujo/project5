@@ -8,8 +8,8 @@
 
 {% block inner_content %}
 
-<div class="row mt-5  offset-sm-3">
-  <h1 class="logo-font mt-5"><i class="fa-solid fa-right-to-bracket"></i> {% trans "Sign In" %}</h1>
+<div class="row margin-top  offset-sm-3">
+  <h1 class="logo-font margin-top"><i class="fa-solid fa-right-to-bracket"></i> {% trans "Sign In" %}</h1>
 
   {% get_providers as socialaccount_providers %}
 
@@ -35,7 +35,7 @@
   <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   {% endif %}
 
-  <form class="login" method="POST" action="{% url 'account_login' %}">
+  <form class="login mb-2" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}

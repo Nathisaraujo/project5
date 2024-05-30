@@ -35,6 +35,10 @@ footer a:hover {
     font-size: larger;
 }
 
+.margin-top {
+    margin-top: 3rem;
+}
+
 /* Scrollbar - Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 12px;
@@ -652,6 +656,10 @@ li {
     color: black;
 }
 
+.height-auth {
+    height: 50vh;
+}
+
 /* Add Product Form - from walkthrough*/
 
 .btn-file {
@@ -721,6 +729,7 @@ li {
     .header-container {
         padding-top: 164px;
     }
+
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -784,6 +793,10 @@ li {
 
     #delivery-banner h4 {
         font-size: .9rem;
+    }
+
+    .margin-top {
+        margin-top: 0rem;
     }
 
 }
@@ -885,11 +898,6 @@ li {
 
     .post-image {
         margin-left: 0em;
-    }
-
-    .card-img-top {
-        width: 90%;
-        margin-left: 1.5em;
     }
 
     .qty_input {

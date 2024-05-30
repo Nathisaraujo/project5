@@ -6,8 +6,8 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
-<div class="row mt-5 offset-md-3">
-    <h1 class="logo-font mt-5"><i class="fa-solid fa-user-plus"></i> {% trans "Sign Up" %}</h1>
+<div class="row margin-top offset-md-3">
+    <h1 class="logo-font margin-top"><i class="fa-solid fa-user-plus"></i> {% trans "Sign Up" %}</h1>
     <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
