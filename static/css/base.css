@@ -710,6 +710,34 @@ li {
         padding-left: 5em;
     }
 
+    .p-offers-image {
+        padding-top: 7em;
+        padding-left: 6em;
+    }
+
+    .community.items-site:hover {
+        background-image: url('/media/about/community_2.png');
+    }
+    
+    .watercolor.items-site:hover {
+        background-image: url('/media/about/watercolor_2.png');
+    }
+    
+    .special.items-site:hover {
+        background-image: url('/media/about/special_2.png');
+    }
+    
+    .blog.items-site:hover {
+        background-image: url('/media/about/blog_2.png');
+    }
+    
+    .digital.items-site:hover {
+        background-image: url('/media/about/digital_2.png');
+    }
+    
+    .events.items-site:hover {
+        background-image: url('/media/about/event_2.png');      
+    }
 }
 
 @media (min-width: 1200px) {
@@ -806,12 +834,61 @@ li {
         margin-top: 0rem;
     }
 
+    .watercolor.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
+    .special.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
+    .event.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
+    .digital.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
+    .community.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
+    .blog.items-site:hover {
+        background-image: none;
+        padding-top: 4em;
+        background-color: white;
+        color:#3d2b3d;
+        border: solid 2px #9684a1;
+    }
+
 }
 
 @media (max-width: 768px) {
     .interests-aboutme {
         text-align: center;
     }
+
 }
 
 @media (max-width: 576px) {
