@@ -700,6 +700,12 @@ li {
     padding-top: 10em;
 }
 
+/* 404 page */
+
+.image-404 {
+    max-width: 30em;
+}
+
 /* -------------------------------- Media Queries */
 
 /* screens larger then 1400px - xxl */
@@ -737,6 +743,10 @@ li {
     
     .events.items-site:hover {
         background-image: url('/media/about/event_2.png');      
+    }
+
+    .image-404 {
+        max-width: 20em;
     }
 }
 
@@ -882,11 +892,19 @@ li {
         border: solid 2px #9684a1;
     }
 
+    .image-404 {
+        max-width: 15em;
+    }
+
 }
 
 @media (max-width: 768px) {
     .interests-aboutme {
         text-align: center;
+    }
+
+    .container-404 {
+        padding-top: 0em;
     }
 
 }
