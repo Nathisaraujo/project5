@@ -70,7 +70,7 @@
                         <p class="my-0">My Account</p>
                     </div>
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                <div class="dropdown-menu border-0" aria-labelledby="user options">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                             <a href="{% url 'management' %}" class="dropdown-item">Management</a>
@@ -189,7 +189,7 @@
     </div>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
       var toastEl = document.querySelector('.toast');
       var toast = new bootstrap.Toast(toastEl);
       toast.show();

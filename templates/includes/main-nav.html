@@ -9,7 +9,7 @@
             <a class="fw-bold nav-link text-dark me-5" href="#" id="all-products-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <ul class="dropdown-menu border-0" aria-labelledby="all products link">
                 <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Lowest Price</a></li>
                 <li><a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">By Highest Price</a></li>
                 <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
@@ -17,10 +17,10 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="fw-bold nav-link text-dark me-5" href="#" id="clothing-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="fw-bold nav-link text-dark me-5" href="#" id="categories-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Category
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="categories-link">
+            <ul class="dropdown-menu border-0" aria-labelledby="categories link">
                 <li><a href="{% url 'products' %}?category=christmas" class="dropdown-item">Christmas</a></li>
                 <li><a href="{% url 'products' %}?category=family" class="dropdown-item">Family</a></li>
                 <li><a href="{% url 'products' %}?category=thank_you" class="dropdown-item">Thank You</a></li>
@@ -41,12 +41,12 @@
             <a class="fw-bold nav-link text-dark me-5" href="#" id="homeware-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Main Materials
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="homeware-link">
+            <ul class="dropdown-menu border-0" aria-labelledby="homeware link">
                 <li><a href="{% url 'products' %}?digital=True" class="dropdown-item">Digital</a></li>
                 <li><a href="{% url 'products' %}?paint=Watercolor" class="dropdown-item">Watercolor</a></li>
-                <li><a href="{% url 'products' %}?surface=Card" class="dropdown-item">Card</a></li>
-                <li><a href="{% url 'products' %}?material=Ink Pens" class="dropdown-item">Ink Pen</a></li>
-                <li><a href="{% url 'products' %}?material=Coloured Pencil" class="dropdown-item">Coloured Pencil</a></li>
+                <li><a href="{% url 'products' %}?paper=Card" class="dropdown-item">Card</a></li>
+                <li><a href="{% url 'products' %}?material=Ink%20Pens" class="dropdown-item">Ink Pen</a></li>
+                <li><a href="{% url 'products' %}?material=Coloured%20Pencil" class="dropdown-item">Coloured Pencil</a></li>
             </ul>
         </li>
 
@@ -58,16 +58,16 @@
             <a class="fw-bold nav-link text-dark" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Offers
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <ul class="dropdown-menu border-0" aria-labelledby="specials link">
                 <li><a href="{% url 'products' %}?offers=True" class="dropdown-item text-uppercase" id="specials-link">Sale</a></li>
                 <li><a href="{% url 'products' %}?community=True" class="dropdown-item">Community Suggestions</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown">
-            <a class="fw-bold nav-link text-dark" href="" id="specials-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="fw-bold nav-link text-dark" href="" id="about-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About
             </a>
-            <ul class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <ul class="dropdown-menu border-0" aria-labelledby="about link">
                 <li><a href="{% url 'about_me' %}" class="dropdown-item">About the artist</a></li>
                 <li><a href="{% url 'blog' %}" class="dropdown-item">Blog Why Art</a></li>
                 <li><a href="{% url 'event_list' %}" class="dropdown-item">Events</a></li>
