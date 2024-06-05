@@ -138,42 +138,86 @@ I utilized Lighthouse, an automated tool integrated into web browsers and availa
 
 You can review the detailed results below.
 
+*Please note that each value follows the format: mobile/desktop.*
+
 LIGHTHOUSE
 
-| File path                     | Performance | Accessibility | Best Practices | SEO | 
-|-------------------------------|-------------|---------------|----------------|-----|
-| *ABOUT APP*                   |             |               |                |     |
-| about/                        | 45          | 94            | 74             | 92  |
-| about/edit                    | 45          | 94            | 74             | 92  |
-| *BAG APP*                     |             |               |                |     |
-| bag/                          | 45          | 94            | 74             | 92  |
-| *BLOG APP*                    |             |               |                |     |
-| blog/                         | 45          | 94            | 74             | 92  |
-| blog/post_detail              | 45          | 94            | 74             | 92  |
-| blog/add_post                 | 45          | 94            | 74             | 92  |
-| *CHECKOUT APP*                |             |               |                |     |
-| checkout/                     | 45          | 94            | 74             | 92  |
-| checkout/checkout_success     | 45          | 94            | 74             | 92  |
-| *COMMUNITY APP*               |             |               |                |     |
-| community/                    | 45          | 94            | 74             | 92  |
-| *EVENTS APP*                  |             |               |                |     |
-| events/                       | 45          | 94            | 74             | 92  |
-| events/add/                   | 45          | 94            | 74             | 92  |
-| events/edit/                  | 45          | 94            | 74             | 92  |
-| *HOME APP*                    |             |               |                |     |
-| home/                         | 45          | 94            | 74             | 92  |
-| home/privacy_policy           | 45          | 94            | 74             | 92  |
-| *PRODUCTS APP*                |             |               |                |     |
-| products/                     | 45          | 94            | 74             | 92  |
-| products/product_detail       | 45          | 94            | 74             | 92  |
-| products/edit                 | 45          | 94            | 74             | 92  |
-| products/add_product          | 45          | 94            | 74             | 92  |
-| products/add_product_tags     | 45          | 94            | 74             | 92  |
-| *PROFILES APP*                |             |               |                |     |
-| profile/                      | 45          | 94            | 74             | 92  |
-| profile/management            | 45          | 94            | 74             | 92  |
-| profile/wishilist             | 45          | 94            | 74             | 92  |
-| profile/update_profile        | 45          | 94            | 74             | 92  |
-| profile/saved_events          | 45          | 94            | 74             | 92  |
-| profile/recomemmendation_form | 45          | 94            | 74             | 92  |
-| profile/orders                | 45          | 94            | 74             | 92  |
+| File path                     | Performance | Accessibility | Best Practices | SEO | Comment |
+|-------------------------------|-------------|---------------|----------------|-----|---------|
+| *ABOUT APP*                   |             |               |                |     |         |
+| about/                        | 45          | 94            | 74             | 92  |         |
+| about/edit                    | 45          | 94            | 74             | 92  |         |
+| *BAG APP*                     |             |               |                |     |         |
+| bag/                          | 45          | 94            | 74             | 92  |         |
+| *BLOG APP*                    |             |               |                |     |         |
+| blog/                         | 45          | 94            | 74             | 92  |         |
+| blog/post_detail              | 45          | 94            | 74             | 92  |         |
+| blog/add_post                 | 45          | 94            | 74             | 92  |         |
+| *CHECKOUT APP*                |             |               |                |     |         |
+| checkout/                     | 45          | 94            | 74             | 92  |         |
+| checkout/checkout_success     | 45          | 94            | 74             | 92  |         |
+| *COMMUNITY APP*               |             |               |                |     |         |
+| community/                    | 45          | 94            | 74             | 92  |         |
+| *EVENTS APP*                  |             |               |                |     |         |
+| events/                       | 45          | 94            | 74             | 92  |         |
+| events/add/                   | 45          | 94            | 74             | 92  |         |
+| events/edit/                  | 45          | 94            | 74             | 92  |         |
+| *HOME APP*                    |             |               |                |     |         |
+| home/                         | 45          | 94            | 74             | 92  |         |
+| home/privacy_policy           | 45          | 94            | 74             | 92  |         |
+| *PRODUCTS APP*                |             |               |                |     |         |
+| products/                     | 45          | 94            | 74             | 92  |         |
+| products/product_detail       | 45          | 94            | 74             | 92  |         |
+| products/edit                 | 45          | 94            | 74             | 92  |         |
+| products/add_product          | 45          | 94            | 74             | 92  |         |
+| products/add_product_tags     | 45          | 94            | 74             | 92  |         |
+| *PROFILES APP*                |             |               |                |     |         |
+| profile/                      | 45          | 94            | 74             | 92  |         |
+| profile/management            | 45          | 94            | 74             | 92  |         |
+| profile/wishilist             | 45          | 94            | 74             | 92  |         |
+| profile/update_profile        | 45          | 94            | 74             | 92  |         |
+| profile/saved_events          | 45          | 94            | 74             | 92  |         |
+| profile/recomemmendation_form | 45          | 94            | 74             | 92  |         |
+| profile/orders                | 45          | 94            | 74             | 92  |         |
+
+
+
+WAVE
+
+| File path                     | Errors | Alerts | Features | ARIA | Comment |
+|-------------------------------|--------|--------|----------|------|---------|
+| *ABOUT APP*                   |        |        |          |      |         |
+| about/                        | PASS   |        |          |      |         |
+| about/edit                    | PASS   |        |          |      |         |
+| *BAG APP*                     |        |        |          |      |         |
+| bag/                          | PASS   |        |          |      |         |
+| *BLOG APP*                    |        |        |          |      |         |
+| blog/                         | PASS   |        |          |      |         |
+| blog/post_detail              | PASS   |        |          |      |         |
+| blog/add_post                 | PASS   |        |          |      |         |
+| *CHECKOUT APP*                |        |        |          |      |         |
+| checkout/                     | PASS   |        |          |      |         |
+| checkout/checkout_success     | PASS   |        |          |      |         |
+| *COMMUNITY APP*               |        |        |          |      |         |
+| community/                    | PASS   |        |          |      |         |
+| *EVENTS APP*                  |        |        |          |      |         |
+| events/                       | PASS   |        |          |      |         |
+| events/add/                   | PASS   |        |          |      |         |
+| events/edit/                  | PASS   |        |          |      |         |
+| *HOME APP*                    |        |        |          |      |         |
+| home/                         | PASS   |        |          |      |         |
+| home/privacy_policy           | PASS   |        |          |      |         |
+| *PRODUCTS APP*                |        |        |          |      |         |
+| products/                     | PASS   |        |          |      |         |
+| products/product_detail       | PASS   |        |          |      |         |
+| products/edit                 | PASS   |        |          |      |         |
+| products/add_product          | PASS   |        |          |      |         |
+| products/add_product_tags     | PASS   |        |          |      |         |
+| *PROFILES APP*                |        |        |          |      |         |
+| profile/                      | PASS   |        |          |      |         |
+| profile/management            | PASS   |        |          |      |         |
+| profile/wishilist             | PASS   |        |          |      |         |
+| profile/update_profile        | PASS   |        |          |      |         |
+| profile/saved_events          | PASS   |        |          |      |         |
+| profile/recomemmendation_form | PASS   |        |          |      |         |
+| profile/orders                | PASS   |        |          |      |         |
