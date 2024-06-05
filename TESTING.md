@@ -79,34 +79,34 @@ You can use this table for reference:
 
 |File path                      | XS   | MD   | LG   | XL   | XXL  |
 |------------------------------ |----- | ---- | ---- | ---- | ---- |
-|*ABOUT APP*                    | ---- | ---- | ---- | ---- | ---- |
+|*ABOUT APP*                    |      |      |      |      |      |
 |about/                         | PASS | PASS | PASS | PASS | PASS |
 |about/edit                     | PASS | PASS | PASS | PASS | PASS |
-|*BAG APP*                      | ---- | ---- | ---- | ---- | ---- |
+|*BAG APP*                      |      |      |      |      |      |
 |bag/                           | PASS | PASS | PASS | PASS | PASS |
-|*BLOG APP*                     | ---- | ---- | ---- | ---- | ---- |
+|*BLOG APP*                     |      |      |      |      |      |
 |blog/                          | PASS | PASS | PASS | PASS | PASS |
 |blog/post_detail               | PASS | PASS | PASS | PASS | PASS |
 |blog/add_post                  | PASS | PASS | PASS | PASS | PASS |
-|*CHECKOUT APP*                 | ---- | ---- | ---- | ---- | ---- |
+|*CHECKOUT APP*                 |      |      |      |      |      |
 |checkout/                      | PASS | PASS | PASS | PASS | PASS |
 |checkout/checkout_success      | PASS | PASS | PASS | PASS | PASS |
-|*COMMUNITY APP*                | ---- | ---- | ---- | ---- | ---- |
+|*COMMUNITY APP*                |      |      |      |      |      |
 |community/                     | PASS | PASS | PASS | PASS | PASS |
-|*EVENTS APP*                   | ---- | ---- | ---- | ---- | ---- |
+|*EVENTS APP*                   |      |      |      |      |      |
 |events/                        | PASS | PASS | PASS | PASS | PASS |
 |events/add/                    | PASS | PASS | PASS | PASS | PASS |
 |events/edit/                   | PASS | PASS | PASS | PASS | PASS |
-|*HOME APP*                     | ---- | ---- | ---- | ---- | ---- |
+|*HOME APP*                     |      |      |      |      |      |
 |home/                          | PASS | PASS | PASS | PASS | PASS |
 |home/privacy_policy            | PASS | PASS | PASS | PASS | PASS |
-|*PRODUCTS APP*                 | ---- | ---- | ---- | ---- | ---- |
+|*PRODUCTS APP*                 |      |      |      |      |      |
 |products/                      | PASS | PASS | PASS | PASS | PASS |
 |products/product_detail        | PASS | PASS | PASS | PASS | PASS |
 |products/edit                  | PASS | PASS | PASS | PASS | PASS |
 |products/add_product           | PASS | PASS | PASS | PASS | PASS |
 |products/add_product_tags      | PASS | PASS | PASS | PASS | PASS |
-|*PROFILES APP*                 | ---- | ---- | ---- | ---- | ---- |
+|*PROFILES APP*                 |      |      |      |      |      |
 |profile/                       | PASS | PASS | PASS | PASS | PASS |
 |profile/management             | PASS | PASS | PASS | PASS | PASS |
 |profile/wishilist              | PASS | PASS | PASS | PASS | PASS |
@@ -114,7 +114,7 @@ You can use this table for reference:
 |profile/saved_events           | PASS | PASS | PASS | PASS | PASS |
 |profile/recomemmendation_form  | PASS | PASS | PASS | PASS | PASS |
 |profile/orders                 | PASS | PASS | PASS | PASS | PASS |
-|*ALLAUTH TEMPLATES*            | ---- | ---- | ---- | ---- | ---- |
+|*ALLAUTH TEMPLATES*            |      |      |      |      |      |
 |signup/                        | PASS | PASS | PASS | PASS | PASS |
 |login/                         | PASS | PASS | PASS | PASS | PASS |
 |logout/                        | PASS | PASS | PASS | PASS | PASS |
@@ -196,5 +196,70 @@ Note that he main nav is displaying missing label errors, empty button and orpha
 | products/                     |    Raised alerts regarding shipping headings' level. Fixed seem more button contrast, added label to select, missinh h1 heading, see more button as redundant link                                                                                                   |
 | products/product_detail       |     Fixed empty buttons, missing first level heading                                                                                                  |
 
+# MANUAL TESTING
+
+Performed comprehensive manual testing across all website features and functionalities, meticulously examining navigation, forms, buttons, links, and interactive elements. Ensured seamless functionality and user-friendliness across all aspects of the site. Scrutinized the website against predefined user stories and acceptance criteria, confirming successful implementation and seamless task completion for users.
 
 
+| User Stories    | Links Active | Features Working | Pass/Fail |
+|-----------------|--------------|------------------|-----------|
+|*ABOUT*          |              |                  |           |
+|**[About Me Page](https://github.com/Nathisaraujo/project5/issues/10)** | Yes           | Yes              | PASS      |
+|*BAG*            |              |                  |           |
+| **[Purchases Total](https://github.com/Nathisaraujo/project5/issues/18)**         | Yes           | Yes              | PASS      |
+| **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |            |               |       |
+|*BLOG*           |              |                  |           |
+| **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |            |               |       |
+| **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
+| **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
+|*CHECKOUT*       |              |                  |           |
+| **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |            |               |       |
+| **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |            |               |       |
+| **[Cancel Order](https://github.com/Nathisaraujo/project5/issues/41)**         |            |               |       |
+| **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |            |               |       |
+| **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |            |               |       |
+| **[Order Confirmation](https://github.com/Nathisaraujo/project5/issues/24)**         |            |               |       |
+| **[Payment Details](https://github.com/Nathisaraujo/project5/issues/23)**         |            |               |       |
+|*COMMUNITY*      |              |                  |           |
+| **[Community Page](https://github.com/Nathisaraujo/project5/issues/46)**         |      Yes      |       Yes        |   PASS    |
+| **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |            |               |       |
+|*EVENTS*         |              |                  |           |
+| **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |            |               |       |
+|*HOME*           |              |                  |           |
+| **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |            |               |       |
+|*PRODUCTS*       |              |                  |           |
+| **[Product Details](https://github.com/Nathisaraujo/project5/issues/37)**         |            |               |       |
+| **[Product Detail Page](https://github.com/Nathisaraujo/project5/issues/9)**         |            |               |       |
+| **[Search Product](https://github.com/Nathisaraujo/project5/issues/22)**         |            |               |       |
+| **[Sort Products](https://github.com/Nathisaraujo/project5/issues/21)**         |            |               |       |
+| **[Special Offers Page](https://github.com/Nathisaraujo/project5/issues/4)**         |            |               |       |
+| **[Products Page](https://github.com/Nathisaraujo/project5/issues/3)**         |            |               |       |
+|*PROFILES*       |              |                  |           |
+| **[User Profile Page](https://github.com/Nathisaraujo/project5/issues/47)**          |      Yes     |         Yes      |    PASS   |
+| **[Order History](https://github.com/Nathisaraujo/project5/issues/25)**          |           |               |       |
+| **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |           |               |       |
+| **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |           |               |       |
+|*WISHLIST*       |              |                  |           |
+| **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |           |               |       |
+|*AUTHENTICATION* |              |                  |           |
+| **[Recover word](https://github.com/Nathisaraujo/project5/issues/16)**          |           |               |       |
+| **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |           |               |       |
+| **[Login](https://github.com/Nathisaraujo/project5/issues/14)**          |           |               |       |
+| **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |           |               |       |
+| **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |           |               |       |
+|*MANAGEMENT*     |              |                  |           |
+| **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |           |               |       |
+| **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |           |               |       |
+| **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |           |               |       |
+|*OTHERS*     |              |                  |           |
+| **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |           |               |       |
+| **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |           |               |       |
+| **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |           |               |       |
+| **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)**          |     Yes      |        Yes       |   PASS    |
+| **[404 error page](https://github.com/Nathisaraujo/project5/issues/49)**          |      Yes     |       Yes        |  PASS     |
+
+# RESUMO
+# BUGS
+
+reset password alignment
+![quantity button css](/readme-images/reset-password.png)

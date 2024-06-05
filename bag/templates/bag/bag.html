@@ -59,18 +59,27 @@
         });
 
         // Remove item and reload on click
-        $('.remove-item').click(function(e) {
+        $('.remove-item-form').submit(function(e) {
             e.preventDefault();
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).data('item_id');
-            var url = `/bag/remove/${itemId}/`;
-            var data = {'csrfmiddlewaretoken': csrfToken};
+            var form = $(this);
+            var url = form.attr('action');
+            var csrfToken = form.find('[name="csrfmiddlewaretoken"]').val();
 
-            $.post(url, data)
-             .done(function() {
-                 location.reload();
-             });
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    csrfmiddlewaretoken: csrfToken
+                },
+                success: function(response) {
+                    location.reload();
+                },
+                error: function(response) {
+                    alert('Error removing item.');
+                }
+            });
         });
+
 
         // Disable decrement button if quantity is 1
         $('.decrement-qty').each(function() {
