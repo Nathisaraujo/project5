@@ -14,7 +14,7 @@ Back to [Drawing Gratitude README](https://github.com/Nathisaraujo/project5/blob
 
 * [BROWSER COMPATIBILITY](<#browser-compatibility>) 
 
-* [LIGHTHOUSE](<#lighthouse>) 
+* [ACCESSIBILITY](<#accessibility>) 
 
 * [MANUAL TESTING](<#manual-testing>)
 
@@ -115,4 +115,65 @@ You can use this table for reference:
 |profile/recomemmendation_form  | PASS | PASS | PASS | PASS | PASS |
 |profile/orders                 | PASS | PASS | PASS | PASS | PASS |
 
+* I'd like to point out that the quantity input on the products page appears too small on devices with screen widths less than 390px. To address this, I added the following code to the CSS file. Although it seemed to work when tested in the browser's developer tools, it didn't have the desired effect in the final testing phase.
 
+![quantity button css](/readme-images/qty-css.png)
+
+# BROWSER COMPATIBILITY
+Tested the website on different web browsers to ensure consistent functionality and appearance across all major browsers.
+
+| Browser | Comments | Pass/Fail |
+| --- | --- | --- | 
+| Google Chrome | Displays and functions correctly  | PASS |
+| Mozilla Firefox | Displays and functions correctly  | PASS |
+| Microsoft Edge | Displays and functions correctly  | PASS |
+| Opera | Displays and functions correctly  | PASS |
+| Samsung Internet | Displays and functions correctly  | FAIL |
+
+* The project encountered issues specifically on the Samsung Internet Browser, as it exhibited numerous responsiveness problems. Interestingly, the same website displayed no responsiveness issues in other browsers.
+
+# ACCESSIBILITY
+
+I utilized Lighthouse, an automated tool integrated into web browsers and available as a Chrome extension, to evaluate the website's performance, accessibility, best practices, and SEO. Additionally, I employed the WAVE accessibility tool to further assess the site's accessibility. I addressed most of the issues or recommendations provided by Lighthouse and Wave.
+
+You can review the detailed results below.
+
+LIGHTHOUSE
+
+| File path                     | Performance | Accessibility | Best Practices | SEO | 
+|-------------------------------|-------------|---------------|----------------|-----|
+| *ABOUT APP*                   |             |               |                |     |
+| about/                        | 45          | 94            | 74             | 92  |
+| about/edit                    | 45          | 94            | 74             | 92  |
+| *BAG APP*                     |             |               |                |     |
+| bag/                          | 45          | 94            | 74             | 92  |
+| *BLOG APP*                    |             |               |                |     |
+| blog/                         | 45          | 94            | 74             | 92  |
+| blog/post_detail              | 45          | 94            | 74             | 92  |
+| blog/add_post                 | 45          | 94            | 74             | 92  |
+| *CHECKOUT APP*                |             |               |                |     |
+| checkout/                     | 45          | 94            | 74             | 92  |
+| checkout/checkout_success     | 45          | 94            | 74             | 92  |
+| *COMMUNITY APP*               |             |               |                |     |
+| community/                    | 45          | 94            | 74             | 92  |
+| *EVENTS APP*                  |             |               |                |     |
+| events/                       | 45          | 94            | 74             | 92  |
+| events/add/                   | 45          | 94            | 74             | 92  |
+| events/edit/                  | 45          | 94            | 74             | 92  |
+| *HOME APP*                    |             |               |                |     |
+| home/                         | 45          | 94            | 74             | 92  |
+| home/privacy_policy           | 45          | 94            | 74             | 92  |
+| *PRODUCTS APP*                |             |               |                |     |
+| products/                     | 45          | 94            | 74             | 92  |
+| products/product_detail       | 45          | 94            | 74             | 92  |
+| products/edit                 | 45          | 94            | 74             | 92  |
+| products/add_product          | 45          | 94            | 74             | 92  |
+| products/add_product_tags     | 45          | 94            | 74             | 92  |
+| *PROFILES APP*                |             |               |                |     |
+| profile/                      | 45          | 94            | 74             | 92  |
+| profile/management            | 45          | 94            | 74             | 92  |
+| profile/wishilist             | 45          | 94            | 74             | 92  |
+| profile/update_profile        | 45          | 94            | 74             | 92  |
+| profile/saved_events          | 45          | 94            | 74             | 92  |
+| profile/recomemmendation_form | 45          | 94            | 74             | 92  |
+| profile/orders                | 45          | 94            | 74             | 92  |
