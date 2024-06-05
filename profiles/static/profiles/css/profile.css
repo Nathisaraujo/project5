@@ -80,10 +80,6 @@
 
 }
 
-.btn-profile {
-    margin: 0em 0em 2em 11em;
-}
-
 .order-img {
     max-width: 10em;
 }
@@ -115,10 +111,6 @@
 
 @media (max-width: 480px) {
     .profile-table {
-        max-width: 20em;
+        max-width: 22em;
     }
-
-    .btn-profile {
-        margin: 0em 0em 2em 5em;
-    } 
 }

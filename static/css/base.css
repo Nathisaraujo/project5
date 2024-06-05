@@ -715,10 +715,13 @@ li {
     .image-404 {
         max-width: 20em;
     }
+
+    .margin-products {
+        margin-left: 7em;
+    }
 }
 
 @media (min-width: 1200px) {
-    /* home page */
     .knowme-image {
         min-width: 12em;
     }
@@ -779,11 +782,11 @@ li {
     }
 
     .trd-section {
-        height: 70vh;
+        height: 40vh;
     }
 
     .fth-section {
-        height: 70vh;
+        height: 40vh;
     }
 
     .knowme-image {
@@ -863,6 +866,9 @@ li {
         max-width: 15em;
     }
 
+    .margin-products {
+        margin-left: 4em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -872,6 +878,14 @@ li {
 
     .container-404 {
         padding-top: 0em;
+    }
+
+    .trd-section {
+        height: 50vh;
+    }
+
+    .fth-section {
+        height: 50vh;
     }
 
 }
@@ -899,13 +913,13 @@ li {
 
     .fth-section {
         font-size: 1em;
-        height: 50vh;
+        height: 60vh;
 
     }
 
     .trd-section {
         font-size: 1em;
-        height: 40vh;
+        height: 60vh;
     }
 
     .scd-section {
@@ -956,7 +970,7 @@ li {
 
 
     .suggestion-img {
-        max-width: 18em;
+        max-width: 15em;
     }
 
     .card-deck {
@@ -985,5 +999,9 @@ li {
 
     .btn-wish-detail {
        margin: 16px;
+    }
+
+    .input-group>.form-control, .input-group>.form-select {
+        min-width: 2em;
     }
 }

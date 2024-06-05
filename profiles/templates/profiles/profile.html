@@ -26,39 +26,41 @@
                 {% include 'includes/profile_navbar.html' %}
                 <!-- navbar -->
             </div>
-            <div class="col-12 col-sm-8">
+            <div class="col-12 col-sm-8 m-md-5">
                 <p class="text-muted default-text text-center"><i class="fa-solid fa-circle-info fa-lg"></i> Your details</p>
                 <div class="m-5">
                     <p><i class="fa-solid fa-user"></i> Username: {{ user_info.user.username }}</p>
                     <p><i class="fa-solid fa-envelope"></i> Email: {{ user_info.user.email }}</p>
                     <p><i class="fa-solid fa-phone"></i> Phone Number: {{ user_info.default_phone_number }}</p>
                 </div>
-                <p class="text-muted default-text text-center"><i class="fa-solid fa-truck fa-lg"></i> Default Delivery Information</p>
-                <table class="table table-hover profile-table m-5">
-                    <tbody>
-                    <tr>
-                        <th>Street Address 1:</th>
-                        <td>{{ user_info.default_street_address1 }}</td>
-                    </tr>
-                    <tr>
-                        <th>Street Address 2:</th>
-                        <td>{{ user_info.default_street_address2 }}</td>
-                    </tr>
-                    <tr>
-                        <th>County:</th>
-                        <td>{{ user_info.default_county }}</td>
-                    </tr>
-                    <tr>
-                        <th>Country:</th>
-                        <td>{{ user_info.default_country }}</td>
-                    </tr>
-                    <tr>
-                        <th>Postal Code:</th>
-                        <td>{{ user_info.default_postcode }}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <a href="{% url 'update_profile' %}" class="btn btn-dark btn-profile">Update delivery information</a>
+                <div class="text-center">
+                    <p class="text-muted default-text text-center"><i class="fa-solid fa-truck fa-lg"></i> Default Delivery Information</p>
+                    <table class="table table-hover profile-table">
+                        <tbody>
+                        <tr>
+                            <th>Street Address 1:</th>
+                            <td>{{ user_info.default_street_address1 }}</td>
+                        </tr>
+                        <tr>
+                            <th>Street Address 2:</th>
+                            <td>{{ user_info.default_street_address2 }}</td>
+                        </tr>
+                        <tr>
+                            <th>County:</th>
+                            <td>{{ user_info.default_county }}</td>
+                        </tr>
+                        <tr>
+                            <th>Country:</th>
+                            <td>{{ user_info.default_country }}</td>
+                        </tr>
+                        <tr>
+                            <th>Postal Code:</th>
+                            <td>{{ user_info.default_postcode }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'update_profile' %}" class="btn btn-dark mb-2">Update delivery information</a>
+                </div>
             </div>
         </div>
     </div>
