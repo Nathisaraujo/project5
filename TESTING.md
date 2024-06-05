@@ -20,7 +20,9 @@ Back to [Drawing Gratitude README](https://github.com/Nathisaraujo/project5/blob
 
 * [DEFENSIVE PROGRAMMING](<#defensive-programming>) 
 
-* [USER STORY TESTING](<#user-story-testing>)
+* [KNOWN BUGS](<#known-bugs>)
+
+* [SUMMARY](<#summary>)
 
 # CODE VALIDATION
 
@@ -208,61 +210,79 @@ Performed comprehensive manual testing across all website features and functiona
 |*BAG*            |              |                  |           |
 | **[Purchases Total](https://github.com/Nathisaraujo/project5/issues/18)**         | Yes           | Yes              | PASS      |
 | **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |    Yes        |      Yes         |    PASS   |
+| **[Delete Product from Bag](https://github.com/Nathisaraujo/project5/issues/20)**         |    Yes        |      Yes         |    PASS   |
+| **[Add Product to Bag](https://github.com/Nathisaraujo/project5/issues/19)**         |    Yes        |      Yes         |    PASS   |
 |*BLOG*           |              |                  |           |
-| **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |            |               |       |
-| **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
-| **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
+| **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |     Yes       |       Yes        |   PASS    |
+| **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |      Yes      |        Yes       |   PASS    |
+| **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |     Yes       |       Yes        |   PASS    |
 |*CHECKOUT*       |              |                  |           |
-| **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |            |               |       |
+| **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |      Yes    |       Yes        |   PASS    |
 | **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |     Yes       |       Yes        |    PASS   |
 | **[Cancel Order](https://github.com/Nathisaraujo/project5/issues/41)**         |            |               |       |
-| **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |            |               |       |
-| **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |            |               |       |
-| **[Order Confirmation](https://github.com/Nathisaraujo/project5/issues/24)**         |            |               |       |
-| **[Payment Details](https://github.com/Nathisaraujo/project5/issues/23)**         |            |               |       |
+| **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |      Yes      |       Yes        |    PASS   |
+| **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |      Yes      |        Yes       |   PASS    |
+| **[Order Confirmation](https://github.com/Nathisaraujo/project5/issues/24)**         |     Yes       |      Yes         |    PASS   |
+| **[Payment Details](https://github.com/Nathisaraujo/project5/issues/23)**         |     Yes       |       Yes        |   PASS    |
 |*COMMUNITY*      |              |                  |           |
 | **[Community Page](https://github.com/Nathisaraujo/project5/issues/46)**         |      Yes      |       Yes        |   PASS    |
-| **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |            |               |       |
+| **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |     Yes       |      Yes         |    PASS   |
 |*EVENTS*         |              |                  |           |
 | **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |      Yes      |       Yes        |    PASS   |
 |*HOME*           |              |                  |           |
-| **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |            |               |       |
+| **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |     Yes        |        Yes       |   PASS    |
 |*PRODUCTS*       |              |                  |           |
-| **[Product Details](https://github.com/Nathisaraujo/project5/issues/37)**         |            |               |       |
-| **[Product Detail Page](https://github.com/Nathisaraujo/project5/issues/9)**         |            |               |       |
-| **[Search Product](https://github.com/Nathisaraujo/project5/issues/22)**         |            |               |       |
-| **[Sort Products](https://github.com/Nathisaraujo/project5/issues/21)**         |            |               |       |
-| **[Special Offers Page](https://github.com/Nathisaraujo/project5/issues/4)**         |            |               |       |
-| **[Products Page](https://github.com/Nathisaraujo/project5/issues/3)**         |            |               |       |
+| **[Product Details](https://github.com/Nathisaraujo/project5/issues/37)**         |       Yes     |       Yes        |   PASS    |
+| **[Product Detail Page](https://github.com/Nathisaraujo/project5/issues/9)**         |      Yes      |      Yes         |    PASS   |
+| **[Search Product](https://github.com/Nathisaraujo/project5/issues/22)**         |      Yes      |       Yes        |   PASS    |
+| **[Sort Products](https://github.com/Nathisaraujo/project5/issues/21)**         |       Yes     |       Yes        |    PASS   |
+| **[Special Offers Page](https://github.com/Nathisaraujo/project5/issues/4)**         |     Yes       |       Yes        |    PASS   |
 |*PROFILES*       |              |                  |           |
 | **[User Profile Page](https://github.com/Nathisaraujo/project5/issues/47)**          |      Yes     |         Yes      |    PASS   |
-| **[Order History](https://github.com/Nathisaraujo/project5/issues/25)**          |           |               |       |
-| **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |           |               |       |
-| **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |           |               |       |
+| **[Order History](https://github.com/Nathisaraujo/project5/issues/25)**          |     Yes      |       Yes        |   PASS    |
+| **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |     Yes      |       Yes        |   PASS    |
+| **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |      Yes     |       Yes        |    PASS   |
 |*WISHLIST*       |              |                  |           |
 | **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |    Yes       |        Yes       |   PASS    |
 |*AUTHENTICATION* |              |                  |           |
-| **[Recover word](https://github.com/Nathisaraujo/project5/issues/16)**          |           |               |       |
-| **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |           |               |       |
-| **[Login](https://github.com/Nathisaraujo/project5/issues/14)**          |           |               |       |
-| **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |           |               |       |
-| **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |           |               |       |
+| **[Recover Password](https://github.com/Nathisaraujo/project5/issues/16)**          |      Yes     |        Yes       |   PASS    |
+| **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |    Yes       |      Yes         |   PASS    |
+| **[Login](https://github.com/Nathisaraujo/project5/issues/14)**          |    Yes       |      Yes         |   PASS    |
+| **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |     Yes      |        Yes       |    PASS   |
+| **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |      Yes     |        Yes       |   PASS    |
 |*MANAGEMENT*     |              |                  |           |
 | **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |    Yes       |       Yes        |   PASS    |
-| **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |           |               |       |
-| **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |           |               |       |
+| **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |     Yes      |      Yes         |   PASS    |
+| **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |     Yes      |       Yes        |    PASS   |
 |*OTHERS*     |              |                  |           |
 | **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |      Yes     |       Yes        |   PASS    |
-| **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |           |               |       |
-| **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |           |               |       |
+| **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |     Yes      |       Yes        |    PASS   |
+| **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |     Yes      |        Yes       |   PASS    |
 | **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)**          |     Yes      |        Yes       |   PASS    |
 | **[404 error page](https://github.com/Nathisaraujo/project5/issues/49)**          |      Yes     |       Yes        |  PASS     |
 
-# RESUMO
-# BUGS
+# DEFENSIVE PROGRAMMING
 
-reset password alignment
-![quantity button css](/readme-images/reset-password.png)
+Implemented defensive programming techniques to handle unexpected inputs, edge cases, and error conditions gracefully. Utilized exception handling, input validation, and error messages to enhance the robustness and reliability of the code. Users will experience a smooth and intuitive interface with features such as popups for confirming product deletions, informative messages if the payment process fails, and toast notifications when editing items. These additions, among others, ensure a seamless and user-friendly shopping experience, minimizing disruptions and enhancing overall satisfaction.
 
-remove button 
-aws limit
+![defensive programming](/readme-images/defensive.jpg)
+
+# KNOWN BUGS
+
+- The "remove from bag" button was working perfectly, but during final testing, it suddenly stopped functioning. I managed to fix the bug, but I am unsure why it initially stopped working. I am documenting this in case the issue reoccurs.
+
+- I received an email about the AWS free tier limit. I hope this doesn't impact the functionality of the project or cause it to stop working.
+
+![AWS email](/readme-images/aws.png)
+
+- Adding product tags: When editing a product, you can add tags if none are already assigned. If tags exist, you can update them using the update button. If a user tries to add product tags to a product that already has tags, an error message will be displayed, and the user will be instructed to use the update feature. This limitation is noted on the management page. While this is an area for potential improvement, I only discovered it while writing this document and do not have the time to make changes at this moment.
+
+- The reset password template has an alignment issue. The text is not displayed correctly on large screens because I forgot to add some margin.
+
+![reset password](/readme-images/reset-password.png)
+
+# SUMMARY
+
+I thoroughly tested the entire project using various validators to ensure the highest quality and compliance with web standards. Specifically, I validated the HTML, CSS, JavaScript, and Python code to identify and rectify any issues that could affect the functionality or performance of the application. For accessibility testing, I utilized tools like Lighthouse and WAVE to ensure that the application is accessible to all users, including those with disabilities. This comprehensive testing process helped to identify and address numerous potential issues, ensuring that the application meets the necessary accessibility standards.
+
+In addition to using validators and accessibility tools, I read the documentation for each specific language and framework used in the project. This allowed me to adhere to best practices and meet the required guidelines. I focused on improving code readability and included comments throughout the codebase to guide future developers and maintainers. Wherever possible, I performed refactoring to enhance the structure and efficiency of the code. This not only improved the maintainability of the project but also ensured that the code is clean, well-organized, and easy to understand. My goal was to create a robust, user-friendly, and accessible application that adheres to industry standards and best practices.
