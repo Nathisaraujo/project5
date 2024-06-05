@@ -207,14 +207,14 @@ Performed comprehensive manual testing across all website features and functiona
 |**[About Me Page](https://github.com/Nathisaraujo/project5/issues/10)** | Yes           | Yes              | PASS      |
 |*BAG*            |              |                  |           |
 | **[Purchases Total](https://github.com/Nathisaraujo/project5/issues/18)**         | Yes           | Yes              | PASS      |
-| **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |            |               |       |
+| **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |    Yes        |      Yes         |    PASS   |
 |*BLOG*           |              |                  |           |
 | **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |            |               |       |
 | **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
 | **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |            |               |       |
 |*CHECKOUT*       |              |                  |           |
 | **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |            |               |       |
-| **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |            |               |       |
+| **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |     Yes       |       Yes        |    PASS   |
 | **[Cancel Order](https://github.com/Nathisaraujo/project5/issues/41)**         |            |               |       |
 | **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |            |               |       |
 | **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |            |               |       |
@@ -224,7 +224,7 @@ Performed comprehensive manual testing across all website features and functiona
 | **[Community Page](https://github.com/Nathisaraujo/project5/issues/46)**         |      Yes      |       Yes        |   PASS    |
 | **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |            |               |       |
 |*EVENTS*         |              |                  |           |
-| **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |            |               |       |
+| **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |      Yes      |       Yes        |    PASS   |
 |*HOME*           |              |                  |           |
 | **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |            |               |       |
 |*PRODUCTS*       |              |                  |           |
@@ -240,7 +240,7 @@ Performed comprehensive manual testing across all website features and functiona
 | **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |           |               |       |
 | **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |           |               |       |
 |*WISHLIST*       |              |                  |           |
-| **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |           |               |       |
+| **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |    Yes       |        Yes       |   PASS    |
 |*AUTHENTICATION* |              |                  |           |
 | **[Recover word](https://github.com/Nathisaraujo/project5/issues/16)**          |           |               |       |
 | **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |           |               |       |
@@ -248,11 +248,11 @@ Performed comprehensive manual testing across all website features and functiona
 | **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |           |               |       |
 | **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |           |               |       |
 |*MANAGEMENT*     |              |                  |           |
-| **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |           |               |       |
+| **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |    Yes       |       Yes        |   PASS    |
 | **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |           |               |       |
 | **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |           |               |       |
 |*OTHERS*     |              |                  |           |
-| **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |           |               |       |
+| **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |      Yes     |       Yes        |   PASS    |
 | **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |           |               |       |
 | **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |           |               |       |
 | **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)**          |     Yes      |        Yes       |   PASS    |
@@ -263,3 +263,6 @@ Performed comprehensive manual testing across all website features and functiona
 
 reset password alignment
 ![quantity button css](/readme-images/reset-password.png)
+
+remove button 
+aws limit

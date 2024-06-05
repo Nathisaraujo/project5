@@ -430,6 +430,7 @@ li {
     text-decoration: none;
     height: 1.7em;
     border-radius: 5px;
+    color: black;
 }
 
 .see-more-btn:hover {
@@ -500,10 +501,12 @@ li {
 
 .remove-item {
     background-color: red;
-    color: white;
     text-decoration: none;
     border-radius: 2px;
     padding: 2px;
+    color: white;
+    border: none;
+    margin: 0px;
 }
 
 .remove-item:hover {

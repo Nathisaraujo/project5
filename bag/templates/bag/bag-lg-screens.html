@@ -63,13 +63,15 @@
                             </div>
                         </div>
                     </form>
-                    <a class="update-link p-1 rounded"><small> Update </small></a>
-                    <form class="form remove-item-form" method="POST" action="{% url 'remove_from_bag' item.item_id %}" data-item-id="{{ item.item_id }}">
-                        {% csrf_token %}
-                        <button type="submit" class="remove-item float-right p-1 m-1 rounded remove-item-{{ item.item_id }}">
-                            <small>Remove</small>
-                        </button>
-                    </form>
+                    <div class="col-10 d-flex">
+                        <a class="update-link p-1 rounded m-1"><small> Update </small></a>
+                        <form class="form remove-item-form m-1" method="POST" action="{% url 'remove_from_bag' item.item_id %}" data-item-id="{{ item.item_id }}">
+                            {% csrf_token %}
+                            <button type="submit" class="remove-item float-right rounded remove-item-{{ item.item_id }}">
+                                <small>Remove</small>
+                            </button>
+                        </form>
+                    </div>
                 </td>
                 <td class="py-3">
                     {% if item.product.offers %}
