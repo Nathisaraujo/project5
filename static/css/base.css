@@ -135,15 +135,11 @@ li {
 
 .knowme-image {
     max-width: 20em;
-    /* margin-right: 20em; */
 }
 
 .btn-home {
     width: 15em;
     text-transform: uppercase;
-    /* height: 5em; */
-    /* font-weight: bold; */
-    /* font-family: "Indie Flower", cursive; */
     font-size: 30px;
     border-radius: 20px;
     border-style: none;
@@ -280,7 +276,6 @@ li {
 
 .events.items-site:hover {
     background-image: url('/media/about/event.png');
-    /* font-size: larger; */
     background-size: cover;
     padding-top: 0em;
     color: #000000;
@@ -345,8 +340,6 @@ li {
     text-transform: uppercase;
     border: none;
     color: #fff;
-    /* min-width: 20em;
-    max-height: 2em; */
     margin: 16px;
     align-content: center;
 }
@@ -359,8 +352,6 @@ li {
 .btn-wish {
     background-color: #000;
     color: #fff;
-    /* margin: 1em; */
-    /* min-width: 8em; */
 }
 
 .btn-wish:hover {
@@ -368,7 +359,6 @@ li {
 }
 
 .margin-product-list {
-    /* margin-left: 10em; */
     margin-right: 8em;
 }
 
@@ -390,11 +380,8 @@ li {
     width: 10em;
 }
 .card-product {
-    /* border: solid 1px #AAACB0;
-    border-radius: 10px; */
     padding: 0px;
     margin-left: 0px;
-    /* max-width: 23em; */
 }
 
 .product-title {
@@ -407,8 +394,6 @@ li {
 }
 
 .btn-products {
-    /* margin: 1em 0em; */
-    /* max-width: 10em; */
     min-width: 8em;
     border-radius: 5px;
     background-color: #000;
@@ -449,7 +434,6 @@ li {
 
 .image-container {
     width: 25em;
-    height: 20em;
     background-size: cover;
     background-position: center;
 }
@@ -958,7 +942,6 @@ li {
     }
 
     .btn-products {
-        /* min-width: 3em; */
         width: 2em;
     }
 
