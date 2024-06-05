@@ -34,7 +34,7 @@ class Post(models.Model):
         User, default=None, related_name='like_posts', blank=True
     )
     author = models.ForeignKey(AboutMe, on_delete=models.CASCADE)
-    image = models.ImageField(null=True, blank=True, upload_to='media/posts/')
+    image = models.ImageField(null=True, blank=True, upload_to='posts/')
     learn_more_link1 = models.URLField(
         blank=True,
         null=True,
