@@ -170,7 +170,6 @@ li {
 
 .trd-section {
     background-color: #9684A1;
-    color: white;
     height: 20em;
     font-size: 20px;
     padding-bottom: 4em;
@@ -179,7 +178,6 @@ li {
 
 .fth-section {
     background-color: #9684A1;
-    color: white;
     font-size: 20px;
     padding-bottom: 2em;
     padding-top: 2em;
@@ -430,7 +428,6 @@ li {
 .see-more-btn {
     background-color: #9684A1;
     text-decoration: none;
-    color: white;
     height: 1.7em;
     border-radius: 5px;
 }
@@ -455,7 +452,7 @@ li {
 }
 
 .page-link {
-    color:#9684A1;
+    color:3d2b3d;
 }
 
 

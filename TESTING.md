@@ -114,6 +114,11 @@ You can use this table for reference:
 |profile/saved_events           | PASS | PASS | PASS | PASS | PASS |
 |profile/recomemmendation_form  | PASS | PASS | PASS | PASS | PASS |
 |profile/orders                 | PASS | PASS | PASS | PASS | PASS |
+|*ALLAUTH TEMPLATES*            | ---- | ---- | ---- | ---- | ---- |
+|signup/                        | PASS | PASS | PASS | PASS | PASS |
+|login/                         | PASS | PASS | PASS | PASS | PASS |
+|logout/                        | PASS | PASS | PASS | PASS | PASS |
+|accounts/confirm-email/        | PASS | PASS | PASS | PASS | PASS |
 
 * I'd like to point out that the quantity input on the products page appears too small on devices with screen widths less than 390px. To address this, I added the following code to the CSS file. Although it seemed to work when tested in the browser's developer tools, it didn't have the desired effect in the final testing phase.
 
@@ -134,90 +139,62 @@ Tested the website on different web browsers to ensure consistent functionality 
 
 # ACCESSIBILITY
 
-I utilized Lighthouse, an automated tool integrated into web browsers and available as a Chrome extension, to evaluate the website's performance, accessibility, best practices, and SEO. Additionally, I employed the WAVE accessibility tool to further assess the site's accessibility. I addressed most of the issues or recommendations provided by Lighthouse and Wave.
+I utilized Lighthouse, an automated tool integrated into web browsers and available as a Chrome extension, to evaluate the website's performance, accessibility, best practices, and SEO. Additionally, I employed the WAVE accessibility tool to further assess the site's accessibility. I addressed most of the issues or recommendations provided by Lighthouse and Wave. 
 
-You can review the detailed results below.
+These values were tested on pages where login is not required. You can review the detailed results below.
 
 *Please note that each value follows the format: mobile/desktop.*
 
 LIGHTHOUSE
 
-| File path                     | Performance | Accessibility | Best Practices | SEO | Comment |
-|-------------------------------|-------------|---------------|----------------|-----|---------|
-| *ABOUT APP*                   |             |               |                |     |         |
-| about/                        | 45          | 94            | 74             | 92  |         |
-| about/edit                    | 45          | 94            | 74             | 92  |         |
-| *BAG APP*                     |             |               |                |     |         |
-| bag/                          | 45          | 94            | 74             | 92  |         |
-| *BLOG APP*                    |             |               |                |     |         |
-| blog/                         | 45          | 94            | 74             | 92  |         |
-| blog/post_detail              | 45          | 94            | 74             | 92  |         |
-| blog/add_post                 | 45          | 94            | 74             | 92  |         |
-| *CHECKOUT APP*                |             |               |                |     |         |
-| checkout/                     | 45          | 94            | 74             | 92  |         |
-| checkout/checkout_success     | 45          | 94            | 74             | 92  |         |
-| *COMMUNITY APP*               |             |               |                |     |         |
-| community/                    | 45          | 94            | 74             | 92  |         |
-| *EVENTS APP*                  |             |               |                |     |         |
-| events/                       | 45          | 94            | 74             | 92  |         |
-| events/add/                   | 45          | 94            | 74             | 92  |         |
-| events/edit/                  | 45          | 94            | 74             | 92  |         |
-| *HOME APP*                    |             |               |                |     |         |
-| home/                         | 45          | 94            | 74             | 92  |         |
-| home/privacy_policy           | 45          | 94            | 74             | 92  |         |
-| *PRODUCTS APP*                |             |               |                |     |         |
-| products/                     | 45          | 94            | 74             | 92  |         |
-| products/product_detail       | 45          | 94            | 74             | 92  |         |
-| products/edit                 | 45          | 94            | 74             | 92  |         |
-| products/add_product          | 45          | 94            | 74             | 92  |         |
-| products/add_product_tags     | 45          | 94            | 74             | 92  |         |
-| *PROFILES APP*                |             |               |                |     |         |
-| profile/                      | 45          | 94            | 74             | 92  |         |
-| profile/management            | 45          | 94            | 74             | 92  |         |
-| profile/wishilist             | 45          | 94            | 74             | 92  |         |
-| profile/update_profile        | 45          | 94            | 74             | 92  |         |
-| profile/saved_events          | 45          | 94            | 74             | 92  |         |
-| profile/recomemmendation_form | 45          | 94            | 74             | 92  |         |
-| profile/orders                | 45          | 94            | 74             | 92  |         |
+| File path                     | Performance | Accessibility | Best Practices | SEO      |
+|-------------------------------|-------------|---------------|----------------|----------|
+| *ABOUT APP*                   |             |               |                |          |
+| about/                        | 34/74       | 94/94         | 96/96          | 100/100  |
+| *BAG APP*                     |             |               |                |          |
+| bag/                          | 60/96       | 94/96         | 96/96          | 100/100  |
+| *BLOG APP*                    |             |               |                |          |
+| blog/                         | 60/87       | 90/90         | 96/96          | 100/100  |
+| blog/post_detail              | 56/87       | 94/91         | 93/93          | 91/91    |
+| *COMMUNITY APP*               |             |               |                |          |
+| community/                    | 59/79       | 95/95         | 100/100        | 100/100  |
+| *EVENTS APP*                  |             |               |                |          |
+| events/                       | 63/95       | 94/87         | 96/96          | 100/100  |
+| *HOME APP*                    |             |               |                |          |
+| home/                         | 57/87       | 90/90         | 96/96          | 100/100  |
+| home/privacy_policy           | 62/95       | 94/95         | 96/96          | 100/100  |
+| *PRODUCTS APP*                |             |               |                |          |
+| products/                     | 55/79       | 82/83         | 96/96          | 91/91    |
+| products/6/                   | 54/77       | 85/81         | 96/96          | 100/100  |
+| *ALLAUTH*                     |             |               |                |          |
+| signup/                       | 62/96       | 94/95         | 96/96          | 100/100  |
+| login/                        | 59/96       | 94/95         | 96/96          | 100/100  |
 
 
 
 WAVE
 
-| File path                     | Errors | Alerts | Features | ARIA | Comment |
-|-------------------------------|--------|--------|----------|------|---------|
-| *ABOUT APP*                   |        |        |          |      |         |
-| about/                        | PASS   |        |          |      |         |
-| about/edit                    | PASS   |        |          |      |         |
-| *BAG APP*                     |        |        |          |      |         |
-| bag/                          | PASS   |        |          |      |         |
-| *BLOG APP*                    |        |        |          |      |         |
-| blog/                         | PASS   |        |          |      |         |
-| blog/post_detail              | PASS   |        |          |      |         |
-| blog/add_post                 | PASS   |        |          |      |         |
-| *CHECKOUT APP*                |        |        |          |      |         |
-| checkout/                     | PASS   |        |          |      |         |
-| checkout/checkout_success     | PASS   |        |          |      |         |
-| *COMMUNITY APP*               |        |        |          |      |         |
-| community/                    | PASS   |        |          |      |         |
-| *EVENTS APP*                  |        |        |          |      |         |
-| events/                       | PASS   |        |          |      |         |
-| events/add/                   | PASS   |        |          |      |         |
-| events/edit/                  | PASS   |        |          |      |         |
-| *HOME APP*                    |        |        |          |      |         |
-| home/                         | PASS   |        |          |      |         |
-| home/privacy_policy           | PASS   |        |          |      |         |
-| *PRODUCTS APP*                |        |        |          |      |         |
-| products/                     | PASS   |        |          |      |         |
-| products/product_detail       | PASS   |        |          |      |         |
-| products/edit                 | PASS   |        |          |      |         |
-| products/add_product          | PASS   |        |          |      |         |
-| products/add_product_tags     | PASS   |        |          |      |         |
-| *PROFILES APP*                |        |        |          |      |         |
-| profile/                      | PASS   |        |          |      |         |
-| profile/management            | PASS   |        |          |      |         |
-| profile/wishilist             | PASS   |        |          |      |         |
-| profile/update_profile        | PASS   |        |          |      |         |
-| profile/saved_events          | PASS   |        |          |      |         |
-| profile/recomemmendation_form | PASS   |        |          |      |         |
-| profile/orders                | PASS   |        |          |      |         |
+Note that he main nav is displaying missing label errors, empty button and orphaned form label although mitigated by screen reader-only classes.
+
+| File path                     | Comment                                                                                               |
+|-------------------------------|-------------------------------------------------------------------------------------------------------|
+| *ABOUT APP*                   |                                                                                                       |
+| about/                        | Raised alerts regarding shipping headings' level.                                                     |
+| *BAG APP*                     |                                                                                                       |
+| bag/                          | Raised alerts regarding shipping headings' level.                                                                                                         |
+| *BLOG APP*                    |                                                                                                       |
+| blog/                         | Raised alerts regarding shipping headings' level. Fixed pagination contrast error.                                                                                                      |
+| blog/post_detail              |  Raised alerts regarding shipping headings' level. Fixed suspicious link text.                                                                                                     |
+| *COMMUNITY APP*               |                                                                                                       |
+| community/                    |  Raised alerts regarding shipping headings' level. Low contrast errors from mailchimp box.                                                                                                      |
+| *EVENTS APP*                  |                                                                                                       |
+| events/                       | Raised alerts regarding shipping headings' level. "login to save event" raised redundant link alerts.                                                                                                       |
+| *HOME APP*                    |                                                                                                       |
+| home/                         | Raised alerts regarding shipping headings' level and a deliberately redundant link designed to prompt user action. Fixed contrast errors by changing the color of the text from white to black. |
+| home/privacy_policy           |   Skipped heading level                                                                                                    |
+| *PRODUCTS APP*                |                                                                                                       |
+| products/                     |    Raised alerts regarding shipping headings' level. Fixed seem more button contrast, added label to select, missinh h1 heading, see more button as redundant link                                                                                                   |
+| products/product_detail       |     Fixed empty buttons, missing first level heading                                                                                                  |
+
+
+
