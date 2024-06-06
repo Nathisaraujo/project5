@@ -34,7 +34,8 @@ Ensured that all HTML code adheres to the standards set by the W3C Markup Valida
 ## Css
 Validated all CSS code using the W3C CSS Validation Service to ensure compliance with CSS standards.
 
-An error persisted in the Font Awesome minified CSS file. 
+> [!NOTE]
+> An error persisted in the Font Awesome minified CSS file. 
 
 ![css validation](/readme-images/css.png)
 
@@ -50,7 +51,8 @@ Validated all Python Files using CI Python Linter to ensure code quality and adh
 ## JavaScript
 I validated all JavaScript code using JSHint. Below are my settings, as I encountered syntax errors when the "new JavaScript features" option was unchecked.
 
-Additionally, the AWS and ChimpMail JavaScript files generate numerous warnings. However, since these are third-party libraries, I chose not to address them to avoid potential disruptions in my project's functionality.
+> [!NOTE]
+> The AWS and ChimpMail JavaScript files generate numerous warnings. However, since these are third-party libraries, I chose not to address them to avoid potential disruptions in my project's functionality.
 
 ![js validation settings](/readme-images/js-settings.png)
 
@@ -122,7 +124,8 @@ You can use this table for reference:
 |logout/                        | PASS | PASS | PASS | PASS | PASS |
 |accounts/confirm-email/        | PASS | PASS | PASS | PASS | PASS |
 
-* I'd like to point out that the quantity input on the products page appears too small on devices with screen widths less than 390px. To address this, I added the following code to the CSS file. Although it seemed to work when tested in the browser's developer tools, it didn't have the desired effect in the final testing phase.
+> [!NOTE]
+> I'd like to point out that the quantity input on the products page appears too small on devices with screen widths less than 390px. To address this, I added the following code to the CSS file. Although it seemed to work when tested in the browser's developer tools, it didn't have the desired effect in the final testing phase.
 
 ![quantity button css](/readme-images/qty-css.png)
 
@@ -137,7 +140,8 @@ Tested the website on different web browsers to ensure consistent functionality 
 | Opera | Displays and functions correctly  | PASS |
 | Samsung Internet | Displays and functions correctly  | FAIL |
 
-* The project encountered issues specifically on the Samsung Internet Browser, as it exhibited numerous responsiveness problems. Interestingly, the same website displayed no responsiveness issues in other browsers.
+> [!NOTE]
+> The project encountered issues specifically on the Samsung Internet Browser, as it exhibited numerous responsiveness problems. Interestingly, the same website displayed no responsiveness issues in other browsers.
 
 # ACCESSIBILITY
 
@@ -145,7 +149,8 @@ I utilized Lighthouse, an automated tool integrated into web browsers and availa
 
 These values were tested on pages where login is not required. You can review the detailed results below.
 
-*Please note that each value follows the format: mobile/desktop.*
+> [!NOTE]
+> *Please note that each value follows the format: mobile/desktop.*
 
 LIGHTHOUSE
 
@@ -176,7 +181,8 @@ LIGHTHOUSE
 
 WAVE
 
-Note that he main nav is displaying missing label errors, empty button and orphaned form label although mitigated by screen reader-only classes.
+> [!NOTE]
+> Note that he main nav is displaying missing label errors, empty button and orphaned form label although mitigated by screen reader-only classes.
 
 | File path                     | Comment                                                                                               |
 |-------------------------------|-------------------------------------------------------------------------------------------------------|

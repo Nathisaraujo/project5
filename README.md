@@ -22,12 +22,16 @@ Deployed website: [Go to Drawing Gratitude](https://drawing-gratitude-07bcca57b9
 
 * [WEB MARKETING STRATEGY](<#web-marketing-strategy>)
     * [SEO](<#SEO>)
-    * [XML Sitemap](<#xml-sitemap>)
-    * [Newsletter](<#newsletter>)
-    * [Community](<#community>)
+        * [Keyword Research](<#keyword-research>)
+        * [Html Implementation](<#html-implementation>)
+    * [Affiliate and Content Marketing](<#affiliate-and-content-marketing>)
+    * [Email Marketing](<#email-marketing>)
+    * [Facebook Business Page](<#facebook-business-page>)
+    * [Privacy Policy](<#privacy-policy>)
 
 * [FEATURES](<#features>)
     * [Existing Features](<#existing-features>)
+        * [Navbar and Footer](<#navbar-and-footer>)
         * [Home page](<#home-page>)
         * [Products](<#products>)
         * [Community](<#community>)
@@ -43,6 +47,7 @@ Deployed website: [Go to Drawing Gratitude](https://drawing-gratitude-07bcca57b9
          * [Agile](<#agile>)
     * [Django Apps](<#django-apps>)
         * [About App](<#about-app>)
+        * [Blog App](<#blog-app>)
         * [Bag App](<#bag-app>)
         * [Checkout App](<#checkout-app>)
         * [Community App](<#community-app>)
@@ -70,15 +75,15 @@ This platform specializes in selling **heartfelt art gifts**. There's nothing be
 
 The goal is for users to have an overview of all the available art pieces and purchase them directly from my website. Users can search for art by name or term using the search bar in the navbar, or they can browse by category and materials used.
 
-### *Community*
+- *Community*
 
 :star: Users also have access to the **community page** to learn about the site's features. They can subscribe to the **newsletter** to receive emails about the latest news and updates. Community members can also send **drawing suggestions** to the artist.
 
-### *Events*
+- *Events*
 
 :star: Additionally, there is an **events section** where users can view the events the artist has participated in and save the ones they are interested in to their profile.
 
-### *Blog*
+- *Blog*
 
 :star: Finally, users can access the **blog** to stay updated on various art-related topics and understand why consuming art is essential for life.
 
@@ -268,7 +273,148 @@ The Facebook Business Page is a crucial component of web marketing strategy and 
 
 ![Facebook screenshot](/readme-images/facebook.png)
 
+## SITEMAP AND ROBOTS
+
+- **sitemap.xml**: A sitemap is created and submitted to search engines to ensure all pages are indexed. I used the following website to create it - [sitemap generator](https://www.xml-sitemaps.com/)
+
+- **robots.txt**: This file is configured to guide search engines on which pages to crawl and index.
+
 ## PRIVACY POLICY
 
 To ensure the protection of my users' data and comply with legal requirements, I used a privacy policy generator ([Terms Feed](https://www.termsfeed.com/)) to create a comprehensive privacy policy for my website. This policy is crucial in building trust with my audience, as it transparently outlines how their personal information is collected, used, and safeguarded.
+
+# FEATURES
+
+## EXISTING FEATURES
+
+The website is designed with a variety of features to enhance user experience, engagement, and functionality. Each feature has been thoughtfully implemented to ensure ease of use, seamless navigation, and to provide value to our users. Below is a detailed overview of the existing features, showcasing the our website's capabilities. 
+
+### NAVBAR AND FOOTER
+
+
+
+### HOME PAGE
+
+The home page is designed using a carefully curated color scheme that reflects the artistic essence of the site. This page introduces visitors to the unique, handmade art available for purchase. After presenting a warm and inviting introduction to the artist, a "Start Shopping" button invites users to explore and buy these unique creations.
+
+Additionally, the home page features a picture of the artist, which, when clicked, redirects users to the About page. This allows visitors to get to know the artist better, fostering a personal connection and enhancing the authenticity of the shopping experience.
+
+The navigation also guides users to the Offers page, highlighting special deals and promotions. If users need more convincing, the home page provides insights into the community and blog sections.
+
+![home page screenshot](/readme-images/home-page.png)
+
+### PRODUCTS
+
+- **ALL PRODUCTS**
+
+The Products page showcases the entire collection available on the website, presenting each item with its title, price, and a button to view more details. These features collectively enhance the user experience by providing clear, intuitive navigation, making it easy to find, sort, and identify products. The visual indicators for sales, community suggestions, and digital art ensure that users can quickly grasp the nature and status of each product, while the back-to-top button and product count improve usability and browsing efficiency. 
+
+![products page screenshot](/readme-images/products.png)
+
+- For **superusers**, additional buttons for editing and deleting products are also displayed, facilitating easy management of the inventory.
+
+- Products **on sale** are marked with a prominent yellow banner, showing both the old and new prices, making it easy for users to spot discounts. 
+
+- **Community suggestions** are highlighted with a purple banner, adding a sense of community involvement and exclusivity. 
+
+- **Digital art** products are identified with a yellow exclamation icon, distinguishing them from physical items.
+
+- At the bottom of the page, a round button allows users to quickly return to the top, enhancing navigation. 
+
+- The top left corner displays the total number of products on the page, giving users an overview of the available items. 
+
+- In the top right corner, a filter is provided to sort products by price or name, allowing users to find items based on their preferences.
+
+![sorting](/readme-images/sorting.png)
+
+- **PRODUCT DETAIL**
+
+The Product Detail page provides an in-depth view of each product, enhancing the shopping experience by presenting all necessary information in a clear and organized manner. The page layout features the product image on the left side and all relevant details on the right side.
+
+The right section includes the product title and price, along with color-coded banners to indicate the product category. This visual cue helps users quickly identify the type of product they are viewing. Below the title and price, the page provides a detailed description of the product, including size specifications and the materials used. This comprehensive information ensures that users have a thorough understanding of the product before making a purchase.
+
+For digital products, a yellow exclamation icon is displayed, along with information about how digital art is delivered after purchase. This transparency helps set clear expectations for customers.
+
+The page also includes an input field for users to specify the quantity they wish to add to their bag. Additionally, there are three key buttons to enhance the user experience:
+
+1. **Buy Now**: This button takes users directly to the checkout page, streamlining the purchase process.
+2. **Wishlist**: Allows users to save the product for future consideration.
+3. **Keep Shopping**: Enables users to continue browsing the website without losing their place.
+
+![product detail](/readme-images/product-detail.png)
+
+### COMMUNITY
+
+The Community page begins with a warm welcome message, inviting users to become a part of our vibrant community. It then provides a brief overview of the benefits of joining the website community, presented in a concise list. This list highlights all the features available to community members, creating an immediate sense of value.
+
+After this introduction, the page encourages users to start exploring these features in more detail. Each feature is described with a dedicated section that includes both a text description and an accompanying image to enhance understanding and engagement. 
+
+The features include:
+
+1. **Newsletter**: Stay updated with the latest news, products, and events by subscribing to our newsletter.
+2. **Drawing Suggestions**: Submit your own drawing suggestions and have the chance to see them created by the artist.
+3. **Events**: Access a calendar of upcoming and past events that the artist will participate in, and save the ones you're interested in.
+4. **Wishlist**: Add your favorite products to a wishlist for future reference and easy access.
+5. **Save Delivery Information**: Save your delivery details to streamline future purchases.
+6. **Order History**: Keep track of all your past orders in one convenient location.
+
+Each section not only explains the feature but also showcases a relevant image to provide a visual representation, making it easier for users to understand the benefits and how to use them. This comprehensive and visually appealing presentation ensures users are well-informed and encouraged to fully engage with the community.
+
+![community page](/readme-images/community-page.png)
+
+### ABOUT
+
+The About page offers a detailed and engaging introduction to the artist behind the website. You’ll find an image of the artist, giving a personal touch and creating a connection with visitors. Alongside this image, there is a thoughtfully curated list highlighting her interests and passions, providing insight into what inspires her work.
+
+Also, there's a comprehensive text section delves into the artist’s background, explaining who she is. This narrative helps visitors understand the unique perspective and heartfelt dedication that goes into each piece of her handmade art.
+
+If it's a superuser, it will display a green button to edit the page information.
+
+![about page](/readme-images/about-page.png)
+
+This well-structured layout not only introduces the artist in a personal and relatable way but also guides visitors to explore more of her work and interests, enhancing their overall experience on the website.
+
+At the bottom of the page, there are six cards featuring the artist's top recommendations on the website. Each card offers a glimpse into the artist’s curated selections. When you hover over these cards, an image related to the recommendation is displayed, adding an interactive and visually appealing element to the page.
+
+![about page recommendations](/readme-images/about-recommendations.gif)
+
+### BLOG
+
+- **BLOG FEED**
+
+The Blog page serves as a hub for all the captivating stories and insights shared by the artist. It presents a curated list of blog posts, each accompanied by the post image and title, drawing visitors into the rich content that awaits them. 
+With its engaging layout and user-friendly design, the Blog page invites visitors to immerse themselves in the artist's world, offering a treasure trove of inspiration and insight waiting to be discovered.
+
+For each post, you'll find details about the author under the "Written By" section, providing a personal touch and adding credibility to the content. Additionally, the date and time of publication are prominently displayed, keeping visitors informed about the recency of the posts.
+
+To ensure smooth navigation through the abundance of content, the page features a convenient pagination button at the bottom.
+
+![blog page](/readme-images/blog-page.png)
+
+- **POST DETAIL**
+
+The Post Detail page offers an immersive experience for diving deep into each blog post, providing rich content and engaging features to captivate visitors.
+
+On the left side of the page, visitors are greeted with the post's captivating image, accompanied by the "Written By" section. A thoughtful touch is the inclusion of the artist's picture. For those curious to learn more about the artist behind the words, a convenient link is provided to redirect visitors to the About page. Below these elements, a "Back to All Posts" button ensures seamless navigation back to the main blog feed.
+
+Meanwhile, the right side of the page is dedicated to the post's content. Here, visitors encounter the post title, along with the content. The date and time of publication serve as a helpful reference point.
+
+Below the post content lies the "Learn More" section, offering additional resources and related links to deepen the reader's understanding of the topic. This feature encourages further exploration and engagement, enriching the visitor's experience.
+
+Finally, nestled at the bottom of the page is a heart-shaped button, inviting visitors to express their appreciation for the post by liking it. This delightful touch fosters a sense of community and encourages interaction.
+
+![blog page](/readme-images/blog-page.png)
+
+### EVENTS
+
+
+
+![events page](/readme-images/events-page.png)
+
+### PROFILE
+
+
+### MANAGEMENT
+
+## FUTURE FEATURES
 
