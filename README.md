@@ -191,8 +191,84 @@ Taking into consideration my audience, I crafted several user stories to guide t
 | **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)** | As a **user** I can **access the privacy policy page** so that **I can understand how my data is collected** | - As a user concerned about privacy, I want to easily locate and access the privacy policy page on the website so that I can understand how my personal information is collected, used, and protected. <br> - I can return to the shop page using the button on the bottom of the page. |
 | **[404 error page](https://github.com/Nathisaraujo/project5/issues/49)** | As a **user** I can **see the 404 error page** so that **I can be informed of the error and be redirected to another page** | - As a user encountering a broken link or missing page, I expect to be directed to a helpful and informative 404 error page. |
 
+# WEB MARKETING STRATEGY
 
+As mentioned earlier, I didn't want the website to have a constant "buy now" vibe with numerous explicit calls to action. Instead, my goal was to guide users towards making a purchase by helping them understand the importance of art. This approach naturally encourages purchases as users feel a closer connection to the artist and view the website more as a gallery than a typical e-commerce site. I aimed to build this trust by employing a "storyteller" approach.
 
+Users can be directed to make a purchase as a first thing from the home page, but there's also an option to click on a picture of the artist to learn more about her. Additionally, there's a highlighted offers button on the home page, maintaining the narrative I established. If users aren't immediately inclined to click on the buy buttons, they're invited to explore the community page and the blog.
 
+On the products page, each picture includes a brief description, encouraging users to contemplate each detail of the drawing. This also assists visually impaired users in imagining the art if they wish to buy it for themselves or as a gift. The detailed descriptions help everybody to understand the artwork and choose the right piece to convey the desired impression. Each product can also have a specification table, detailing the materials used, so users know what to expect upon receiving the art. Additionally, users can add items to their wishlist, allowing them to save pieces for future purchases without losing track.
 
-# WEB MARKETING EXPERIENCE
+The community page offers multiple links encouraging users to register on the website. It directs them to a newsletter signup form to stay updated with the latest news. Users are also informed that they can submit drawing suggestions, with the artist committing to select one suggestion per month to draw and display on the website. It encourages the the users to register as these selected suggestions will be available for a fixed price of 10 euros, and the person who submitted the suggestion will receive a free copy. This page also informs users about an events page where they can see all the art events the artist will be participating in. To further persuade users, we inform them that they can save interesting events to their profile if logged in. We also show how many people have saved each event, indicating the event's relevance to both the artist and the public.
+
+The blog serves as a tool for users to learn more about the artist's work and its significance. Each post, authored by the artist, can include external links related to the post's subject.
+
+On the about page, after some text about the artist, users can see cards with recommended features of the artist. They can be immediately redirected to the content that interests them.
+
+Finally, the footer provides users with access to contact information, the artist's social media links, payment methods, and quick links to relevant website content.
+
+## SEO
+
+To optimize the website for search engines and improve its visibility, I employed a comprehensive SEO (Search Engine Optimization) strategy that includes keyword research, effective use of meta tags, meaningful image names, proper heading hierarchy, and both internal and external linking. By implementing these SEO strategies, the website aims to rank higher in search engine results, attract more visitors, and convert them into loyal customers.
+
+### KEYWORD RESEARCH
+
+The keywords I focused on include:
+- Heartfelt
+- Unique
+- Affordable
+- Handmade
+- Art
+- Gifts
+
+These keywords were selected based on their relevance to the website's content and the search intent of potential users.
+
+I conducted thorough keyword research using Google to identify the most commonly searched terms. Additionally, I leveraged [ChatGPT](https://chatgpt.com/) during brainstorming sessions to explore keywords relevant to the website's subject matter. Moreover, I installed a [ICT Keyword Generator](https://chromewebstore.google.com/detail/ict-keyword-generator/gaonneapfjigdaklggdabodjpmnfhlch?gad_source=1&gclid=CjwKCAjwvIWzBhAlEiwAHHWgvUEkWAkOXx6XtPmnniR3Kda5j-RGCjL8TeeU0r4JTOOmcJabG3BsrRoC1KgQAvD_BwE) and utilized [Wordtracker](https://www.wordtracker.com/) to assess factors such as competition and ranking. These comprehensive strategies allowed me to gather valuable insights into optimizing keyword selection for the website.
+
+> [!NOTE]
+> All keywords are strategically combined to create both short and long-tail keywords.
+
+See below my keyword brainstorming:
+
+![keywords list](/readme-images/keywords-list.png)
+
+### HTML IMPLEMENTATION
+
+Keywords are embedded within the text to enhance SEO while maintaining readability:
+
+- **Meta Tags**: Each page has meta tags that include relevant keywords. 
+
+- **Headings**: Proper use of heading tags (h1, h2, h3, h4, h5) ensures a clear hierarchy and includes keywords. 
+
+- **Bold and Italic Text**: Keywords are highlighted using "strong" and "em" tags where appropriate to emphasize important points.
+
+- **Images Optimization**: they are named meaningfully and include keywords to improve image search results.
+
+## AFFILIATE AND CONTENT MARKETING
+
+The blog, events and community pages are optimized with relevant keywords and include both internal and external links
+
+- **Internal Links**: The community and blog pages contain internal links to other relevant parts of the website, improving navigation and keeping users engaged. For instance, blog posts can also link to related products.
+
+- **External Links**: Blog posts include useful, well-informed, and trustworthy external links to enhance credibility. For example, an article about the importance of art might link to reputable sources on art history or techniques. External links use rel="noopener" to improve security.
+
+## EMAIL MARKETING
+
+To ensure users stay informed about new products, blog posts, events, and features on the website, I implemented an email marketing strategy using [Mailchimp](https://mailchimp.com/). By leveraging Mailchimp's user-friendly interface and robust features, I created engaging email campaigns tailored to the interests of our subscribers.
+
+I chose to place the newsletter signup on the community page rather than in the footer because I believe users are more likely to subscribe when they understand its value. By positioning it on the community page, users can see the benefits of becoming part of our community. This page explains all the features and advantages, making it easier for users to decide to subscribe and stay informed. This approach fosters a sense of belonging and encourages users to engage more deeply with our content and updates.
+
+![email marketing screenshot](/readme-images/email-marketing.png)
+
+## FACEBOOK BUSINESS PAGE
+
+The Facebook Business Page is a crucial component of web marketing strategy and to enhance it, I created a Facebook Business Page. This page serves as a dynamic platform to engage with my audience, promote new products, and share updates about the website, blog posts, and upcoming events. By leveraging Facebook's vast user base, I can reach a broader audience and drive more traffic to my website.
+
+- [Drawing Gratitude on Facebook](https://www.facebook.com/profile.php?id=61560493948234)
+
+![Facebook screenshot](/readme-images/facebook.png)
+
+## PRIVACY POLICY
+
+To ensure the protection of my users' data and comply with legal requirements, I used a privacy policy generator ([Terms Feed](https://www.termsfeed.com/)) to create a comprehensive privacy policy for my website. This policy is crucial in building trust with my audience, as it transparently outlines how their personal information is collected, used, and safeguarded.
+
