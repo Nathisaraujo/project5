@@ -206,60 +206,59 @@ Performed comprehensive manual testing across all website features and functiona
 | User Stories    | Links Active | Features Working | Pass/Fail |
 |-----------------|--------------|------------------|-----------|
 |*ABOUT*          |              |                  |           |
-|**[About Me Page](https://github.com/Nathisaraujo/project5/issues/10)** | Yes           | Yes              | PASS      |
+|**[About Me Page](https://github.com/Nathisaraujo/project5/issues/10)** | :white_check_mark:           | :white_check_mark:              | PASS      |
 |*BAG*            |              |                  |           |
-| **[Purchases Total](https://github.com/Nathisaraujo/project5/issues/18)**         | Yes           | Yes              | PASS      |
-| **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |    Yes        |      Yes         |    PASS   |
-| **[Delete Product from Bag](https://github.com/Nathisaraujo/project5/issues/20)**         |    Yes        |      Yes         |    PASS   |
-| **[Add Product to Bag](https://github.com/Nathisaraujo/project5/issues/19)**         |    Yes        |      Yes         |    PASS   |
+| **[Purchases Total](https://github.com/Nathisaraujo/project5/issues/18)**         | :white_check_mark:           | :white_check_mark:              | PASS      |
+| **[Select Order Details - Standard Products](https://github.com/Nathisaraujo/project5/issues/39)**         |    :white_check_mark:        |      :white_check_mark:         |    PASS   |
+| **[Delete Product from Bag](https://github.com/Nathisaraujo/project5/issues/20)**         |    :white_check_mark:        |      :white_check_mark:         |    PASS   |
+| **[Add Product to Bag](https://github.com/Nathisaraujo/project5/issues/19)**         |    :white_check_mark:        |      :white_check_mark:         |    PASS   |
 |*BLOG*           |              |                  |           |
-| **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |     Yes       |       Yes        |   PASS    |
-| **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |      Yes      |        Yes       |   PASS    |
-| **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |     Yes       |       Yes        |   PASS    |
+| **[Like Blog Posts](https://github.com/Nathisaraujo/project5/issues/30)**         |     :white_check_mark:       |       :white_check_mark:        |   PASS    |
+| **[Blog (Why Art) Post Detail Page](https://github.com/Nathisaraujo/project5/issues/8)**         |      :white_check_mark:      |        :white_check_mark:       |   PASS    |
+| **[Why Art Blog Posts Page](https://github.com/Nathisaraujo/project5/issues/8)**         |     :white_check_mark:       |       :white_check_mark:        |   PASS    |
 |*CHECKOUT*       |              |                  |           |
-| **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |      Yes    |       Yes        |   PASS    |
-| **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |     Yes       |       Yes        |    PASS   |
-| **[Cancel Order](https://github.com/Nathisaraujo/project5/issues/41)**         |            |               |       |
-| **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |      Yes      |       Yes        |    PASS   |
-| **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |      Yes      |        Yes       |   PASS    |
-| **[Order Confirmation](https://github.com/Nathisaraujo/project5/issues/24)**         |     Yes       |      Yes         |    PASS   |
-| **[Payment Details](https://github.com/Nathisaraujo/project5/issues/23)**         |     Yes       |       Yes        |   PASS    |
+| **[Purchase Checkout](https://github.com/Nathisaraujo/project5/issues/34)**         |      :white_check_mark:    |       :white_check_mark:        |   PASS    |
+| **[Payment Security](https://github.com/Nathisaraujo/project5/issues/42)**         |     :white_check_mark:       |       :white_check_mark:        |    PASS   |
+| **[Successful Purchase](https://github.com/Nathisaraujo/project5/issues/36)**         |      :white_check_mark:      |       :white_check_mark:        |    PASS   |
+| **[Unsuccessful Purchase](https://github.com/Nathisaraujo/project5/issues/35)**         |      :white_check_mark:      |        :white_check_mark:       |   PASS    |
+| **[Order Confirmation](https://github.com/Nathisaraujo/project5/issues/24)**         |     :white_check_mark:       |      :white_check_mark:         |    PASS   |
+| **[Payment Details](https://github.com/Nathisaraujo/project5/issues/23)**         |     :white_check_mark:       |       :white_check_mark:        |   PASS    |
 |*COMMUNITY*      |              |                  |           |
-| **[Community Page](https://github.com/Nathisaraujo/project5/issues/46)**         |      Yes      |       Yes        |   PASS    |
-| **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |     Yes       |      Yes         |    PASS   |
+| **[Community Page](https://github.com/Nathisaraujo/project5/issues/46)**         |      :white_check_mark:      |       :white_check_mark:        |   PASS    |
+| **[Newsletter Form](https://github.com/Nathisaraujo/project5/issues/32)**         |     :white_check_mark:       |      :white_check_mark:         |    PASS   |
 |*EVENTS*         |              |                  |           |
-| **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |      Yes      |       Yes        |    PASS   |
+| **[Events Page](https://github.com/Nathisaraujo/project5/issues/44)**         |      :white_check_mark:      |       :white_check_mark:        |    PASS   |
 |*HOME*           |              |                  |           |
-| **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |     Yes        |        Yes       |   PASS    |
+| **[Home Page](https://github.com/Nathisaraujo/project5/issues/1)**         |     :white_check_mark:        |        :white_check_mark:       |   PASS    |
 |*PRODUCTS*       |              |                  |           |
-| **[Product Details](https://github.com/Nathisaraujo/project5/issues/37)**         |       Yes     |       Yes        |   PASS    |
-| **[Product Detail Page](https://github.com/Nathisaraujo/project5/issues/9)**         |      Yes      |      Yes         |    PASS   |
-| **[Search Product](https://github.com/Nathisaraujo/project5/issues/22)**         |      Yes      |       Yes        |   PASS    |
-| **[Sort Products](https://github.com/Nathisaraujo/project5/issues/21)**         |       Yes     |       Yes        |    PASS   |
-| **[Special Offers Page](https://github.com/Nathisaraujo/project5/issues/4)**         |     Yes       |       Yes        |    PASS   |
+| **[Product Details](https://github.com/Nathisaraujo/project5/issues/37)**         |       :white_check_mark:     |       :white_check_mark:        |   PASS    |
+| **[Product Detail Page](https://github.com/Nathisaraujo/project5/issues/9)**         |      :white_check_mark:      |      :white_check_mark:         |    PASS   |
+| **[Search Product](https://github.com/Nathisaraujo/project5/issues/22)**         |      :white_check_mark:      |       :white_check_mark:        |   PASS    |
+| **[Sort Products](https://github.com/Nathisaraujo/project5/issues/21)**         |       :white_check_mark:     |       :white_check_mark:        |    PASS   |
+| **[Special Offers Page](https://github.com/Nathisaraujo/project5/issues/4)**         |     :white_check_mark:       |       :white_check_mark:        |    PASS   |
 |*PROFILES*       |              |                  |           |
-| **[User Profile Page](https://github.com/Nathisaraujo/project5/issues/47)**          |      Yes     |         Yes      |    PASS   |
-| **[Order History](https://github.com/Nathisaraujo/project5/issues/25)**          |     Yes      |       Yes        |   PASS    |
-| **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |     Yes      |       Yes        |   PASS    |
-| **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |      Yes     |       Yes        |    PASS   |
+| **[User Profile Page](https://github.com/Nathisaraujo/project5/issues/47)**          |      :white_check_mark:     |         :white_check_mark:      |    PASS   |
+| **[Order History](https://github.com/Nathisaraujo/project5/issues/25)**          |     :white_check_mark:      |       :white_check_mark:        |   PASS    |
+| **[Edit User Profile](https://github.com/Nathisaraujo/project5/issues/17)**          |     :white_check_mark:      |       :white_check_mark:        |   PASS    |
+| **[Account Page](https://github.com/Nathisaraujo/project5/issues/2)**          |      :white_check_mark:     |       :white_check_mark:        |    PASS   |
 |*WISHLIST*       |              |                  |           |
-| **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |    Yes       |        Yes       |   PASS    |
+| **[Manage Wishlist](https://github.com/Nathisaraujo/project5/issues/40)**          |    :white_check_mark:       |        :white_check_mark:       |   PASS    |
 |*AUTHENTICATION* |              |                  |           |
-| **[Recover Password](https://github.com/Nathisaraujo/project5/issues/16)**          |      Yes     |        Yes       |   PASS    |
-| **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |    Yes       |      Yes         |   PASS    |
-| **[Login](https://github.com/Nathisaraujo/project5/issues/14)**          |    Yes       |      Yes         |   PASS    |
-| **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |     Yes      |        Yes       |    PASS   |
-| **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |      Yes     |        Yes       |   PASS    |
+| **[Recover Password](https://github.com/Nathisaraujo/project5/issues/16)**          |      :white_check_mark:     |        :white_check_mark:       |   PASS    |
+| **[Logout](https://github.com/Nathisaraujo/project5/issues/15)**          |    :white_check_mark:       |      :white_check_mark:         |   PASS    |
+| **[Login](https://github.com/Nathisaraujo/project5/issues/14)**          |    :white_check_mark:       |      :white_check_mark:         |   PASS    |
+| **[Confirm Registration](https://github.com/Nathisaraujo/project5/issues/13)**          |     :white_check_mark:      |        :white_check_mark:       |    PASS   |
+| **[Register](https://github.com/Nathisaraujo/project5/issues/12)**          |      :white_check_mark:     |        :white_check_mark:       |   PASS    |
 |*MANAGEMENT*     |              |                  |           |
-| **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |    Yes       |       Yes        |   PASS    |
-| **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |     Yes      |      Yes         |   PASS    |
-| **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |     Yes      |       Yes        |    PASS   |
+| **[Admin - Management](https://github.com/Nathisaraujo/project5/issues/45)**          |    :white_check_mark:       |       :white_check_mark:        |   PASS    |
+| **[Admin - Post Blog](https://github.com/Nathisaraujo/project5/issues/29)**          |     :white_check_mark:      |      :white_check_mark:         |   PASS    |
+| **[Manage Products](https://github.com/Nathisaraujo/project5/issues/28)**          |     :white_check_mark:      |       :white_check_mark:        |    PASS   |
 |*OTHERS*     |              |                  |           |
-| **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |      Yes     |       Yes        |   PASS    |
-| **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |     Yes      |       Yes        |    PASS   |
-| **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |     Yes      |        Yes       |   PASS    |
-| **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)**          |     Yes      |        Yes       |   PASS    |
-| **[404 error page](https://github.com/Nathisaraujo/project5/issues/49)**          |      Yes     |       Yes        |  PASS     |
+| **[Footer](https://github.com/Nathisaraujo/project5/issues/43)**          |      :white_check_mark:     |       :white_check_mark:        |   PASS    |
+| **[Contact Details](https://github.com/Nathisaraujo/project5/issues/31)**          |     :white_check_mark:      |       :white_check_mark:        |    PASS   |
+| **[Navigation Bar](https://github.com/Nathisaraujo/project5/issues/11)**          |     :white_check_mark:      |        :white_check_mark:       |   PASS    |
+| **[Privacy Policy](https://github.com/Nathisaraujo/project5/issues/48)**          |     :white_check_mark:      |        :white_check_mark:       |   PASS    |
+| **[404 error page](https://github.com/Nathisaraujo/project5/issues/49)**          |      :white_check_mark:     |       :white_check_mark:        |  PASS     |
 
 # DEFENSIVE PROGRAMMING
 
