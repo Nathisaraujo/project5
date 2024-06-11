@@ -42,10 +42,9 @@ Deployed website: [Go to Drawing Gratitude](https://drawing-gratitude-07bcca57b9
     * [Future Features](<#future-features>)
 
 * [LOGIC](<#logic>)
+    * [Initial Plans and Sketches](<#initial-plans-and-sketches>)
     * [Database](<#database>)
     * [Workflow](<#workflow>)
-         * [Agile](<#agile>)
-    * [Django Apps](<#django-apps>)
         * [About App](<#about-app>)
         * [Blog App](<#blog-app>)
         * [Bag App](<#bag-app>)
@@ -56,6 +55,7 @@ Deployed website: [Go to Drawing Gratitude](https://drawing-gratitude-07bcca57b9
         * [Products App](<#products-app>)
         * [Profiles App](<#profiles-app>)
         * [Wishlist App](<#wishlist-app>)
+    * [Agile](<#agile>)
 
 * [Techonologies Used](<#technologies-used>)
     * [Languages](<#languages>)
@@ -548,7 +548,20 @@ These future features are aimed at making the website more interactive, user-fri
 5. **More Efficient Profile Page**
    - Enhancements to the profile page will allow users to update not just their delivery information but also their personal information such as username, email, and phone number. This will make it easier for users to keep their profiles up-to-date and manage their accounts efficiently.
 
+6. **More Admin functionalities**
+   - Enhancements to the profile page will allow users to update not just their delivery information but also their personal information such as username, email, and phone number. This will make it easier for users to keep their profiles up-to-date and manage their accounts efficiently.
+
 # LOGIC
+
+## Initial Plans and Sketches
+
+In the initial planning phase, I outlined the core features and functionality for the page, creating detailed sketches to visualize the layout and user interactions. This helped in identifying the necessary components and their interactions within the project. Throughout the development process, I made numerous changes and adjustments to improve the design and functionality, ensuring a well-organized and efficient final product.
+
+![Initial Plans](/readme-images/first-plan.png)
+
+You can see below my initial sketch, which outlines the intended design, UI/UX, and overall look of the page.
+
+![Sketches](/readme-images/rascunho.jpg)
 
 ## Database
 A database diagram (ERD) was generated using Django Extensions.
@@ -556,4 +569,79 @@ A database diagram (ERD) was generated using Django Extensions.
 You can see the documentation I've followed [here.](https://www.linkedin.com/pulse/generate-database-diagramerd-django-extensions-automatically-srujan-s/)
 
 ![database schema](/readme-images/database.png)
+
+## Workflow
+
+I used [Lucidcharts](https://www.lucidchart.com/) to create a detailed workflow diagram for each app in my project, illustrating how components like models, views, and forms interact with one another and integrate with various website features. This visualization helps in understanding the overall structure and flow of data within the project.
+
+### About App
+
+This app manages the content for the "About Me" page, providing a streamlined way to present and update information about the artist.
+
+![about me app workflow](/readme-images/aboutme-app.png)
+
+### Bag App
+
+This app manages the shopping bag functionality for the website. The bag_contents context processor generates the context for the bag contents, calculating the total price, discounts, and delivery charges. The bag_tools.py file contains custom template filters to calculate subtotal and discount prices. The views handle adding, adjusting, and removing items from the bag, updating the session accordingly.
+
+![bag app workflow](/readme-images/bag-app.png)
+
+### Blog App
+
+This blog app manages the creation, display, and interaction with blog posts on the website. It enables the management and interaction with blog posts, providing a platform for content creation and engagement.
+
+![blog app workflow](/readme-images/blog-app.png)
+
+### Checkout App
+
+The checkout app facilitates the process of placing orders on the website. So the checkout app manages the entire order process, from collecting user information to processing payments and updating order status.
+
+![checkout app workflow](/readme-images/checkout-app.png)
+
+### Community App
+
+The community app displays content related to community engagement and interaction.
+
+![community app workflow](/readme-images/community-app.png)
+
+### Events App
+
+The events app is designed to manage events within a web application. The purpose of the events app is to facilitate the management and presentation of events within the web application, allowing users to discover, save, and interact with event information easily. It provides a user-friendly interface for both regular users and administrators to engage with events effectively.
+
+![events app workflow](/readme-images/events-app.png)
+
+### Home App
+
+The home app serves as the landing page and main interface for users accessing the web application. Overall, it aims to engage users from the moment they enter the platform, providing them with valuable information about the artist, current offers, community engagement opportunities, and access to insightful blog content, ultimately encouraging them to explore further and interact with the platform's features.
+
+![home app workflow](/readme-images/home-app.png)
+
+### Products App
+
+The products app serves as a page for managing and showcasing various products. Its primary purpose is to facilitate the administration of product listings and provide a user-friendly interface for customers to explore and purchase these items. 
+
+> [!NOTE]
+> I opted to incorporate multiple models related to the ProductTags model to allow for diverse and customizable product attributes such as materials, surfaces, paints, frames, and papers. One product can have different and varying numbers of materials, surfaces, paints, papers and frames based on its characteristics. By utilizing these models, each product can be enriched with detailed information about its composition, enhancing the user experience and enabling more precise categorization and search capabilities within the application.
+
+![products app workflow](/readme-images/products-app.png)
+
+### Profiles App
+
+The profiles app is designed to manage user profiles and their related functionalities (such as order history, wishlist, community recommendation and saved events. It also displays a management section for superusers), providing a personalized experience for each user.
+
+![profiles app workflow](/readme-images/profiles-app.png)
+
+### Wishlist App
+
+The Wishlist app allows users to manage a list of products they are interested in. This feature enhances the user experience by enabling them to save products they might want to purchase in the future. I inspired myself on a colleague project - [Gamerhood](https://github.com/fpatrick/p5gh/tree/master/wishlist)
+
+![wishlist app workflow](/readme-images/wishlist-app.png)
+
+## Agile
+
+During the development of my website, I implemented Agile methodologies to enhance project management and ensure a streamlined development process. I utilized GitHub, where I created issues to outline specific tasks and enhancements. Each issue was associated with a project board, providing a visual representation of the project's status and priorities.  I adopted user stories to define the functionality from the user's perspective. Each user story was accompanied by acceptance criteria, detailing the conditions that must be met for the feature to be considered complete. Additionally, I categorized user stories using labels, allowing for easy classification based on the feature type or functionality.
+
+By integrating Agile methodologies, GitHub for issue tracking, and user stories with acceptance criteria, I maintained an organized and efficient development process, ultimately leading to the successful creation of my website.
+
+You can see check it [here](https://github.com/Nathisaraujo/project5/issues)
 

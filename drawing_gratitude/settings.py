@@ -244,4 +244,9 @@ else:
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
