@@ -739,3 +739,233 @@ You can see check it [here](https://github.com/Nathisaraujo/project5/issues)
 # TESTING
 
 Refer to the [TESTING.MD](https://github.com/Nathisaraujo/project5/blob/main/TESTING.md)
+
+
+# DEPLOYMENT
+
+I followed the Code Institute walkthrough to deploy my project. Below are the steps I took:
+
+### Heroku Setup:
+1. **Create a New App:** log in to Heroku and create a new app with a unique name.
+2. **Configure Settings:** in the settings tab of your Heroku app dashboard, set config vars for production:
+    - Add a key of DISABLE_COLLECTSTATIC and a value of 1 and click Add.
+3. **Add Buildpack:** Include a Python buildpack in the settings tab to install necessary dependencies.
+
+### Create an External Database
+
+Since ElephantSQL will no longer be available, I used the Code Institute Postgres Database server instead. I received my database URL via email.
+
+1. Go to the config vars section on deploy section.
+2. Add the config var DATABASE_URL and paste the database URL.
+
+### Connect your database to your local development web server
+
+1. In the terminal, install dj_database_url and psycopg2:
+```
+ pip3 install dj_database_url==0.5.0 psycopg2
+```
+2. Update your requirements.txt file with the newly installed packages:
+```
+ pip freeze > requirements.txt
+```
+3. In your settings.py file, import dj_database_url underneath the import for os:
+```
+ import os
+ import dj_database_url
+```
+4. Scroll to the DATABASES section and update it to the following code, so that the original connection to sqlite3 is commented out and we connect to the new database instead. 
+```
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+     
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+```
+5. In the terminal, run the showmigrations command to confirm you are connected to the external database:
+```
+ python3 manage.py showmigrations
+```
+6. Migrate your database models to your new database
+```
+ python3 manage.py migrate
+```
+7. Use an if statement in settings.py so that when our app is running on Heroku here the database URL environment variable will be defined, we connect to our database and, otherwise, we connect to SQLite.
+```
+ if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+    }
+```
+
+### Update the project for deployment
+
+1. Install a production-ready webserver for Heroku.
+```
+pip3 install gunicorn~=20.1
+```
+2. Add gunicorn==20.1.0 to the requirements.txt file:
+```
+pip3 freeze --local > requirements.txt
+```
+3. Create Procfile: Specify the web dyno command in a Procfile. In the Procfile, declare this is a web process followed by the command to execute your Django project:
+```
+web: gunicorn drawing_gratitude.wsgi
+```
+4. Set DEBUG to False on drawing_gratitude/settings.py
+5. In settings.py, append the Heroku hostname to the ALLOWED_HOSTS list:
+```
+,'.herokuapp.com'
+```
+6. Commit changes to GitHub and push them to Heroku for deployment. Heroku automatically detects changes in the repository and triggers the deployment process.
+
+### Create an AWS Account
+
+1. Create an AWS account.
+2. Go to the services tab on the AWS Management Console and select S3.
+3. Click on "Create new bucket", give it a name of your project and choose your region.
+4. The Object Ownership setting needs to be set as shown with
+the ACLs enabled and Bucket Owner Preferred option checked.
+5. Click on "create bucket"
+6. Go to the "Properties" tab, on static website hosting, click on edit and chande it to "enable".
+7. On the permissions tab, go to CORS configuration, paste that into the Cross-origin resource sharing (CORS) section:
+```
+    [
+        {
+            "AllowedHeaders": [
+            "Authorization"
+            ],
+            "AllowedMethods": [
+            "GET"
+            ],
+            "AllowedOrigins": [
+            "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+
+```
+8. Go to "Bucket Policy", click on Policy Generator and choose the "S3 Bucket Policy".
+9. On "Step 2: Add Statements", add the settings:
+```
+Effect: Allow
+Principal: *
+Actions: GetObject
+ARN: Bucket ARN   # copy and paste from the S3 Bucket
+```
+10. Click on add statement and then generate policy. Copy the policy, and paste it into the permissions tab, on the Bucket Policy Section.
+11. Add '/*' at the end of the 'Resource' key, and save.
+11. Go to the "Access Control List "section, click edit and enable List for Everyone (public access) and accept the warning box.
+
+### Identify and Access Management (IAM)
+
+1.  Go to the services tab on the AWS Management Console and select "IAM".
+2. On the IAM page, click on User Groups, then on create group, and choose a name and click create.
+3. Go to Policies tab, click "Create New Policy". 
+4. Go to the JSON tab and click "Import Managed Policy".
+5. Search for S3 and choose "AmazonS3FullAccess". Then, click "Import".
+6. Retrieve the bucket ARN from 'S3 Permissions' as mentioned earlier. Replace the '*' in the 'Resource' key with the following code:
+
+```
+"Resource": [
+    "YOUR-ARN-NO-HERE",
+    "YOUR-ARN-NO-HERE/*"
+]
+```
+7. Click on "Next Tags", then "Review Policy". Provide a name and description, then click "Create Policy".
+8. Go to User Groups tab, open the created group, and navigate to the permissions tab. Click on "Add Permissions "and then "Attach Policies". Select the policy and click on "Add permissions" at the bottom.
+9. To create a user for the group, select "Users" from the sidebar and click "Add User". Enter a username and check "Programmatic Access".
+10. Click on "Next" and select the group you created. Continue clicking it until you reach the "Create User" button and click it.
+12. Go to IAM and select 'Users'
+11. Select the user for whom you wish to create a CSV file.
+12. Select the 'Security Credentials' tab
+13. Scroll to 'Access Keys' and click 'Create access key'
+14. Select 'Application running outside AWS', and click next
+15. On the next screen, you can leave the 'Description tag value' blank. Click 'Create Access Key'
+16. Download the CSV file containing the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID. You will need these for the Heroku variables as mentioned earlier and also in your env.py file.
+
+### Set up hosting for static and media- AWS (Amazon Web Services) - S3 (“Simple Storage Service”)
+
+1. Install two additional requirements:
+```
+pip3 install boto3
+pip3 install django-storages
+```
+2. Update your `requirements.txt` file:
+```
+pip3 freeze --local > requirements.txt
+```
+3. Add "storages" to your installed apps:
+4. In settings.py, create an if statement:
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'insert-your-bucket-name-here'
+    AWS_S3_REGION_NAME = 'insert-your-region-here'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+5. Create a file called custom_storages.py and import the settings from django.conf and the S3Boto3Storage class from django-storages. Add the following code:
+```python
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+6. In settings.py, add the following inside the if statement:
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+7. And then add this at the top of the if statement:
+```
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+```
+8. Go to S3, navigate to your bucket, and click 'Create folder'. Name the folder 'media' and click 'Save'. 
+9. Inside the folder, click 'Upload', 'Add files', and select all the images you are using for your site. Under 'Permissions', select the option 'Grant public-read access' and click 'Upload'.
+
+### Back to Heroku Setup:
+
+1. Go to the deploy tab, in the Deployment method section, and enable GitHub integration by clicking on Connect to GitHub.
+2. Scroll to the bottom of the page and click Deploy Branch to start a manual deployment of the main branch.
+3. Open the Resources tab and choose an eco dyno. 
+4. Click on Open app to view your deployed project.
+
+## Forking
+Forking allows you to freely experiment with changes without affecting the original repository.
+
+1. **Create a Fork:** Visit the GitHub repository and click on 'Fork' to create a copy of the repository under your account. 
+2. **Customize Fork:** Customize the fork as needed before creating it. You can modify the fork's settings, description, and other details to suit your requirements.
+
+## Cloning Repository
+Cloning creates a local copy of the repository on your machine, allowing you to work on the codebase locally.
+
+1. **Copy Repository Link:** Copy the repository link from GitHub.
+2. **Clone Repository:** Use Git commands to clone the repository to your local environment.
+3. **Set Up Environment:** Enter your workspace, set up a virtual environment, install dependencies from requirements.txt, and create an env.py file. 
+4. **Configuration:** Modify settings.py and other necessary files to match your environment and configurations. Update settings.py with database connection details, secret keys, and other environment-specific configurations.
+
