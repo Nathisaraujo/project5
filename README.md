@@ -645,3 +645,97 @@ By integrating Agile methodologies, GitHub for issue tracking, and user stories 
 
 You can see check it [here](https://github.com/Nathisaraujo/project5/issues)
 
+# TECHNOLOGIES USED
+
+## Languages
+- **HTML:** structure the content of web pages.
+
+- **CSS:** style HTML elements.
+
+- **JavaScript:** create interactive and dynamic features.
+
+- **Python:** is used with the Django framework to handle server-side logic and data manipulation.
+
+## Libraries and Programs:
+
+- **Frameworks and Packages:**
+
+    - **Django:** a high-level Python web framework that simplifies the process of building web applications.
+
+    - **Crispy Forms:** Crispy Forms is a Python package used to style Django forms, making them more visually appealing and user-friendly.
+
+    - **Bootstrap5:** front-end framework for building responsive and mobile-first websites.
+
+    - **Allauth:** is a Django package that provides authentication, registration, and account management functionality for Django applications
+
+    - **Gunicorn:** a WSGI HTTP server for running Python web applications, providing a fast and scalable solution for serving web requests in production environments.
+
+    - **Whitenoise:** a Python library for serving static files efficiently.
+
+    - **PyGraphviz:** a Python library used for working with Graphviz, to generate the ERD.
+
+    - **Pillow:** Python Imaging Library (PIL) fork that adds support for opening, manipulating, and saving many different image file formats.
+
+    - **Django-countries:** a Django application that provides country choices for use with forms, flag icon widgets, and a country field for models.
+
+    - **boto3:** AWS SDK for Python. It allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2.
+
+    - **AWS (Amazon Web Services):** a cloud computing platform that offers a wide range of services including computing power, storage options, and networking capabilities. It provides scalable and cost-effective solutions for hosting web applications and managing infrastructure.
+
+    - **Django-storages:** a collection of custom storage backends for Django applications to work with different storage services like Amazon S3, Google Cloud Storage, and others.
+
+    - **select2:** a jQuery-based replacement for select boxes. It provides a user-friendly interface for selecting elements from a dropdown list with features like search functionality and customizable styling.
+
+- **Database:**
+    
+    - **CI PostgreSQL:** Code Institute Postgres Database server.
+
+    - **SQLite:** database management system used as a local database during development.
+
+- **Tools and Platforms:**
+
+    - **Gitpod:** cloud-based integrated development environment (IDE) used for coding.
+
+    - **Git and GitHub:** track changes in project files.
+
+    - **Heroku:** cloud-based platform as a service (PaaS) that enables deployment and management.
+
+    - **Google Developer Tools:** web development and debugging tools built into the Google Chrome browser.
+
+    - **Mailchimp:** an email marketing service provider that allows users to create, send, and track email campaigns. It provides tools for managing subscriber lists, designing email templates, and analyzing campaign performance.
+
+    - **Facebook Pages:** a feature of Facebook that allows businesses, organizations, and public figures to create a presence on Facebook and connect with their audience. It provides tools for sharing updates, engaging with followers, and promoting products or services.
+
+    - **ChatGPT:** an AI-powered chatbot developed by OpenAI. It uses natural language processing techniques to understand and respond to user input in conversational contexts. 
+
+    - **TermsFeed:** an online platform that generates legal documents such as privacy policies, terms and conditions, and cookie policies for websites and mobile apps. 
+
+- **Design and Styling:**
+
+    - **Summernote:** rich text editor that provides an easy-to-use interface for formatting and styling text in web applications.
+
+    - **Fontawesome:** a library of scalable vector icons.
+
+    - **Google Fonts:** a collection of open-source fonts hosted by Google. 
+
+    - **Coolors:** Coolors is a color scheme generator.
+
+    - **LucidChart:** diagramming tool used for creating flowcharts.
+
+    - **Canva:** a graphic design platform used for creating visual content.
+
+    - **Wave:** an accessibility testing tool that helps developers and designers ensure their web content is accessible to all users, including those with disabilities.
+
+- **Validators:**
+
+    - **Code Institute Python Linter:** Python.
+
+    - **W3C Validator:** HTML and CSS.
+
+    - **JS Hint:** JavaScript.
+
+    - **flake8:** Python.
+
+# TESTING
+
+Refer to the [TESTING.MD](https://github.com/Nathisaraujo/project5/blob/main/TESTING.md)
