@@ -291,7 +291,35 @@ The website is designed with a variety of features to enhance user experience, e
 
 ### NAVBAR AND FOOTER
 
+Overall, the navbar and footer are designed to enhance user experience by offering easy navigation, essential contact information, and quick access to important sections of the site.
 
+**Navbar**
+
+The navbar on my Django project is designed for ready navigation and is attached to the top of every page. It features a sleek and intuitive layout:
+
+- **Logo**: Positioned on the left side, providing a consistent brand identity.
+- **Search Bar**: Centrally located, allowing users to easily search products within the site.
+- **Account and Bag Buttons**: Located on the right side for quick access to user account details and shopping bag.
+- **Navigation Buttons**: At the bottom of the navbar, there are buttons for quick access to various sections of the site, including:
+  - Products
+  - Categories
+  - Main Materials
+  - Community Page
+  - Offers
+  - About (featuring information about the artist, blog, and events)
+
+![navbar](/readme-images/navbar.png)
+
+**Footer**
+
+The footer of the website is structured to provide essential information and links in a clear, organized manner:
+
+- **Contact Me Section**: Includes the artist's email, phone number, and address, making it easy for visitors to get in touch.
+- **Social Media Links**: A dedicated section for the artist's social media profiles, enabling visitors to connect and follow on various platforms.
+- **Payment Methods**: Displays the accepted payment methods, ensuring users are informed about their payment options.
+- **Quick Links**: Provides links to important pages on the website, including the privacy policy, ensuring users can easily navigate to key information.
+
+![footer](/readme-images/footer.png)
 
 ### HOME PAGE
 
@@ -403,18 +431,129 @@ Below the post content lies the "Learn More" section, offering additional resour
 
 Finally, nestled at the bottom of the page is a heart-shaped button, inviting visitors to express their appreciation for the post by liking it. This delightful touch fosters a sense of community and encourages interaction.
 
-![blog page](/readme-images/blog-page.png)
+![blog page](/readme-images/post-detail.png)
 
 ### EVENTS
 
+The events page features a dynamic and user-friendly interface, showcasing all upcoming and past events through individual cards. Each card displays essential information about the event, including the title, description, organizer, date and time, and location. Overall, the events page is designed to be intuitive and interactive, providing users with all the necessary information and functionalities to engage with the events effectively.
 
+Key features of the events page include:
+
+- **Event Details**: Each event card provides a clear and concise overview of the event, making it easy for users to quickly understand the essential details.
+- **Past Events Indication**: If an event has already occurred, the card will display a red text indicator, ensuring users can easily distinguish between upcoming and past events.
+- **Save to Profile**: For upcoming events, logged-in users have the option to save the event to their profile with a simple click. This feature allows users to keep track of events they are interested in attending.
+- **Interest Counter**: Each event card includes a counter that shows the number of people interested in the event. This counter increases by one each time a user saves the event to their profile.
+- **Admin Controls**: If a superuser is viewing the page, they will see additional buttons to edit or delete events, allowing for easy management and updates to the event listings.
 
 ![events page](/readme-images/events-page.png)
 
 ### PROFILE
 
+**Profile Page**
+
+When you click on the profile button, you are directed to the main profile page, which is thoughtfully organized to enhance user experience. This profile section is designed to provide users with easy access to their information and activities, enhancing overall usability and engagement with the site.
+
+The layout includes:
+
+- **Menu on the Left Side**: This menu provides quick access to various sections, including:
+  - Order History
+  - Wishlist
+  - Community Suggestions
+  - Saved Events
+  - (For superusers) Management Button
+- **User Information on the Right Side**: Displays essential user details such as username, email, and phone number.
+- **Default Delivery Information**: Presented in a table format below the user information, making it easy to view and update.
+- **Update Delivery Information Button**: Positioned at the bottom of the page for convenient access.
+
+![profile page](/readme-images/profile.png)
+
+> [!NOTE]
+> Every sub-page within the profile section includes a "Back to Profile" button, allowing for easy navigation back to the main profile page.
+
+**Order History Page**
+
+This page displays a comprehensive list of all orders made by the user in a clean, striped format for better readability. Each order line includes:
+- Order number
+- Date and time
+- Items ordered
+- Total price
+- Product picture
+
+![order history page](/readme-images/orders.png)
+
+**Wishlist Page**
+
+The wishlist page features a table listing all products the user has added. The table columns include:
+- **Type**: Indicates whether the product is a community suggestion, on sale, or a standard product.
+- **Product Picture**
+- **Title**: With a link that redirects to the product page.
+- **Price**
+- **Option to Remove from Wishlist**
+
+![wishlist page](/readme-images/wishlist-page.png)
+
+**Community Suggestions Page**
+
+This page contains a simple form where users can submit their drawing recommendations, facilitating direct input from the community.
+
+![community suggestion page](/readme-images/community-suggestion.png)
+
+**Saved Events Page**
+
+The saved events page showcases cards for each event the user has saved to their profile. Users can easily manage their saved events, with an option to unsave an event by clicking the saved button on each card.
+
+![saved events page](/readme-images/saved-events.png)
+
 
 ### MANAGEMENT
 
+The management page is tailored to provide superusers with a clear and efficient interface for maintaining and updating website content, ensuring smooth and effective administration. It offers comprehensive control over the website's content. Access to this page is conveniently provided via the profile menu or the profile button on the navbar. Upon selecting the management option, superusers are redirected to the main management page.
+
+The main management page features several cards, each with buttons to different management sections. These cards are color-coded for easy identification:
+- **Products Management**: Yellow
+- **Events Management**: Light Blue
+- **About Management**: Green
+- **Blog Management**: Red
+
+Each card provides a brief explanation of how to manage the respective subject area. Depending on the section, clicking on a card may redirect superusers either directly to an update/edit/add page or to an intermediate page with edit and delete options. For example, the products management card redirects to the "All Products" page, where admins can locate the product they want to manage and access the edit or delete functions.
+
+![management page](/readme-images/management.png)
+
+**Add or Edit Pages**
+
+Each add or edit page is designed with simplicity and efficiency in mind. They feature straightforward forms that capture all necessary information for the respective content type. At the bottom of these forms, there are buttons to either update existing entries or add new ones, facilitating quick and easy content management.
+
+![edit or add example page](/readme-images/edit-or-add.png)
+
 ## FUTURE FEATURES
+
+**Future Features**
+
+These future features are aimed at making the website more interactive, user-friendly, and personalized, ensuring a richer and more engaging experience for all users. As the website continues to evolve, several exciting features are planned to enhance user experience and functionality:
+
+1. **Personalized Orders**
+   - A highly anticipated feature is the ability for users to order personalized drawings. This would allow users to specify details such as size, material, and other custom preferences. The price would be dynamically calculated based on these factors, providing a seamless and personalized shopping experience.
+
+2. **Enhanced Events Section**
+   - The events section has great potential for improvement. Planned upgrades include:
+     - **Countdown Timer**: A timer for each event, allowing users to see how much time is left until the event starts.
+     - **Reminder Emails**: Users will receive email reminders about upcoming events they are interested in, ensuring they don't miss out.
+
+3. **Comment Sections**
+   - To foster greater interaction and engagement, adding comment sections to both the product pages and the blog is planned. This will allow users to share their thoughts, ask questions, and engage with the community.
+
+4. **Improved Newsletter Section**
+   - The newsletter section will be revamped to be more compelling and user-friendly, encouraging more users to subscribe. This will include better design, clear benefits of subscribing, and possibly incentives for joining the mailing list.
+
+5. **More Efficient Profile Page**
+   - Enhancements to the profile page will allow users to update not just their delivery information but also their personal information such as username, email, and phone number. This will make it easier for users to keep their profiles up-to-date and manage their accounts efficiently.
+
+# LOGIC
+
+## Database
+A database diagram (ERD) was generated using Django Extensions.
+
+You can see the documentation I've followed [here.](https://www.linkedin.com/pulse/generate-database-diagramerd-django-extensions-automatically-srujan-s/)
+
+![database schema](/readme-images/database.png)
 
