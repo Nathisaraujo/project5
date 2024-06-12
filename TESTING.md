@@ -9,6 +9,7 @@ Back to [Drawing Gratitude README](https://github.com/Nathisaraujo/project5/blob
     * [CSS](<#css>) 
     * [Python](<#python>)
     * [JavaScript](<#javascript>)
+    * [Flake8](<#flake8>)
 
 * [RESPONSIVENESS](<#responsivess>) 
 
@@ -55,6 +56,10 @@ I validated all JavaScript code using JSHint. Below are my settings, as I encoun
 > The AWS and ChimpMail JavaScript files generate numerous warnings. However, since these are third-party libraries, I chose not to address them to avoid potential disruptions in my project's functionality.
 
 ![js validation settings](/readme-images/js-settings.png)
+
+## Flake8
+
+I utilized Flake8 extensively to identify and fix bugs in my project, ensuring adherence to Python's best coding practices. I meticulously resolved all issues highlighted by Flake8, leaving behind only those bugs that were not related to my code. Additionally, there were just two or three instances where lines were excessively long, and I was unsure how to split them appropriately.
 
 # RESPONSIVENESS
 
