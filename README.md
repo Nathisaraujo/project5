@@ -969,3 +969,71 @@ Cloning creates a local copy of the repository on your machine, allowing you to 
 3. **Set Up Environment:** Enter your workspace, set up a virtual environment, install dependencies from requirements.txt, and create an env.py file. 
 4. **Configuration:** Modify settings.py and other necessary files to match your environment and configurations. Update settings.py with database connection details, secret keys, and other environment-specific configurations.
 
+
+# CREDITS
+
+- The "Boutique Ado" project by Code Institute played a crucial role in my learning journey. It provided invaluable insights and knowledge, significantly contributing to my project development.
+
+- **Debugging and Error Resolution:** When encountering issues with the like button implementation, I utilized various resources for assistance, including tutoring sessions, browser developer tools, and ChatGPT.
+
+- I used [ChatGPT](https://chat.openai.com/) to help me throughout the project, leveraging its capabilities in various ways:
+    - **Error Understanding and Debugging:** ChatGPT assisted me in comprehending complex errors and provided insights to debug the code effectively.
+    - **Typo Detection:** I employed ChatGPT to identify any typos present in my code or documentation files.
+    - **Vocabulary and Grammar Enhancement:** ChatGPT helped refine the vocabulary and grammar in my project documentation, ensuring clarity as English is not my first language.
+
+    - **Specific Use Cases:**
+        - **To create a filter to calculate the offers** When faced with the task of creating a filter for the products on offer, I tried the following:
+
+            ![chatgpt offers filter - my version ](/readme-images/offers-filter-1.png)
+
+            But of course, it wasn't working, so ChatGPT suggested another approach:
+
+            ![chatgpt offers filter - Chatgpt version ](/readme-images/offers-filter-2.png)
+
+            Then I tried to add more context, making things more complex:
+
+            ![chatgpt offers filter - my version ](/readme-images/offers-filter-3.png)
+
+            It still wasn't working, so ChatGPT suggested this:
+
+            ![chatgpt offers filter - Chatgpt version ](/readme-images/offers-filter-4.png)
+
+            Realizing I wasn't understanding it well, I asked ChatGPT to explain the logic to me, which really helped:
+
+            ![chatgpt offers filter - Chatgpt version ](/readme-images/offers-filter-5.png)
+            ![chatgpt offers filter - Chatgpt version ](/readme-images/offers-filter-6.png)
+
+            For this specific case, I also watched this video: [Adding Ecommerce Discount Prices](https://www.youtube.com/watch?v=H8uvpvpas_U)
+
+            And referred to this documentation: [Decimal Field](https://docs.djangoproject.com/en/4.0/ref/models/fields/#decimalfield)
+            
+        - **Ideas to create new models:** I struggled to think of more models to create, knowing I needed to create three of my own. ChatGPT gave me a list of ideas:
+
+            ![chatgpt models ideas](/readme-images/model-ideas.png)
+
+            This led me to the idea of creating an events page.
+
+        - **Clean Function on Events model**  I had an issue with my events model and received this error:
+
+            ![events model error](/readme-images/events-error.png)
+
+            ChatGPT suggested creating a clean function for the model:
+
+            ![events model error - chatgpt suggestion](/readme-images/events-error-gpt.png)
+
+- **Navbars and tables:** To create different navbars and tables, I frequently used:
+
+    - [W3 Schools](https://www.w3schools.com/)
+    - [Bootstrap5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
+- **Boolean Field:** When I couldn't remember how to implement a Boolean field, I referred to [Geeks for Geeks](https://www.geeksforgeeks.org/boolean-data-type-in-python/)
+
+- **Post Model:** I referred to my last project to create the post model.
+
+- **Pagination:**  I referred to my last project and the Bootstrap documentation to implement pagination.
+
+- **Wishilist App** I referred to a colleague's project to create the wishlist app:  [Gamerhood](https://github.com/fpatrick/p5gh)
+
+- **Friend Collaboration:** A friend shared his code with me, providing insights into some requirements and features: [Easy Vape](https://github.com/gioZAK/easy_vape).
+
+To craft this README, I referred to the the [Coffee Collective Project](https://github.com/LauraMayock/the-coffee-collective?tab=readme-ov-file)

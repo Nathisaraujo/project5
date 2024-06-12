@@ -4,7 +4,7 @@ from django.contrib import messages
 from products.models import Product
 from wishlist.models import Wishlist
 
-# Create your views here.
+# Relied on a colleague views to create the wishlist views - refer to README
 
 
 @login_required

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from products.models import Product
 
-# Create your models here.
+# Relied on a colleague model to create the wishlist model - refer to README
 
 
 class Wishlist(models.Model):
